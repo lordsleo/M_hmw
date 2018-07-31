@@ -1,0 +1,206 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>更多资讯</title>
+    <link href="../Css/css.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>  
+
+    <script>
+
+        function DetailNewsClick(info) {
+            //实现详细资讯页面的跳转
+            window.location.href = 'Detail_News.html?info=' + info;
+        }
+
+        var str = document.location.search;
+        var str1 = str.split("=", 2);
+        var sqlId = str1[1];
+        var headline = "";
+        //sqlId = 0;
+
+        var retarry;
+        $(function () {
+
+            switch (sqlId) {
+                case "0": headline = "公路咨询"; break;
+                case "1": headline = "已放行车辆"; break;
+                case "2": headline = "网上车源"; break;
+                case "3": headline = "司机信息"; break;
+                case "4": headline = "内河咨询"; break;
+                case "5": headline = "确报船"; break;
+                case "6": headline = "确报船"; break;
+                case "7": headline = "泊位船"; break;
+                case "8": headline = "泊位船"; break;
+                case "9": headline = "煤焦资讯"; break;
+                case "10": headline = "煤焦资讯"; break;
+                case "11": headline = "煤焦资讯"; break;
+                case "12": headline = "煤焦供应"; break;
+                case "13": headline = "煤焦求购"; break;
+                case "14": headline = "煤焦行情"; break;
+                case "15": headline = "煤焦行情"; break;
+                case "16": headline = "有色矿资讯"; break;
+                case "17": headline = "有色矿供求"; break;
+                case "18": headline = "有色矿行情"; break;
+                case "19": headline = "铁矿砂资讯"; break;
+                case "20": headline = "铁矿砂供求"; break;
+                case "21": headline = "铁矿砂行情"; break;
+                case "22": headline = "仓储资讯"; break;
+                case "23": headline = "园区仓储"; break;
+                case "24": headline = "待储货源"; break;
+                case "25": headline = "来港确报"; break;
+                case "26": headline = "港口要闻"; break;
+                case "27": headline = "陆桥资讯"; break;
+                case "28": headline = "行业观察"; break;
+                case "29": headline = "船舶资讯"; break;
+                case "30": headline = "集装箱船期"; break;
+                case "31": headline = "运价"; break;
+                case "32": headline = "散杂船期"; break;
+                case "33": headline = "散杂运价"; break;
+                case "34": headline = "在泊船"; break;
+                case "35": headline = "锚地船"; break;
+                case "36": headline = "铁路资讯"; break;
+                case "37": headline = "来港确报"; break;
+                case "38": headline = "码头卸车计划"; break;
+                case "39": headline = "码头装车计划"; break;
+                case "40": headline = "今日头条"; break;
+                case "41": headline = "我的预报船"; break;
+                case "42": headline = "我的确报船"; break;
+                case "43": headline = "我的引航费用"; break;
+                case "44": headline = "我的高频话费"; break;
+                case "45": headline = "我的泊位船舶"; break;
+                case "46": headline = "我的船舶计划"; break;
+                case "47": headline = "我的业务委托有船作业"; break;
+                case "48": headline = "我的业务委托无船作业"; break;
+                case "49": headline = "我的作业委托"; break;
+                case "50": headline = "我的票货"; break;
+                case "51": headline = "我的货物进港"; break;
+                case "52": headline = "我的货物出港"; break;
+                case "53": headline = "我的货物结存"; break;
+                case "54": headline = "我的船代货代"; break;
+                case "55": headline = "我的作业委托"; break;
+                case "56": headline = "我的已付账单"; break;
+                case "57": headline = "我的业务事项"; break;
+                case "58": headline = "我的船代货代"; break;
+                default: headline = ""; break
+            }
+
+            document.title = headline;
+
+            var num = 1;          
+            $.getJSON("http://218.92.115.55/M_Hmw/Detail/More_News.aspx?sqlId=" + sqlId + "&callback=?", null, function (ret) {
+
+               
+
+                $("#table1").empty();
+                //标题
+                //$('#headlines').text(headline);
+                //页码
+                if (0 == Math.floor(ret.length / 15)) {
+                    sumPage = 1;
+                }
+                else if ((Math.floor(ret.length / 15) >= 1) && ((ret.length % 15) > 0)) {
+                    sumPage = Math.floor(ret.length / 15) + 1;
+                }
+                else {
+                    sumPage = ret.length / 15;
+                }
+
+                var newsNum = (ret.length <= num * 15) ? ret.length : num * 15;
+                var page = num + "/" + sumPage;
+                $('#pagenum').text(page);
+                //资讯
+                for (i = 15 * (num - 1) ; i < newsNum; ++i) {
+                    var title = ret[i][2].length > 18 ? ret[i][2].substr(0, 18) + '...' : ret[i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + ret[i][0] + '+' + ret[i][1] + "')\"><span>" + title + "</span></li>")
+                    //$('#table1').append("<li onclick=\"DetailNewsClick('" + ret[i][0] + '+' + ret[i][1] + "')\"><span>" + ret[i][2].substr(0, 12) + '...' + "</span><span class='addtime'>" + ret[i][3] + "</span></li>")
+                }
+                
+                $("#table1").trigger("create");
+                $(".turepage").css("display","block");
+
+                retarry = ret;
+            })
+
+
+            $("#prev").click(function () {
+
+                if (1 == num) {
+                    return;
+                }
+                else {
+                    num--;
+                }
+
+                var newsNum = (retarry.length <= num * 15) ? retarry.length : num * 15;
+                var page = num + "/" + sumPage;
+
+                $("#table1").empty();
+                $('#pagenum').text(page);
+                for (i = 15 * (num - 1) ; i < newsNum; ++i) {
+                    var title = retarry[i][2].length > 18 ? retarry[i][2].substr(0, 18) + '...' : retarry[i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + retarry[i][0] + '+' + retarry[i][1] + "')\"><span>" + title + "</span></li>")
+                    //$('#table1').append("<li onclick=\"DetailNewsClick('" + retarry[i][0] + '+' + retarry[i][1] + "')\"><span>" + retarry[i][2].substr(0, 12) + '...' + "</span><span class='addtime'>" + retarry[i][3] + "</span></li>")
+                }
+                $("#table1").trigger("create");
+            });
+
+
+            $("#next").click(function () {
+
+                if (sumPage == num) {
+                    return;
+                }
+                else {
+                    num++;
+                }
+
+                var newsNum = (retarry.length <= num * 15) ? retarry.length : num * 15;
+                var page = num + "/" + sumPage;
+
+                $("#table1").empty();
+                $('#pagenum').text(page);
+                for (i = 15 * (num - 1) ; i < newsNum; ++i) {
+                    var title = retarry[i][2].length > 18 ? retarry[i][2].substr(0, 18) + '...' : retarry[i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + retarry[i][0] + '+' + retarry[i][1] + "')\"><span>" + title + "</span></li>")
+                    //$('#table1').append("<li onclick=\"DetailNewsClick('" + retarry[i][0] + '+' + retarry[i][1] + "')\"><span>" + retarry[i][2].substr(0, 12) + '...' + "</span><span class='addtime'>" + retarry[i][3] + "</span></li>")
+                }
+                $("#table1").trigger("create");
+            });
+
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title" id="headlines"></div>
+        </div>
+
+        <div class="stylebox">
+            <ul id="table1" class="styel3" style="margin:15px 10px 10px 10px"></ul>
+        </div>
+
+        <div class="turepage">
+            <button type="button", id="prev">上一页</button>
+            <p id="pagenum"></p>
+            <button type="button", id="next">下一页</button>
+        </div>
+
+        <!--页尾-->
+        <!--<div class="foot">连云港港口集团有限公司版权所有 <br />连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+
+</body>
+</html>

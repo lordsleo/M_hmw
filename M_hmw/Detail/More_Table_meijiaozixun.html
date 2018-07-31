@@ -1,0 +1,336 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>煤焦资讯</title>
+    <link href="../Css/css.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+    <script>
+    <!--
+    /*第一种形式 第二种形式 更换显示样式*/
+    function setTab(name,cursel,n){
+    for(i=1;i<=n;i++){
+    var menu=document.getElementById(name+i);
+    var con=document.getElementById("con_"+name+"_"+i);
+    menu.className=i==cursel?"hover":"";
+    con.style.display=i==cursel?"block":"none";
+    }
+    }
+    //-->
+    </script>
+
+    <script>
+
+        function DetailNewsClick(info) {
+            //实现详细资讯页面的跳转
+            window.location.href = '../Detail/Detail_News.html?info=' + info;
+        }
+
+        //var str = document.location.search;
+        //var str1 = str.split("=", 2);
+        //var sqlId = str1[1];
+        var headline = "煤焦资讯";
+        var sqlId = "";
+
+        var retarry;
+        $(document).ready(function () {
+
+            var num1 = 1;
+            var num2 = 1;
+            var num3 = 1;
+            //总页数
+            var sumPage1
+            var sumPage2;
+            var sumPage3;
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Detail/More_Table_meijiaozixun.aspx?sqlId=" + sqlId + "&callback=?", null, function (ret) {
+
+                $("#table1").empty();
+                $("#table2").empty();
+                $("#table3").empty();
+                //标题
+                $('#headlines').text(headline);
+
+                /*国内*/
+                //页码
+                if (0 == Math.floor(ret[0].length / 15)) {
+                    sumPage1 = 1;
+                }
+                else if ((Math.floor(ret[0].length / 15) >= 1) && ((ret[0].length % 15) > 0)) {
+                    sumPage1 = Math.floor(ret[1].length / 15) + 1;
+                }
+                else {
+                    sumPage1 = ret[0].length / 15;
+                }
+
+                var newsNum1 = (ret[0].length <= num1 * 15) ? ret[0].length : num1 * 15;
+                var page1 = num1 + "/" + sumPage1;
+                $('#pagenum1').text(page1);
+                for (i = 15 * (num1 - 1) ; i < newsNum1; ++i) {
+                    var title = ret[0][i][2].length > 18 ? ret[0][i][2].substr(0, 18) + '...' : ret[0][i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + ret[0][i][0] + '+' + ret[0][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == newsNum1) {
+                    $('#table1').append("<tr><td colspan=\"1\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                /*国际*/
+                //页码
+                if (0 == Math.floor(ret[1].length / 15)) {
+                    sumPage2 = 1;
+                }
+                else if ((Math.floor(ret[1].length / 15) >= 1) && ((ret[1].length % 15) > 0)) {
+                    sumPage2 = Math.floor(ret[0].length / 15) + 1;
+                }
+                else {
+                    sumPage2 = ret[1].length / 15;
+                }
+
+                var newsNum2 = (ret[1].length <= num2 * 15) ? ret[1].length : num2 * 15;
+                var page2 = num2 + "/" + sumPage2;
+                $('#pagenum2').text(page2);
+                for (i = 15 * (num2 - 1) ; i < newsNum2; ++i) {
+                    var title = ret[1][i][2].length > 18 ? ret[1][i][2].substr(0, 18) + '...' : ret[1][i][2];
+                    $('#table2').append("<li onclick=\"DetailNewsClick('" + ret[1][i][0] + '+' + ret[1][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == newsNum2) {
+                    $('#table2').append("<tr><td colspan=\"1\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                /*港口*/
+                //页码
+                if (0 == Math.floor(ret[2].length / 15)) {
+                    sumPage3 = 1;
+                }
+                else if ((Math.floor(ret[2].length / 15) >= 1) && ((ret[2].length % 15) > 0)) {
+                    sumPage3 = Math.floor(ret[0].length / 15) + 1;
+                }
+                else {
+                    sumPage3 = ret[2].length / 15;
+                }
+
+                var newsNum3 = (ret[2].length <= num3 * 15) ? ret[2].length : num3 * 15;
+                var page3 = num3 + "/" + sumPage3;
+                $('#pagenum3').text(page3);
+                for (i = 15 * (num3 - 1) ; i < newsNum3; ++i) {
+                    var title = ret[2][i][2].length > 18 ? ret[2][i][2].substr(0, 18) + '...' : ret[2][i][2];
+                    $('#table3').append("<li onclick=\"DetailNewsClick('" + ret[2][i][0] + '+' + ret[2][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == newsNum3) {
+                    $('#table3').append("<tr><td colspan=\"1\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table1").trigger("create");
+                $("#table2").trigger("create");
+                $("#table3").trigger("create");
+                $(".turepage").css("display", "block");
+
+                retarry = ret;
+            })
+
+
+            $("#prev1").click(function () {
+
+                if (1 == num1) {
+                    return;
+                }
+                else {
+                    num1--;
+                }
+
+                var newsNum1 = (retarry[0].length <= num1 * 15) ? retarry[0].length : num1 * 15;
+                var page1 = num1 + "/" + sumPage1;
+
+                $("#table1").empty();
+                $('#pagenum1').text(page1);;
+                for (i = 15 * (num1 - 1) ; i < newsNum1; ++i) {
+                    var title = retarry[0][i][2].length > 18 ? retarry[0][i][2].substr(0, 18) + '...' : retarry[0][i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + retarry[0][i][0] + '+' + retarry[0][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                $("#table1").trigger("create");
+            });
+
+
+            $("#next1").click(function () {
+
+                if (sumPage1 == num1) {
+                    return;
+                }
+                else {
+                    num1++;
+                }
+
+                var newsNum1 = (retarry[0].length <= num1 * 15) ? retarry[0].length : num1 * 15;
+                var page1 = num1 + "/" + sumPage1;
+
+                $("#table1").empty();
+                $('#pagenum1').text(page1);
+                for (i = 15 * (num1 - 1) ; i < newsNum1; ++i) {
+                    var title = retarry[0][i][2].length > 18 ? retarry[0][i][2].substr(0, 18) + '...' : retarry[0][i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + retarry[0][i][0] + '+' + retarry[0][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                $("#table1").trigger("create");
+            });
+
+            $("#prev2").click(function () {
+
+                if (1 == num2) {
+                    return;
+                }
+                else {
+                    num2--;
+                }
+
+                var newsNum2 = (retarry[1].length <= num2 * 15) ? retarry[1].length : num2 * 15;
+                var page2 = num2 + "/" + sumPage2;
+
+                $("#table2").empty();
+                $('#pagenum2').text(page2);;
+                for (i = 15 * (num2 - 1) ; i < newsNum2; ++i) {
+                    var title = retarry[1][i][2].length > 18 ? retarry[1][i][2].substr(0, 18) + '...' : retarry[1][i][2];
+                    $('#table2').append("<li onclick=\"DetailNewsClick('" + retarry[1][i][0] + '+' + retarry[1][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+
+                $("#table2").trigger("create");
+            });
+
+
+            $("#next2").click(function () {
+
+                if (sumPage2 == num2) {
+                    return;
+                }
+                else {
+                    num2++;
+                }
+
+                var newsNum2 = (retarry[1].length <= num2 * 15) ? retarry[1].length : num2 * 15;
+                var page2 = num2 + "/" + sumPage2;
+
+                $("#table2").empty();
+                $('#pagenum2').text(page2);
+                for (i = 15 * (num2 - 1) ; i < newsNum2; ++i) {
+                    var title = retarry[1][i][2].length > 18 ? retarry[1][i][2].substr(0, 18) + '...' : retarry[1][i][2];
+                    $('#table2').append("<li onclick=\"DetailNewsClick('" + retarry[1][i][0] + '+' + retarry[1][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+
+                $("#table2").trigger("create");
+            });
+
+            $("#prev3").click(function () {
+
+                if (1 == num3) {
+                    return;
+                }
+                else {
+                    num3--;
+                }
+
+                var newsNum3 = (retarry[2].length <= num3 * 15) ? retarry[2].length : num3 * 15;
+                var page3 = num3 + "/" + sumPage3;
+
+                $("#table3").empty();
+                $('#pagenum3').text(page3);;
+                for (i = 15 * (num3 - 1) ; i < newsNum3; ++i) {
+                    var title = retarry[2][i][2].length > 18 ? retarry[2][i][2].substr(0, 18) + '...' : retarry[2][i][2];
+                    $('#table3').append("<li onclick=\"DetailNewsClick('" + retarry[2][i][0] + '+' + retarry[2][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+
+                $("#table3").trigger("create");
+            });
+
+
+            $("#next3").click(function () {
+
+                if (sumPage3 == num3) {
+                    return;
+                }
+                else {
+                    num3++;
+                }
+
+                var newsNum3 = (retarry[2].length <= num3 * 15) ? retarry[2].length : num3 * 15;
+                var page3 = num3 + "/" + sumPage3;
+
+                $("#table3").empty();
+                $('#pagenum3').text(page3);
+                for (i = 15 * (num3 - 1) ; i < newsNum3; ++i) {
+                    var title = retarry[2][i][2].length > 18 ? retarry[2][i][2].substr(0, 18) + '...' : retarry[2][i][2];
+                    $('#table3').append("<li onclick=\"DetailNewsClick('" + retarry[2][i][0] + '+' + retarry[2][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+
+                $("#table3").trigger("create");
+            });
+
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title" id="headlines"></div>
+        </div>
+
+        <div id="Tab3">
+            <div class="Menubox3">
+                <ul>
+                    <li id="one1" onmouseover="setTab('one',1,3)" class="hover">国内</li>
+                    <li id="one2" onmouseover="setTab('one',2,3)">国际</li>
+                    <li id="one3" onmouseover="setTab('one',3,3)">港口</li>
+                </ul>
+            </div>
+            <div class="Contentbox3a">
+                <div id="con_one_1" class="hover">
+                    <ul id="table1" class="styel3" style="margin:15px 0px 10px 0px">
+
+                    </ul>
+                    <div class="turepage">
+                        <button type="button" id="prev1">上一页</button>
+                        <p id="pagenum1"></p>
+                        <button type="button" id="next1">下一页</button>
+                    </div>
+                </div>
+                <div id="con_one_2" style="display:none">
+                    <ul id="table2" class="styel3" style="margin:15px 0px 10px 0px">
+        
+                    </ul>
+                    <div class="turepage">
+                        <button type="button" id="prev2">上一页</button>
+                        <p id="pagenum2"></p>
+                        <button type="button" id="next2">下一页</button>
+                    </div>
+                </div>
+                <div id="con_one_3" style="display:none">
+                    <ul id="table3" class="styel3" style="margin:15px 0px 10px 0px">
+
+                    </ul>
+                    <div class="turepage">
+                        <button type="button" id="prev3">上一页</button>
+                        <p id="pagenum3"></p>
+                        <button type="button" id="next3">下一页</button>
+                    </div>
+                </div>
+                <!--<div class="bk30"></div>-->
+            </div>
+        </div>
+
+
+
+        <!--页尾-->
+        <div class="bk20"></div>
+        <!--<div class="foot">连云港港口集团有限公司版权所有 <br />连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+
+</body>
+</html>

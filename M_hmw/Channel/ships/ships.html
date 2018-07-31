@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <link href="../../css/css.css" rel="stylesheet" type="text/css" />
+    <script src="../../Jquery/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../../Jquery/jquery.Slide.2.1.1.js"></script>
+    <script>
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTab(name,cursel,n){
+for(i=1;i<=n;i++){
+var menu=document.getElementById(name+i);
+var con=document.getElementById("con_"+name+"_"+i);
+menu.className=i==cursel?"hover":"";
+con.style.display=i==cursel?"block":"none";
+}
+}
+//-->
+    </script>
+
+    <script type="text/javascript">
+        var str = document.location.search;
+        var str1 = str.split("?", 2);
+        var number = str1[1];
+        var loc = "";
+        //number = "1";
+
+        switch (number) {
+            case "0": loc = "韩国航线"; break;
+            case "1": loc = "日本航线"; break;
+            case "2": loc = "内支航线"; break;
+            case "3": loc = "美洲航线"; break;
+            case "4": loc = "欧洲航线"; break;
+            case "5": loc = "中东航线"; break;
+            case "6": loc = "非洲航线"; break;
+            case "7": loc = "东南亚航线"; break;
+            default: loc = "韩国航线"; number = 1; break;
+        }
+
+        function DetailTableClick(info) {
+            //实现详细表格页面的跳转
+            window.location.href = '../../Detail/Detail_Table.html?info=' + info;
+        }
+    
+        $(function () {
+            document.title = loc;
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Channel/ships/ships.aspx?number=" + number + "&callback=?", null, function (ret) {
+                $("#table1").empty();
+                $("#table2").empty();
+                $("#table3").empty();
+                $("#table4").empty();
+ 
+                //集装箱船期
+                $('#table1').append("<tr class='td3'><th>装运港</th><th>目的港</th><th>船名/载重</th><th>开航日期</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table1').append("<tr class='td4' onclick=\"DetailTableClick('" + 32 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][2] + "</td><td>" + ret[0][i][3] + "</td><td><span class='td_front'>" + ret[0][i][1] + "</span><span>" + '/' + "</span><span>" + ret[0][i][5] + "</span></td><td>" + ret[0][i][4] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table1').append("<tr><td colspan=\"4\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //杂散船期
+                $('#table2').append("<tr class='td3'><th>装运港</th><th>目的港</th><th>船名/载重</th><th>开航日期</th></tr>");
+                for (i = 0; i < ret[1].length; ++i) {
+                    $('#table2').append("<tr class='td4' onclick=\"DetailTableClick('" + 33 + '+' + ret[1][i][0] + "')\"><td>" + ret[1][i][2] + "</td><td>" + ret[1][i][3] + "</td><td><span class='td_front'>" + ret[1][i][1] + "</span><span>" + '/' + "</span><span>" + ret[1][i][5] + "</span></td><td>" + ret[1][i][4] + "</td><</tr>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table2').append("<tr><td colspan=\"4\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //整箱运价
+                $('#table3').append("<tr class='td3'><th>装运港</th><th>目的港</th><th>F20/F40</th><th>物流公司</th></tr>");
+                for (i = 0; i < ret[2].length; ++i) {
+                    $('#table3').append("<tr class='td4' onclick=\"DetailTableClick('" + 34 + '+' + ret[2][i][0] + "')\"><td>" + ret[2][i][1] + "</td><td>" + ret[2][i][2] + "</td><td><span class='td_front'>" + ret[2][i][3] + "</span><span>" + '/' + "</span><span>" + ret[2][i][4] + "</span></td><td>" + ret[2][i][5] + "</td></tr>")
+                }
+                if (0 == ret[2].length) {
+                    $('#table3').append("<tr><td colspan=\"5\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //杂散运价
+                $('#table4').append("<tr class='td3'><th>装运港</th><th>目的港</th><th>运价</th><th>承运公司</th></tr>");
+                for (i = 0; i < ret[3].length; ++i) {
+                    $('#table4').append("<tr class='td4' onclick=\"DetailTableClick('" + 35 + '+' + ret[3][i][0] + "')\"><td>" + ret[3][i][1] + "</td><td>" + ret[3][i][2] + "</td><td>" + ret[3][i][3] + "</td><td>" + ret[3][i][4] + "</td></tr>")
+                }
+                if (0 == ret[3].length) {
+                    $('#table4').append("<tr><td colspan=\"5\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="../C2_Ship.html" class="disapper">返回</a>
+            </div>
+            <div class="title" id="tt">船舶</div>
+        </div>
+
+        <div class="focusOuter">
+            <div class="focusBox">
+                <ul class="pic">
+                    <li><a href="#" target="_blank"><img src="../../images/slide/01.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../../images/slide/02.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../../images/slide/03.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../../images/slide/04.jpg" /></a></li>
+                </ul>
+                <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+                <ul class="hd">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                /*鼠标移过，左右按钮显示*/
+                jQuery(".focusBox").hover(function () { jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.2) }, function () { jQuery(this).find(".prev,.next").fadeOut() });
+                /*SuperSlide图片切换*/
+                jQuery(".focusBox").slide({ mainCell: ".pic", effect: "fold", autoPlay: true, delayTime: 600, trigger: "click" });
+            </script>
+        </div>
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div id="Tab2">
+                <div class="Menubox2">
+                    <ul>
+                        <li id="one1" onmouseover="setTab('one',1,2)" class="hover">整箱船期</li>
+                        <li id="one2" onmouseover="setTab('one',2,2)">杂散船期</li>
+                    </ul>
+                </div>
+                <div class="Contentbox2">
+                    <div id="con_one_1" class="hover">
+                        <table id="table1" style="width:100%">
+                            <tr class="td3"><th>起始港</th><th>目的港</th><th>船名/载重</th><th>开航日期</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                    <div id="con_one_2" style="display:none">
+                        <table id="table2" style="width:100%">
+                            <tr class='td3'><th>起始港</th><th>目的港</th><th>F20/F40</th><th>物流公司</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                    <div class="bk30"></div>
+                </div>
+            </div>
+            <div id="Tab2">
+                <div class="Menubox2">
+                    <ul>
+                        <li id="two1" onmouseover="setTab('two',1,2)" class="hover">整箱运价</li>
+                        <li id="two2" onmouseover="setTab('two',2,2)">杂散运价</li>
+                    </ul>
+                </div>
+                <div class="Contentbox2">
+                    <div id="con_two_1" class="hover">
+                        <table id="table3" style="width:100%">
+                            <tr class='td3'><th>起始港</th><th>目的港</th><th>承运公司</th><th>开航日期</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                    <div id="con_two_2" style="display:none">
+                        <table id="table4" style="width:100%">
+                            <tr class='td3'><th>起始港</th><th>目的港</th><th>运价</th><th>承运公司</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                    <div class="bk20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="pic"><img style="width:100%" src="../../Images/ad/line.jpg" /></div>
+        <div class="bk30" style="background-color:#ffffff"></div>
+
+
+        <!--<div class="foot">连云港港口集团有限公司版权所有 <br> 连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+</body>
+</html>

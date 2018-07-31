@@ -1,0 +1,43 @@
+<HTML>
+	<head>
+		<script type="text/javascript">
+
+			function getType(){
+				
+				// android应用安装地址
+			    _android_APP = "http://218.92.115.55/Mobile_App/hmw/Android/hmw.apk";
+
+				// iphone应用安装地址
+			    _iphone_APP = "itms-services://?action=download-manifest&url=https://dn-mylygport.qbox.me/hmw_install.plist";
+
+				// ipad应用安装地址
+			    _ipad_APP = "itms-services://?action=download-manifest&url=https://dn-mylygport.qbox.me/hmw_install.plist";
+
+				// PC/MAC端打开的web地址
+				_PC_URL = "http://www.mylygport.com/portal/Mobile_detail.aspx?id=24";
+
+				if (/android/i.test(navigator.userAgent)){
+					// android设备识别
+    					window.location.href=_android_APP;
+					return;
+			
+				}
+				if (/iphone/i.test(navigator.userAgent)){
+					// iphone设备识别
+    					window.location.href=_iphone_APP;
+					return;
+				}
+				if (/ipad/i.test(navigator.userAgent)){
+					// ipad设备识别
+    					window.location.href=_ipad_APP;
+					return;
+				}
+				else{
+					// 其他类型设备，包括PC/MAC/WP等	
+					window.location.href=_PC_URL;
+				}	
+			}	
+			getType();	
+		</script>
+	</head>
+</HTML>

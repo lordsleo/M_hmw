@@ -1,0 +1,161 @@
+﻿<!--********************************************************************
+//	创建时间:	2015/03/09
+//	作者:		sh
+//********************************************************************
+//	文件: 	IndeedShip.html
+//	功能：  查询船舶确报信息
+//  说明：
+*********************************************************************-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>查询船舶确报信息</title>
+    <link href="../../Css/css.css" rel="stylesheet" />
+    <script src="../../Jquery/jquery-2.1.0.min.js"></script>
+
+    <script>
+
+        function DetailTableClick(info) {
+            //实现详细表格页面的跳转
+            //window.location.href = '../../Detail/Detail_Table.html?info=' + info;
+        }
+
+        var strmess = document.location.search;
+
+        $(function () {
+
+            var num = 1;
+            var minRow = (num - 1) * 15 + 1;
+            var maxRow = num * 15;
+            var str = minRow + '+' + maxRow;
+
+            $.getJSON("IndeedShip.aspx?message=" + str, null, function (ret) {
+                $('#table').empty();
+                var page = '第' + num + '页';
+                $('#pagenum').text(page);
+                $('#table').append("<tr><th>作业公司</th><th>作业名称</th><th>货物名称</th><th>进出口</th><th>进港时间</th></tr>");
+                for (var i = 0; i < ret.length; ++i) {
+                    if (i % 2 == 0) {
+                        $('#table').append("<tr class='tr1' onclick=\"DetailTableClick('" + 9 + '+' + 698245 + "')\"><td>"
+                            + ret[i][1] + "</td><td>"
+                            + ret[i][2] + "</td><td>"
+                            + ret[i][3] + "</td><td>"
+                            + ret[i][4] + "</td><td>"
+                            + ret[i][8] + "</td></tr>")
+                        continue;
+                    }
+                    $('#table').append("<tr class='tr2' onclick=\"DetailTableClick('" + 9 + '+' + 698245 + "')\"><td>"
+                            + ret[i][1] + "</td><td>"
+                            + ret[i][2] + "</td><td>"
+                            + ret[i][3] + "</td><td>"
+                            + ret[i][4] + "</td><td>"
+                            + ret[i][8] + "</td></tr>")
+                }
+            })
+
+
+            $("#prev").click(function () {
+
+                if (1 == num) {
+                    return;
+                }
+                else {
+                    num--;
+                }
+
+                var minRow = (num - 1) * 15 + 1;
+                var maxRow = num * 15;
+                var str = minRow + '+' + maxRow;
+
+                $.getJSON("IndeedShip.aspx?message=" + str, null, function (ret) {
+                    $('#table').empty();
+
+                    var page = '第' + num + '页';
+                    $('#pagenum').text(page);
+                    $('#table').append("<tr><th>作业公司</th><th>作业名称</th><th>货物名称</th><th>进出口</th><th>进港时间</th></tr>");
+                    for (var i = 0; i < ret.length; ++i) {
+                        if (i % 2 == 0) {
+                            $('#table').append("<tr class='tr1'><td>"
+                            + ret[i][1] + "</td><td>"
+                            + ret[i][2] + "</td><td>"
+                            + ret[i][3] + "</td><td>"
+                            + ret[i][4] + "</td><td>"
+                            + ret[i][8] + "</td></tr>")
+                            continue;
+                        }
+                        $('#table').append("<tr class='tr2'><td>"
+                            + ret[i][1] + "</td><td>"
+                            + ret[i][2] + "</td><td>"
+                            + ret[i][3] + "</td><td>"
+                            + ret[i][4] + "</td><td>"
+                            + ret[i][8] + "</td></tr>")
+                    }
+                })
+            });
+
+
+            $("#next").click(function () {
+
+                num++;
+                var minRow = (num - 1) * 15 + 1;
+                var maxRow = num * 15;
+                var str = minRow + '+' + maxRow;
+
+                $.getJSON("IndeedShip.aspx?message=" + str, null, function (ret) {
+
+                    if (ret == 0) {
+                        num--;
+                        alert("当前页无数据，请返回！");
+                        return;
+                    }
+
+                    $('#table').empty();
+                    var page = '第' + num + '页';
+                    $('#pagenum').text(page);
+                    $('#table').append("<tr><th>作业公司</th><th>作业名称</th><th>货物名称</th><th>进出口</th><th>进港时间</th></tr>");
+                    for (var i = 0; i < ret.length; ++i) {
+                        if (i % 2 == 0) {
+                            $('#table').append("<tr class='tr1'><td>"
+                            + ret[i][1] + "</td><td>"
+                            + ret[i][2] + "</td><td>"
+                            + ret[i][3] + "</td><td>"
+                            + ret[i][4] + "</td><td>"
+                            + ret[i][8] + "</td></tr>")
+                            continue;
+                        }
+                        $('#table').append("<tr class='tr2'><td>"
+                            + ret[i][1] + "</td><td>"
+                            + ret[i][2] + "</td><td>"
+                            + ret[i][3] + "</td><td>"
+                            + ret[i][4] + "</td><td>"
+                            + ret[i][8] + "</td></tr>")
+                    }
+                })
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="stylebox">
+            <table id="table" class="table" style="width:100%"></table>
+        </div>
+
+        <div class="turepage">
+            <button type="button" id="prev">上一页</button>
+            <p id="pagenum"></p>
+            <button type="button" id="next">下一页</button>
+        </div>
+        <div class="bk20"></div>
+
+    </div>
+
+</body>
+</html>

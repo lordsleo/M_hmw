@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=640" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="">
+<meta name="format-detection" content="telephone=no">    <title></title>
+    <link href="../Jquery/jquery.jqplot.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <!--<script src="../Jquery/jquery-2.1.0.min.js"></script>-->
+    <script src="../Jquery/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
+    <link href="../Css/mychart.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $('#plot1').val(5555.5);
+            $('#plot2').val(30000);
+            $('#plot3').val(24332);
+            $('#plot4').val(46456);
+            $('#plot5').val(23423);
+            $('#plot6').val(87976);
+            $('#plot7').val(12312);
+            $('#plot8').val(34543);
+            $('#plot9').val(23423);
+            $('#plot10').val(87976);
+            $('#plot11').val(12312);
+            $('#plot12').val(34543);
+            $('#refreshPlotChart').click();
+        })
+        </script>
+</head>
+<body style="text-align:center">
+    <div id="pagePlotChart" data-role="dialog" data-rockncoder-jspage="managePlotChart">
+                    <section data-role="content">
+                        <div id="plotChart" class="myChart"></div>
+                        <button id="refreshPlotChart" value="Refresh Chart" data-mini="true"></button>
+                        <input type="range" id="plot1" data-mini="true" />
+                        <input type="range" id="plot2" data-mini="true" />
+                        <input type="range" id="plot3" data-mini="true" />
+                        <input type="range" id="plot4" data-mini="true" />
+                        <input type="range" id="plot5" data-mini="true" />
+                        <input type="range" id="plot6" data-mini="true" />
+                        <input type="range" id="plot7" data-mini="true" />
+                        <input type="range" id="plot8" data-mini="true" />
+                        <input type="range" id="plot9" data-mini="true" />
+                        <input type="range" id="plot10" data-mini="true" />
+                        <input type="range" id="plot11" data-mini="true" />
+                        <input type="range" id="plot12" data-mini="true" />
+                    </section>
+                </div>
+                <script src="../Jquery/jquery.jqplot.min.js" type="text/javascript"></script>
+    <script src="../Jquery/jqplot.pieRenderer.min.js" type="text/javascript"></script>
+    <script src="../Jquery/underscore-min.js" type="text/javascript"></script>
+    <script src="../Jquery/app.js" type="text/javascript"></script>
+</body>
+</html>

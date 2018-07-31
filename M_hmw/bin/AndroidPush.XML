@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AndroidPush</name>
+    </assembly>
+    <members>
+        <member name="T:AndroidPush.AndroidPn">
+            <summary>
+            利用androidpn推送的框架
+            </summary>
+        </member>
+        <member name="F:AndroidPush.AndroidPn.BROADCAST_ALL">
+            <summary>
+            全部推送标识
+            </summary>
+        </member>
+        <member name="F:AndroidPush.AndroidPn.BROADCAST_ONLINE">
+            <summary>
+            在线推送标识
+            </summary>
+        </member>
+        <member name="F:AndroidPush.AndroidPn.BROADCAST_SINGLE">
+            <summary>
+            单一推送标识
+            </summary>
+        </member>
+        <member name="F:AndroidPush.AndroidPn.url">
+            <summary>
+            推送服务器地址
+            </summary>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="url">推送服务器地址</param>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.PushToAll(System.String,System.String)">
+            <summary>
+            向所有用户推送消息
+            </summary>
+            <param name="title">消息标题</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.PushToAll(System.String,System.String,System.String)">
+            <summary>
+            向所有用户推送消息
+            </summary>
+            <param name="title">消息标题</param>
+            <param name="message">消息内容</param>
+            <param name="uri">资源标识符</param>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.PushToOnline(System.String,System.String)">
+            <summary>
+            向在线用户推送消息
+            </summary>
+            <param name="title">消息标题</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.PushToOnline(System.String,System.String,System.String)">
+            <summary>
+            向在线用户推送消息
+            </summary>
+            <param name="title">消息标题</param>
+            <param name="message">消息内容</param>
+            <param name="uri">资源标识符</param>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.PushToSingle(System.String,System.String,System.String)">
+            <summary>
+            向单个用户推送消息
+            </summary>
+            <param name="userName">用户标识</param>
+            <param name="title">消息标题</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.PushToSingle(System.String,System.String,System.String,System.String)">
+            <summary>
+            向单个用户推送消息
+            </summary>
+            <param name="userName">用户标识</param>
+            <param name="title">消息标题</param>
+            <param name="message">消息内容</param>
+            <param name="uri">资源标识符</param>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.PushToQueue(System.String[],System.String,System.String)">
+            <summary>
+            向一组用户推送消息
+            </summary>
+            <param name="userNames">用户标识集合</param>
+            <param name="title">消息标题</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.PushToQueue(System.String[],System.String,System.String,System.String)">
+            <summary>
+            向一组用户推送消息
+            </summary>
+            <param name="userNames">用户标识集合</param>
+            <param name="title">消息标题</param>
+            <param name="message">消息内容</param>
+            <param name="uri">资源标识符</param>
+        </member>
+        <member name="M:AndroidPush.AndroidPn.Push(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            推送一条消息
+            </summary>
+            <param name="broadcast">模式标识</param>
+            <param name="username">用户标识</param>
+            <param name="title">消息标题</param>
+            <param name="message">消息内容</param>
+            <param name="uri">资源标识符</param>
+        </member>
+        <!-- 对于成员“M:AndroidPush.HttpUtil.HttpPost.PostDataToUrl(System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:AndroidPush.HttpUtil.HttpPost.PostDataToUrl(System.Byte[],System.String)”忽略有格式错误的 XML 注释 -->
+    </members>
+</doc>

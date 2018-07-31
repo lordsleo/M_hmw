@@ -1,0 +1,2378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelJinRiTouTiaoList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelJinRiTouTiaoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelJinRiTouTiaoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelGangKouYaoWenList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelGangKouYaoWenListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelGangKouYaoWenListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelLuQiaoZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelLuQiaoZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelLuQiaoZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelHangYeGuanChaList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelHangYeGuanChaListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelHangYeGuanChaListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelChuanBoZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelChuanBoZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelChuanBoZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelJiZhuangXiangChuanQiList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelJiZhuangXiangChuanQiListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelJiZhuangXiangChuanQiListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelYunJiaList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelYunJiaListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelYunJiaListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelZaSanChuanQiList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelZaSanChuanQiListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelZaSanChuanQiListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelZaSanYunJiaList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelZaSanYunJiaListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelZaSanYunJiaListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelZaiBoChuanList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelZaiBoChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelZaiBoChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMaoDiChuanList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelMaoDiChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMaoDiChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelTieLuZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelTieLuZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelTieLuZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelLaiGangHuoCheQueBaoList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelLaiGangHuoCheQueBaoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelLaiGangHuoCheQueBaoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMaTouXieCheJiHuaList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelMaTouXieCheJiHuaListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMaTouXieCheJiHuaListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMaTouZhuangCheJiHuaList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelMaTouZhuangCheJiHuaListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMaTouZhuangCheJiHuaListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelGongLuZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelGongLuZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelGongLuZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelYiFangXingCheLiangList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelYiFangXingCheLiangListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelYiFangXingCheLiangListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelWangShangCheYuanList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelWangShangCheYuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelWangShangCheYuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelSiJiXinXiList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelSiJiXinXiListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelSiJiXinXiListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelNeiHeZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelNeiHeZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelNeiHeZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelGuanHeGuoJiQueBaoChuanList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelGuanHeGuoJiQueBaoChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelGuanHeGuoJiQueBaoChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelXinYunTaiQueBaoChuanList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelXinYunTaiQueBaoChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelXinYunTaiQueBaoChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelGuanHeGuoJiBoWeiChuanList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelGuanHeGuoJiBoWeiChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelGuanHeGuoJiBoWeiChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelXinYunTaiBoWeiChuanList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelXinYunTaiBoWeiChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelXinYunTaiBoWeiChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelGuoJiMeiJiaoZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelGuoJiMeiJiaoZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelGuoJiMeiJiaoZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelGuoNeiMeiJiaoZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelGuoNeiMeiJiaoZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelGuoNeiMeiJiaoZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelGangKouMeiJiaoZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelGangKouMeiJiaoZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelGangKouMeiJiaoZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMeiJiaoGongYingList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelMeiJiaoGongYingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMeiJiaoGongYingListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMeiJiaoQiuGouList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelMeiJiaoQiuGouListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMeiJiaoQiuGouListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMeiJiaoHangQingList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelMeiJiaoHangQingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMeiJiaoHangQingListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelJiaoTanHangQingList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelJiaoTanHangQingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelJiaoTanHangQingListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelYouSeKuangZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelYouSeKuangZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelYouSeKuangZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelYouSeKuangGongQiuList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelYouSeKuangGongQiuListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelYouSeKuangGongQiuListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelYouSeKuangHangQingList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelYouSeKuangHangQingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelYouSeKuangHangQingListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelTieKuangShaZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelTieKuangShaZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelTieKuangShaZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelTieKuangShaGongQiuList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelTieKuangShaGongQiuListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelTieKuangShaGongQiuListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelTieKuangShaHangQingList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelTieKuangShaHangQingListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelTieKuangShaHangQingListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelCangChuZiXunList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelCangChuZiXunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelCangChuZiXunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelYuanQuCangChuList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelYuanQuCangChuListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelYuanQuCangChuListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelDaiChuHuoYuanList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelDaiChuHuoYuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelDaiChuHuoYuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelLaiGangQueBaoList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelLaiGangQueBaoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelLaiGangQueBaoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYuBaoChuanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYuBaoChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyYuBaoChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyQueBaoChuanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyQueBaoChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyQueBaoChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYinHangFeiList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYinHangFeiListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyYinHangFeiListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyGaoPingHuaFeiList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyGaoPingHuaFeiListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyGaoPingHuaFeiListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyBoWeiChuanBoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyBoWeiChuanBoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyBoWeiChuanBoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyChuanBoJiHuaList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetChannelMyChuanBoJiHuaListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyChuanBoJiHuaListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYeWuWeiTuoYouChuanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYeWuWeiTuoYouChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyYeWuWeiTuoYouChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYeWuWeiTuoWuChuanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYeWuWeiTuoWuChuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyYeWuWeiTuoWuChuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyZuoYeWeiTuoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyZuoYeWeiTuoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyZuoYeWeiTuoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyPiaoHuoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyPiaoHuoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyPiaoHuoListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyHuoWuJinGangList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyHuoWuJinGangListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyHuoWuJinGangListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyHuoWuChuGangList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyHuoWuChuGangListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyHuoWuChuGangListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyHuoWuJieCunList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyHuoWuJieCunListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyHuoWuJieCunListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyFeiYongJieSuanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clientCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyFeiYongJieSuanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyFeiYongJieSuanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYeWuShiXiangList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYeWuShiXiangListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyYeWuShiXiangListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYiFuZhangDanList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="departmentCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyYiFuZhangDanListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyYiFuZhangDanListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyGeRenXinXiList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyGeRenXinXiListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyGeRenXinXiListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyChuanDaiHuoDaiList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChannelMyChuanDaiHuoDaiListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChannelMyChuanDaiHuoDaiListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelJinRiTouTiaoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelJinRiTouTiaoList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelJinRiTouTiaoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelJinRiTouTiaoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGangKouYaoWenListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelGangKouYaoWenList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGangKouYaoWenListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelGangKouYaoWenListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelLuQiaoZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelLuQiaoZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelLuQiaoZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelLuQiaoZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelHangYeGuanChaListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelHangYeGuanChaList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelHangYeGuanChaListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelHangYeGuanChaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelChuanBoZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelChuanBoZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelChuanBoZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelChuanBoZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelJiZhuangXiangChuanQiListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelJiZhuangXiangChuanQiList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelJiZhuangXiangChuanQiListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelJiZhuangXiangChuanQiListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYunJiaListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelYunJiaList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYunJiaListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelYunJiaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelZaSanChuanQiListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelZaSanChuanQiList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelZaSanChuanQiListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelZaSanChuanQiListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelZaSanYunJiaListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelZaSanYunJiaList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelZaSanYunJiaListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelZaSanYunJiaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelZaiBoChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelZaiBoChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelZaiBoChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelZaiBoChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMaoDiChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMaoDiChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMaoDiChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMaoDiChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelTieLuZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelTieLuZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelTieLuZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelTieLuZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelLaiGangHuoCheQueBaoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelLaiGangHuoCheQueBaoList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelLaiGangHuoCheQueBaoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelLaiGangHuoCheQueBaoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMaTouXieCheJiHuaListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMaTouXieCheJiHuaList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMaTouXieCheJiHuaListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMaTouXieCheJiHuaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMaTouZhuangCheJiHuaListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMaTouZhuangCheJiHuaList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMaTouZhuangCheJiHuaListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMaTouZhuangCheJiHuaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGongLuZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelGongLuZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGongLuZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelGongLuZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYiFangXingCheLiangListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelYiFangXingCheLiangList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYiFangXingCheLiangListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelYiFangXingCheLiangListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelWangShangCheYuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelWangShangCheYuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelWangShangCheYuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelWangShangCheYuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelSiJiXinXiListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelSiJiXinXiList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelSiJiXinXiListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelSiJiXinXiListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelNeiHeZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelNeiHeZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelNeiHeZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelNeiHeZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGuanHeGuoJiQueBaoChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelGuanHeGuoJiQueBaoChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGuanHeGuoJiQueBaoChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelGuanHeGuoJiQueBaoChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelXinYunTaiQueBaoChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelXinYunTaiQueBaoChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelXinYunTaiQueBaoChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelXinYunTaiQueBaoChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGuanHeGuoJiBoWeiChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelGuanHeGuoJiBoWeiChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGuanHeGuoJiBoWeiChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelGuanHeGuoJiBoWeiChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelXinYunTaiBoWeiChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelXinYunTaiBoWeiChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelXinYunTaiBoWeiChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelXinYunTaiBoWeiChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGuoJiMeiJiaoZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelGuoJiMeiJiaoZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGuoJiMeiJiaoZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelGuoJiMeiJiaoZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGuoNeiMeiJiaoZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelGuoNeiMeiJiaoZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGuoNeiMeiJiaoZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelGuoNeiMeiJiaoZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGangKouMeiJiaoZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelGangKouMeiJiaoZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelGangKouMeiJiaoZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelGangKouMeiJiaoZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMeiJiaoGongYingListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMeiJiaoGongYingList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMeiJiaoGongYingListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMeiJiaoGongYingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMeiJiaoQiuGouListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMeiJiaoQiuGouList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMeiJiaoQiuGouListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMeiJiaoQiuGouListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMeiJiaoHangQingListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMeiJiaoHangQingList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMeiJiaoHangQingListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMeiJiaoHangQingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelJiaoTanHangQingListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelJiaoTanHangQingList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelJiaoTanHangQingListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelJiaoTanHangQingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYouSeKuangZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelYouSeKuangZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYouSeKuangZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelYouSeKuangZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYouSeKuangGongQiuListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelYouSeKuangGongQiuList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYouSeKuangGongQiuListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelYouSeKuangGongQiuListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYouSeKuangHangQingListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelYouSeKuangHangQingList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYouSeKuangHangQingListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelYouSeKuangHangQingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelTieKuangShaZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelTieKuangShaZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelTieKuangShaZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelTieKuangShaZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelTieKuangShaGongQiuListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelTieKuangShaGongQiuList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelTieKuangShaGongQiuListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelTieKuangShaGongQiuListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelTieKuangShaHangQingListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelTieKuangShaHangQingList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelTieKuangShaHangQingListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelTieKuangShaHangQingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelCangChuZiXunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelCangChuZiXunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelCangChuZiXunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelCangChuZiXunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYuanQuCangChuListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelYuanQuCangChuList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelYuanQuCangChuListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelYuanQuCangChuListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelDaiChuHuoYuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelDaiChuHuoYuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelDaiChuHuoYuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelDaiChuHuoYuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelLaiGangQueBaoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelLaiGangQueBaoList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelLaiGangQueBaoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelLaiGangQueBaoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYuBaoChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYuBaoChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYuBaoChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYuBaoChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyQueBaoChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyQueBaoChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyQueBaoChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyQueBaoChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYinHangFeiListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYinHangFeiList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYinHangFeiListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYinHangFeiListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyGaoPingHuaFeiListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyGaoPingHuaFeiList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyGaoPingHuaFeiListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyGaoPingHuaFeiListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyBoWeiChuanBoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyBoWeiChuanBoList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyBoWeiChuanBoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyBoWeiChuanBoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyChuanBoJiHuaListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyChuanBoJiHuaList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyChuanBoJiHuaListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyChuanBoJiHuaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYeWuWeiTuoYouChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYeWuWeiTuoYouChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYeWuWeiTuoYouChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYeWuWeiTuoYouChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYeWuWeiTuoWuChuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYeWuWeiTuoWuChuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYeWuWeiTuoWuChuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYeWuWeiTuoWuChuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyZuoYeWeiTuoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyZuoYeWeiTuoList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyZuoYeWeiTuoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyZuoYeWeiTuoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyPiaoHuoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyPiaoHuoList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyPiaoHuoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyPiaoHuoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyHuoWuJinGangListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyHuoWuJinGangList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyHuoWuJinGangListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyHuoWuJinGangListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyHuoWuChuGangListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyHuoWuChuGangList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyHuoWuChuGangListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyHuoWuChuGangListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyHuoWuJieCunListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyHuoWuJieCunList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyHuoWuJieCunListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyHuoWuJieCunListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyFeiYongJieSuanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyFeiYongJieSuanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyFeiYongJieSuanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyFeiYongJieSuanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYeWuShiXiangListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYeWuShiXiangList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYeWuShiXiangListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYeWuShiXiangListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYiFuZhangDanListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYiFuZhangDanList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyYiFuZhangDanListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyYiFuZhangDanListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyGeRenXinXiListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyGeRenXinXiList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyGeRenXinXiListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyGeRenXinXiListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyChuanDaiHuoDaiListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChannelMyChuanDaiHuoDaiList" />
+  </wsdl:message>
+  <wsdl:message name="GetChannelMyChuanDaiHuoDaiListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChannelMyChuanDaiHuoDaiListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceHMWSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelJinRiTouTiaoList">
+      <wsdl:input message="tns:GetChannelJinRiTouTiaoListSoapIn" />
+      <wsdl:output message="tns:GetChannelJinRiTouTiaoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGangKouYaoWenList">
+      <wsdl:input message="tns:GetChannelGangKouYaoWenListSoapIn" />
+      <wsdl:output message="tns:GetChannelGangKouYaoWenListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelLuQiaoZiXunList">
+      <wsdl:input message="tns:GetChannelLuQiaoZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelLuQiaoZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelHangYeGuanChaList">
+      <wsdl:input message="tns:GetChannelHangYeGuanChaListSoapIn" />
+      <wsdl:output message="tns:GetChannelHangYeGuanChaListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelChuanBoZiXunList">
+      <wsdl:input message="tns:GetChannelChuanBoZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelChuanBoZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelJiZhuangXiangChuanQiList">
+      <wsdl:input message="tns:GetChannelJiZhuangXiangChuanQiListSoapIn" />
+      <wsdl:output message="tns:GetChannelJiZhuangXiangChuanQiListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYunJiaList">
+      <wsdl:input message="tns:GetChannelYunJiaListSoapIn" />
+      <wsdl:output message="tns:GetChannelYunJiaListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelZaSanChuanQiList">
+      <wsdl:input message="tns:GetChannelZaSanChuanQiListSoapIn" />
+      <wsdl:output message="tns:GetChannelZaSanChuanQiListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelZaSanYunJiaList">
+      <wsdl:input message="tns:GetChannelZaSanYunJiaListSoapIn" />
+      <wsdl:output message="tns:GetChannelZaSanYunJiaListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelZaiBoChuanList">
+      <wsdl:input message="tns:GetChannelZaiBoChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelZaiBoChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMaoDiChuanList">
+      <wsdl:input message="tns:GetChannelMaoDiChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelMaoDiChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieLuZiXunList">
+      <wsdl:input message="tns:GetChannelTieLuZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelTieLuZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelLaiGangHuoCheQueBaoList">
+      <wsdl:input message="tns:GetChannelLaiGangHuoCheQueBaoListSoapIn" />
+      <wsdl:output message="tns:GetChannelLaiGangHuoCheQueBaoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMaTouXieCheJiHuaList">
+      <wsdl:input message="tns:GetChannelMaTouXieCheJiHuaListSoapIn" />
+      <wsdl:output message="tns:GetChannelMaTouXieCheJiHuaListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMaTouZhuangCheJiHuaList">
+      <wsdl:input message="tns:GetChannelMaTouZhuangCheJiHuaListSoapIn" />
+      <wsdl:output message="tns:GetChannelMaTouZhuangCheJiHuaListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGongLuZiXunList">
+      <wsdl:input message="tns:GetChannelGongLuZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelGongLuZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYiFangXingCheLiangList">
+      <wsdl:input message="tns:GetChannelYiFangXingCheLiangListSoapIn" />
+      <wsdl:output message="tns:GetChannelYiFangXingCheLiangListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelWangShangCheYuanList">
+      <wsdl:input message="tns:GetChannelWangShangCheYuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelWangShangCheYuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelSiJiXinXiList">
+      <wsdl:input message="tns:GetChannelSiJiXinXiListSoapIn" />
+      <wsdl:output message="tns:GetChannelSiJiXinXiListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelNeiHeZiXunList">
+      <wsdl:input message="tns:GetChannelNeiHeZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelNeiHeZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuanHeGuoJiQueBaoChuanList">
+      <wsdl:input message="tns:GetChannelGuanHeGuoJiQueBaoChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelGuanHeGuoJiQueBaoChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelXinYunTaiQueBaoChuanList">
+      <wsdl:input message="tns:GetChannelXinYunTaiQueBaoChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelXinYunTaiQueBaoChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuanHeGuoJiBoWeiChuanList">
+      <wsdl:input message="tns:GetChannelGuanHeGuoJiBoWeiChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelGuanHeGuoJiBoWeiChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelXinYunTaiBoWeiChuanList">
+      <wsdl:input message="tns:GetChannelXinYunTaiBoWeiChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelXinYunTaiBoWeiChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuoJiMeiJiaoZiXunList">
+      <wsdl:input message="tns:GetChannelGuoJiMeiJiaoZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelGuoJiMeiJiaoZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuoNeiMeiJiaoZiXunList">
+      <wsdl:input message="tns:GetChannelGuoNeiMeiJiaoZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelGuoNeiMeiJiaoZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGangKouMeiJiaoZiXunList">
+      <wsdl:input message="tns:GetChannelGangKouMeiJiaoZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelGangKouMeiJiaoZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMeiJiaoGongYingList">
+      <wsdl:input message="tns:GetChannelMeiJiaoGongYingListSoapIn" />
+      <wsdl:output message="tns:GetChannelMeiJiaoGongYingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMeiJiaoQiuGouList">
+      <wsdl:input message="tns:GetChannelMeiJiaoQiuGouListSoapIn" />
+      <wsdl:output message="tns:GetChannelMeiJiaoQiuGouListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMeiJiaoHangQingList">
+      <wsdl:input message="tns:GetChannelMeiJiaoHangQingListSoapIn" />
+      <wsdl:output message="tns:GetChannelMeiJiaoHangQingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelJiaoTanHangQingList">
+      <wsdl:input message="tns:GetChannelJiaoTanHangQingListSoapIn" />
+      <wsdl:output message="tns:GetChannelJiaoTanHangQingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYouSeKuangZiXunList">
+      <wsdl:input message="tns:GetChannelYouSeKuangZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelYouSeKuangZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYouSeKuangGongQiuList">
+      <wsdl:input message="tns:GetChannelYouSeKuangGongQiuListSoapIn" />
+      <wsdl:output message="tns:GetChannelYouSeKuangGongQiuListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYouSeKuangHangQingList">
+      <wsdl:input message="tns:GetChannelYouSeKuangHangQingListSoapIn" />
+      <wsdl:output message="tns:GetChannelYouSeKuangHangQingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieKuangShaZiXunList">
+      <wsdl:input message="tns:GetChannelTieKuangShaZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelTieKuangShaZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieKuangShaGongQiuList">
+      <wsdl:input message="tns:GetChannelTieKuangShaGongQiuListSoapIn" />
+      <wsdl:output message="tns:GetChannelTieKuangShaGongQiuListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieKuangShaHangQingList">
+      <wsdl:input message="tns:GetChannelTieKuangShaHangQingListSoapIn" />
+      <wsdl:output message="tns:GetChannelTieKuangShaHangQingListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelCangChuZiXunList">
+      <wsdl:input message="tns:GetChannelCangChuZiXunListSoapIn" />
+      <wsdl:output message="tns:GetChannelCangChuZiXunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYuanQuCangChuList">
+      <wsdl:input message="tns:GetChannelYuanQuCangChuListSoapIn" />
+      <wsdl:output message="tns:GetChannelYuanQuCangChuListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelDaiChuHuoYuanList">
+      <wsdl:input message="tns:GetChannelDaiChuHuoYuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelDaiChuHuoYuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelLaiGangQueBaoList">
+      <wsdl:input message="tns:GetChannelLaiGangQueBaoListSoapIn" />
+      <wsdl:output message="tns:GetChannelLaiGangQueBaoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYuBaoChuanList">
+      <wsdl:input message="tns:GetChannelMyYuBaoChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyYuBaoChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyQueBaoChuanList">
+      <wsdl:input message="tns:GetChannelMyQueBaoChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyQueBaoChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYinHangFeiList">
+      <wsdl:input message="tns:GetChannelMyYinHangFeiListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyYinHangFeiListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyGaoPingHuaFeiList">
+      <wsdl:input message="tns:GetChannelMyGaoPingHuaFeiListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyGaoPingHuaFeiListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyBoWeiChuanBoList">
+      <wsdl:input message="tns:GetChannelMyBoWeiChuanBoListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyBoWeiChuanBoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyChuanBoJiHuaList">
+      <wsdl:input message="tns:GetChannelMyChuanBoJiHuaListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyChuanBoJiHuaListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYeWuWeiTuoYouChuanList">
+      <wsdl:input message="tns:GetChannelMyYeWuWeiTuoYouChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyYeWuWeiTuoYouChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYeWuWeiTuoWuChuanList">
+      <wsdl:input message="tns:GetChannelMyYeWuWeiTuoWuChuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyYeWuWeiTuoWuChuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyZuoYeWeiTuoList">
+      <wsdl:input message="tns:GetChannelMyZuoYeWeiTuoListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyZuoYeWeiTuoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyPiaoHuoList">
+      <wsdl:input message="tns:GetChannelMyPiaoHuoListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyPiaoHuoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyHuoWuJinGangList">
+      <wsdl:input message="tns:GetChannelMyHuoWuJinGangListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyHuoWuJinGangListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyHuoWuChuGangList">
+      <wsdl:input message="tns:GetChannelMyHuoWuChuGangListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyHuoWuChuGangListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyHuoWuJieCunList">
+      <wsdl:input message="tns:GetChannelMyHuoWuJieCunListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyHuoWuJieCunListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyFeiYongJieSuanList">
+      <wsdl:input message="tns:GetChannelMyFeiYongJieSuanListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyFeiYongJieSuanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYeWuShiXiangList">
+      <wsdl:input message="tns:GetChannelMyYeWuShiXiangListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyYeWuShiXiangListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYiFuZhangDanList">
+      <wsdl:input message="tns:GetChannelMyYiFuZhangDanListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyYiFuZhangDanListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyGeRenXinXiList">
+      <wsdl:input message="tns:GetChannelMyGeRenXinXiListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyGeRenXinXiListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyChuanDaiHuoDaiList">
+      <wsdl:input message="tns:GetChannelMyChuanDaiHuoDaiListSoapIn" />
+      <wsdl:output message="tns:GetChannelMyChuanDaiHuoDaiListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceHMWSoap" type="tns:ServiceHMWSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelJinRiTouTiaoList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelJinRiTouTiaoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGangKouYaoWenList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelGangKouYaoWenList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelLuQiaoZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelLuQiaoZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelHangYeGuanChaList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelHangYeGuanChaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelChuanBoZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelChuanBoZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelJiZhuangXiangChuanQiList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelJiZhuangXiangChuanQiList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYunJiaList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelYunJiaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelZaSanChuanQiList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelZaSanChuanQiList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelZaSanYunJiaList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelZaSanYunJiaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelZaiBoChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelZaiBoChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMaoDiChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMaoDiChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieLuZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelTieLuZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelLaiGangHuoCheQueBaoList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelLaiGangHuoCheQueBaoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMaTouXieCheJiHuaList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMaTouXieCheJiHuaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMaTouZhuangCheJiHuaList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMaTouZhuangCheJiHuaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGongLuZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelGongLuZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYiFangXingCheLiangList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelYiFangXingCheLiangList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelWangShangCheYuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelWangShangCheYuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelSiJiXinXiList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelSiJiXinXiList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelNeiHeZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelNeiHeZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuanHeGuoJiQueBaoChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelGuanHeGuoJiQueBaoChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelXinYunTaiQueBaoChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelXinYunTaiQueBaoChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuanHeGuoJiBoWeiChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelGuanHeGuoJiBoWeiChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelXinYunTaiBoWeiChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelXinYunTaiBoWeiChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuoJiMeiJiaoZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelGuoJiMeiJiaoZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuoNeiMeiJiaoZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelGuoNeiMeiJiaoZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGangKouMeiJiaoZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelGangKouMeiJiaoZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMeiJiaoGongYingList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMeiJiaoGongYingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMeiJiaoQiuGouList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMeiJiaoQiuGouList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMeiJiaoHangQingList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMeiJiaoHangQingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelJiaoTanHangQingList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelJiaoTanHangQingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYouSeKuangZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelYouSeKuangZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYouSeKuangGongQiuList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelYouSeKuangGongQiuList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYouSeKuangHangQingList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelYouSeKuangHangQingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieKuangShaZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelTieKuangShaZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieKuangShaGongQiuList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelTieKuangShaGongQiuList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieKuangShaHangQingList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelTieKuangShaHangQingList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelCangChuZiXunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelCangChuZiXunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYuanQuCangChuList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelYuanQuCangChuList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelDaiChuHuoYuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelDaiChuHuoYuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelLaiGangQueBaoList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelLaiGangQueBaoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYuBaoChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyYuBaoChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyQueBaoChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyQueBaoChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYinHangFeiList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyYinHangFeiList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyGaoPingHuaFeiList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyGaoPingHuaFeiList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyBoWeiChuanBoList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyBoWeiChuanBoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyChuanBoJiHuaList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyChuanBoJiHuaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYeWuWeiTuoYouChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyYeWuWeiTuoYouChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYeWuWeiTuoWuChuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyYeWuWeiTuoWuChuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyZuoYeWeiTuoList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyZuoYeWeiTuoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyPiaoHuoList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyPiaoHuoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyHuoWuJinGangList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyHuoWuJinGangList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyHuoWuChuGangList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyHuoWuChuGangList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyHuoWuJieCunList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyHuoWuJieCunList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyFeiYongJieSuanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyFeiYongJieSuanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYeWuShiXiangList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyYeWuShiXiangList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYiFuZhangDanList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyYiFuZhangDanList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyGeRenXinXiList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyGeRenXinXiList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyChuanDaiHuoDaiList">
+      <soap:operation soapAction="http://tempuri.org/GetChannelMyChuanDaiHuoDaiList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHMWSoap12" type="tns:ServiceHMWSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelJinRiTouTiaoList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelJinRiTouTiaoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGangKouYaoWenList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelGangKouYaoWenList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelLuQiaoZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelLuQiaoZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelHangYeGuanChaList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelHangYeGuanChaList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelChuanBoZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelChuanBoZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelJiZhuangXiangChuanQiList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelJiZhuangXiangChuanQiList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYunJiaList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelYunJiaList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelZaSanChuanQiList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelZaSanChuanQiList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelZaSanYunJiaList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelZaSanYunJiaList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelZaiBoChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelZaiBoChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMaoDiChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMaoDiChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieLuZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelTieLuZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelLaiGangHuoCheQueBaoList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelLaiGangHuoCheQueBaoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMaTouXieCheJiHuaList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMaTouXieCheJiHuaList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMaTouZhuangCheJiHuaList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMaTouZhuangCheJiHuaList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGongLuZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelGongLuZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYiFangXingCheLiangList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelYiFangXingCheLiangList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelWangShangCheYuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelWangShangCheYuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelSiJiXinXiList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelSiJiXinXiList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelNeiHeZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelNeiHeZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuanHeGuoJiQueBaoChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelGuanHeGuoJiQueBaoChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelXinYunTaiQueBaoChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelXinYunTaiQueBaoChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuanHeGuoJiBoWeiChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelGuanHeGuoJiBoWeiChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelXinYunTaiBoWeiChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelXinYunTaiBoWeiChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuoJiMeiJiaoZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelGuoJiMeiJiaoZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGuoNeiMeiJiaoZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelGuoNeiMeiJiaoZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelGangKouMeiJiaoZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelGangKouMeiJiaoZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMeiJiaoGongYingList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMeiJiaoGongYingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMeiJiaoQiuGouList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMeiJiaoQiuGouList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMeiJiaoHangQingList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMeiJiaoHangQingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelJiaoTanHangQingList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelJiaoTanHangQingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYouSeKuangZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelYouSeKuangZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYouSeKuangGongQiuList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelYouSeKuangGongQiuList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYouSeKuangHangQingList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelYouSeKuangHangQingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieKuangShaZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelTieKuangShaZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieKuangShaGongQiuList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelTieKuangShaGongQiuList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelTieKuangShaHangQingList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelTieKuangShaHangQingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelCangChuZiXunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelCangChuZiXunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelYuanQuCangChuList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelYuanQuCangChuList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelDaiChuHuoYuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelDaiChuHuoYuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelLaiGangQueBaoList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelLaiGangQueBaoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYuBaoChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyYuBaoChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyQueBaoChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyQueBaoChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYinHangFeiList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyYinHangFeiList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyGaoPingHuaFeiList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyGaoPingHuaFeiList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyBoWeiChuanBoList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyBoWeiChuanBoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyChuanBoJiHuaList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyChuanBoJiHuaList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYeWuWeiTuoYouChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyYeWuWeiTuoYouChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYeWuWeiTuoWuChuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyYeWuWeiTuoWuChuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyZuoYeWeiTuoList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyZuoYeWeiTuoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyPiaoHuoList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyPiaoHuoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyHuoWuJinGangList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyHuoWuJinGangList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyHuoWuChuGangList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyHuoWuChuGangList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyHuoWuJieCunList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyHuoWuJieCunList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyFeiYongJieSuanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyFeiYongJieSuanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYeWuShiXiangList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyYeWuShiXiangList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyYiFuZhangDanList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyYiFuZhangDanList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyGeRenXinXiList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyGeRenXinXiList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannelMyChuanDaiHuoDaiList">
+      <soap12:operation soapAction="http://tempuri.org/GetChannelMyChuanDaiHuoDaiList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceHMW">
+    <wsdl:port name="ServiceHMWSoap" binding="tns:ServiceHMWSoap">
+      <soap:address location="http://localhost:5140/ServiceHMW.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHMWSoap12" binding="tns:ServiceHMWSoap12">
+      <soap12:address location="http://localhost:5140/ServiceHMW.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

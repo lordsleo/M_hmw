@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    
+    <link href="../../css/css.css" rel="stylesheet" type="text/css" />
+    <script src="../../Jquery/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../../Jquery/jquery.Slide.2.1.1.js"></script>
+    <script>
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTab(name,cursel,n){
+for(i=1;i<=n;i++){
+var menu=document.getElementById(name+i);
+var con=document.getElementById("con_"+name+"_"+i);
+menu.className=i==cursel?"hover":"";
+con.style.display=i==cursel?"block":"none";
+}
+}
+//-->
+    </script>
+    
+    <script type="text/javascript">
+
+        function DetailNewsClick(info) {
+            //实现详细资讯页面的跳转
+            window.location.href = '../../Detail/Detail_News.html?info=' + info;
+        }
+
+        var str = document.location.search;
+        var str1 = str.split("?", 2);
+        var number = str1[1];
+        var loc = "";
+        //number = "1";
+
+        switch (number)
+        {
+            case "1": loc = "兰州"; break;
+            case "2": loc = "山西"; break;
+            case "3": loc = "西安"; break;
+            case "4": loc = "新疆"; break;
+            case "5": loc = "郑州"; break;
+            case "6": loc = "银川"; break;
+            case "7": loc = "西宁"; break;
+            default:  loc = "兰州"; break;
+        }
+        
+        $(function () {
+            document.getElementById("tt").innerText = loc;
+            document.title = loc;
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Channel/News/locnews.aspx?number=" + number + "&callback=?", null, function (ret) {
+              
+                $("#table1").empty();
+                $("#table2").empty();
+                $("#table3").empty();
+                $("#table4").empty();
+                $("#table5").empty();
+                $("#table6").empty();
+
+                //本地新闻
+                for (i = 0; i < ret[0].length; ++i) {
+                    var title = ret[0][i][2].length > 18 ? ret[0][i][2].substr(0, 18) + '...' : ret[0][i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + ret[0][i][0] + '+' + ret[0][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table1').append("<tr><td colspan=\"1\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //经济发展
+                for (i = 0; i < ret[1].length; ++i) {
+                    var title = ret[1][i][2].length > 18 ? ret[1][i][2].substr(0, 18) + '...' : ret[1][i][2];
+                    $('#table2').append("<li onclick=\"DetailNewsClick('" + ret[1][i][0] + '+' + ret[1][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table2').append("<tr><td colspan=\"1\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //物流贸易
+                for (i = 0; i < ret[2].length; ++i) {
+                    var title = ret[2][i][2].length > 18 ? ret[2][i][2].substr(0, 18) + '...' : ret[2][i][2];
+                    $('#table3').append("<li onclick=\"DetailNewsClick('" + ret[2][i][0] + '+' + ret[2][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == ret[2].length) {
+                    $('#table3').append("<tr><td colspan=\"1\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //招商引资
+                for (i = 0; i < ret[3].length; ++i) {
+                    var title = ret[3][i][2].length > 18 ? ret[3][i][2].substr(0, 18) + '...' : ret[3][i][2];
+                    $('#table4').append("<li onclick=\"DetailNewsClick('" + ret[3][i][0] + '+' + ret[3][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == ret[3].length) {
+                    $('#table4').append("<tr><td colspan=\"1\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //文化活动
+                for (i = 0; i < ret[4].length; ++i) {
+                    var title = ret[4][i][2].length > 18 ? ret[4][i][2].substr(0, 18) + '...' : ret[4][i][2];
+                    $('#table5').append("<li onclick=\"DetailNewsClick('" + ret[4][i][0] + '+' + ret[4][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == ret[4].length) {
+                    $('#table5').append("<tr><td colspan=\"1\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //地方风情
+                for (i = 0; i < ret[5].length; ++i) {
+                    var title = ret[5][i][2].length > 18 ? ret[5][i][2].substr(0, 18) + '...' : ret[5][i][2];
+                    $('#table6').append("<li onclick=\"DetailNewsClick('" + ret[5][i][0] + '+' + ret[5][i][1] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == ret[5].length) {
+                    $('#table6').append("<tr><td colspan=\"1\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="../C1_News.html" class="disapper">返回</a>
+            </div>
+            <div class="title" id="tt"></div>
+
+        </div>
+        <div class="focusOuter">
+            <div class="focusBox">
+                <ul class="pic">
+                    <li><a href="#" target="_blank"><img src="../../images/slide/01.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../../images/slide/02.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../../images/slide/03.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../../images/slide/04.jpg" /></a></li>
+                </ul>
+                <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+                <ul class="hd">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                /*鼠标移过，左右按钮显示*/
+                jQuery(".focusBox").hover(function () { jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.2) }, function () { jQuery(this).find(".prev,.next").fadeOut() });
+                /*SuperSlide图片切换*/
+                jQuery(".focusBox").slide({ mainCell: ".pic", effect: "fold", autoPlay: true, delayTime: 600, trigger: "click" });
+            </script>
+        </div>
+
+
+        <div class="bk20"></div>
+            <div id="Tab2">
+    <div class="Menubox2">
+                    <ul>
+                        <li id="one1" onmouseover="setTab('one',1,2)" class="hover">本地新闻</li>
+                        <li id="one2" onmouseover="setTab('one',2,2)">经济发展</li>
+                    </ul>
+                </div>
+    <div class="Contentbox2a">
+                    <div id="con_one_1" class="hover">
+                        <ul id="table1" class="styel1" style="margin:15px 0px 10px 0px">
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                        </ul>
+                    </div>
+                    <div id="con_one_2" style="display:none">
+                        <ul id="table2" class="styel1" style="margin:15px 0px 10px 0px">
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                        </ul>
+                    </div>
+                    <div class="bk20"></div>
+                </div>
+            </div>
+        <div class="bk20"></div>
+        <div id="Tab2">
+            <div class="Menubox2">
+                <ul>
+                    <li id="two1" onmouseover="setTab('two',1,2)" class="hover">物流贸易</li>
+                    <li id="two2" onmouseover="setTab('two',2,2)">招商引资</li>
+                </ul>
+            </div>
+            <div class="Contentbox2a">
+                <div id="con_two_1" class="hover">
+                    <ul id="table3" class="styel1" style="margin:15px 0px 10px 0px">
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                    </ul>
+                </div>
+                <div id="con_two_2" style="display:none">
+                    <ul id="table4" class="styel1" style="margin:15px 0px 10px 0px">
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                    </ul>
+                </div>
+                <div class="bk20"></div>
+            </div>
+        </div>
+        <div class="bk20"></div>
+        <div id="Tab2">
+            <div class="Menubox2">
+                <ul>
+                    <li id="three1" onmouseover="setTab('three',1,2)" class="hover">文化活动</li>
+                    <li id="three2" onmouseover="setTab('three',2,2)">地方风情</li>
+                </ul>
+            </div>
+            <div class="Contentbox2a">
+                <div id="con_three_1" class="hover">
+                    <ul id="table5" class="styel1" style="margin:15px 0px 10px 0px">
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                    </ul>
+                </div>
+                <div id="con_three_2" style="display:none">
+                    <ul id="table6" class="styel1" style="margin:15px 0px 10px 0px">
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                    </ul>
+                </div>
+                <div class="bk20"></div>
+            </div>
+        </div>
+        <!--<div class="foot">连云港港口集团有限公司版权所有<br> 连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+
+
+</body>
+</html>

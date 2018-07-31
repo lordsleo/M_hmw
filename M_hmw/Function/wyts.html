@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>我要投诉</title>
+    <link href="../Css/css.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#submit").click(function () {
+                var complainContent = $("#textare-1").val();
+                var complainContentUtf8 = encodeURIComponent(complainContent);
+                $.getJSON("wyts.aspx?message=" + complainContentUtf8, null, function (ret) {                    
+                    if(ret=="false")
+                    {
+                        alert("提交失败，请重试！");
+                    }
+                    else
+                    {
+                        alert("提交成功！");
+                    }
+                })
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="wrapper" style="background-color:#f3f3f3;">
+        <div class="bk20"></div>
+        <p class="complaintitle">投诉意见：</p>
+        <div class="bk20"></div>
+        <div style="text-align:center;">
+            <form>
+                <textarea name="textare-1" id="textare-1" style="width:80%;height:300px;"></textarea>
+            </form>
+        </div>
+        <div class="bk20"></div>
+        <div class="complain">
+            <button id="submit" style="margin:0px auto;">提交</button>
+        </div>
+        <div class="bk20"></div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,66 @@
+﻿body{ 
+}
+
+#cokenews p,#cokesupply p,#cokeprice p{
+    background:url(../Images/Channel/headpic.png) repeat-x;
+    color:#ff0000;
+    height:25px;
+    width:100%;
+    text-align:center;
+    font-size:13px;
+    line-height:26px;
+    font-weight:bold;
+    margin-bottom:-2px;
+}
+
+/*滚动图片*/
+.focusBox {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    top:-15px;
+}
+.focusBox .pic {
+    text-align: center;
+}
+.focusBox .pic img {
+    height: 300px;
+}
+.focusBox .hd {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    font-size: 0;
+    z-index: 1;
+    left:-40px;
+}
+.focusBox .hd li {
+    margin: 0 5px;
+    background: url(../Images/Slide/dot.png) no-repeat 0 -16px;
+    height: 16px;
+    overflow: hidden;
+    width: 16px;
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    _background: url(../Images/Slide/dot8.png) no-repeat 0 -16px;
+}
+.focusBox .hd .on {
+    background-position: 0 0;
+}
+.focusBox .prev:hover {
+    filter: alpha(opacity=50) !important;
+    opacity: 0.5 !important;
+}
+
+/*页尾*/
+.footer {
+    padding:5px 0px 5px 0px;
+    font-size: 11.5px;
+    font-family: 'Arial';
+    text-align: center;
+    overflow: hidden;
+}

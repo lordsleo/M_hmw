@@ -1,0 +1,98 @@
+﻿body {
+}
+
+/*标题*/
+.subtitle{
+    /*background-color:#f5f1f1;*/
+    background:url(../Images/Common/subtitle.png) repeat-x;
+    color:#ff0000;
+    height:41px;
+    width:100%;
+    padding-left:13px;
+    font-size:14px;
+    /*font-family:"arial";*/
+    line-height:41px;
+    font-weight:bold;
+    margin:0;
+    text-shadow: 0px 0px 0px #ffffff;
+}
+
+/*工具栏f*/
+.ui-bar-f {
+    /*background-color: #d72428;*/
+    background:url(../Images/Common/head.png) repeat-x;
+	border-color:	  transparent;
+	color: 			  #ffffff;
+	text-shadow: 0;
+    text-shadow: 0px 0px 0px #ffffff;
+    font-weight:bold;
+    /*font-family:SimHei;*/
+}
+
+./*tabs{ 
+    height:38px;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+.tabs li
+{  float:left;
+   width:50%;
+   height:38px;
+   line-height:38px;
+   background:#ffffff;
+   font-size:13px;
+   font-weight:bold;
+   color:#000000;
+   text-align:center;
+   text-shadow:0px 0px 0px #ffffff;
+   list-style-type:none;  
+}
+.tabs .current{
+    background:#ff0000;
+    color:#fff
+}
+.tabs span{ 
+    display:block
+}*/
+
+
+/*导航按钮*/
+.ui-navbar li .ui-btn {
+	font-size: 12.5px;
+	display: block;
+	margin: 0;
+	border-right-width: 0;
+    background-color:#fff;  /*添加背景色为白色*/
+    /*background:url(../Images/Common/head.png) repeat-x;*/
+    border-color:	 		#ffffff; 
+}
+/* Active button */
+.ui-page-theme-a .ui-btn.ui-btn-active,
+html .ui-bar-a .ui-btn.ui-btn-active,
+html .ui-body-a .ui-btn.ui-btn-active,
+html body .ui-group-theme-a .ui-btn.ui-btn-active,
+html head + body .ui-btn.ui-btn-a.ui-btn-active{
+    background:url(../Images/Common/head.png) repeat-x;
+	border-color:	 		#ff0000; 
+	color: 					#ffffff;
+	text-shadow: 0  0px  0  #ffffff; /*字体阴影*/
+    box-shadow: 0 0 0px     #ff0000  /*删除边框阴影*/
+}
+/* Focus */
+.ui-page-theme-a .ui-btn:focus,
+html .ui-bar-a .ui-btn:focus,
+html .ui-body-a .ui-btn:focus,
+html body .ui-group-theme-a .ui-btn:focus,
+html head + body .ui-btn.ui-btn-a:focus,
+/* Focus buttons and text inputs with div wrap */
+.ui-page-theme-a .ui-focus,
+html .ui-bar-a .ui-focus,
+html .ui-body-a .ui-focus,
+html body .ui-group-theme-a .ui-focus,
+html head + body .ui-btn-a.ui-focus,
+html head + body .ui-body-a.ui-focus {
+	-webkit-box-shadow: 0 0 0px 	#ff0000; /*删除边框阴影*/
+	-moz-box-shadow: 0 0 0px 		#ff0000; /*删除边框阴影*/
+	box-shadow: 0 0 0px 			#ff0000; /*删除边框阴影*/
+}

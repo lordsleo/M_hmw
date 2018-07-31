@@ -1,0 +1,120 @@
+﻿<!--********************************************************************
+//	创建时间:	2015/03/09
+//	作者:		sh
+//********************************************************************
+//	文件: 	BerthShip.html
+//	功能：  泊位船舶查询
+//  说明：
+*********************************************************************-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>泊位船舶查询</title>
+    <link href="../../Css/css.css" rel="stylesheet" />
+    <script src="../../Jquery/jquery-2.1.0.min.js"></script>
+    <script>
+
+        function DetailTableClick(info) {
+            //实现详细表格页面的跳转
+            window.location.href = '../../Detail/Detail_Table_forBusiness.html?info=' + info;
+        }
+
+        var str = document.location.search;
+        if (str == "") {
+            var str = "info=1";
+        }
+        var str1 = str.split("=", 2);
+        var num;
+        if (str1[1] == null) {
+            num = 1;
+        }
+        else {
+            num = str1[1];
+        }
+
+        $(function () {
+
+            var minRow = (num - 1) * 15 + 1;
+            var maxRow = num * 15;
+            str = minRow + '+' + maxRow;
+
+            $.getJSON("BerthShip.aspx?message=" + str, null, function (ret) {
+
+                if (ret == 0 && num != 1) {
+                    num--;
+                    alert("当前页无数据，请返回！");
+                    window.location.href = 'BerthShip.html?info=' + num;
+                    return;
+                }
+
+                $('#table').empty();
+                var page = '第' + num + '页';
+                $('#pagenum').text(page);
+                $('#table').append("<tr><th>中文船名</th><th>泊位</th><th>卸货货种</th><th>装货货种</th><th>靠泊时间</th></tr>");
+                for (var i = 0; i < ret.length; ++i) {
+                    if (i % 2 == 0) {
+                        $('#table').append("<tr class='tr1' onclick=\"DetailTableClick('" + 'BerthShip' + '+' + 12 + '+' + ret[i][0] + "')\"><td>"
+                            + ret[i][1] + "</td><td>"
+                            + ret[i][2] + "</td><td>"
+                            + ret[i][4] + "</td><td>"
+                            + ret[i][6] + "</td><td>"
+                            + ret[i][8] + "</td></tr>")
+                        continue;
+                    }
+                    $('#table').append("<tr class='tr2' onclick=\"DetailTableClick('" + 'BerthShip' + '+' + 12 + '+' + ret[i][0] + "')\"><td>"
+                            + ret[i][1] + "</td><td>"
+                            + ret[i][2] + "</td><td>"
+                            + ret[i][4] + "</td><td>"
+                            + ret[i][6] + "</td><td>"
+                            + ret[i][8] + "</td></tr>")
+                }
+                if (0 == ret) {
+                    $('#table').append("<tr><td colspan=\"5\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+                $(".turepage").css("display", "block");
+            })
+
+
+            $("#prev").click(function () {
+                if (1 == num) {
+                    return;
+                }
+                else {
+                    num--;
+                }
+
+                window.location.href = 'BerthShip.html?info=' + num;
+            });
+
+
+            $("#next").click(function () {
+                num++;
+                window.location.href = 'BerthShip.html?info=' + num;
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="stylebox">
+            <table id="table" class="table" style="width:100%"></table>
+        </div>
+
+        <div class="turepage">
+            <button type="button" id="prev">上一页</button>
+            <p id="pagenum"></p>
+            <button type="button" id="next">下一页</button>
+        </div>
+        <div class="bk20"></div>
+
+    </div>
+
+</body>
+</html>

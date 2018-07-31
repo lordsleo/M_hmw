@@ -1,0 +1,22 @@
+﻿using M_hmw.Common;
+using M_hmw.Service.BaseUtil;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace M_hmw.Service.MyChuanService
+{
+    /// <summary>
+    /// 我的预报船
+    /// </summary>
+    public class MyYuBaoChuanService41 : BaseServiceBS
+    {
+        protected override string getSql()
+        {
+            //0为传入参数船代客户ID，1为系统时间
+            //默认查询5条
+            return String.Format(SQL.MyYuBaoChuanService41, this.Params[0], DateTime.Now.ToString(), this.Params.Length > 2 ? this.Params[2] : "5");
+        }
+    }
+}

@@ -1,0 +1,1913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5EF0429-9638-48B1-ACB5-11282F8FE818}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>M_hmw</RootNamespace>
+    <AssemblyName>M_hmw</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AndroidPush, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AndroidPush.dll</HintPath>
+    </Reference>
+    <Reference Include="CWK.WebService.Util, Version=0.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CWK.WebService.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IPortData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d68b0a7daaf47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IPortData.dll</HintPath>
+    </Reference>
+    <Reference Include="leo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\leo.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\work\项目\OfficialRefuel\OfficialRefuel\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.5439.30480, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\AndroidPush.dll" />
+    <Content Include="bin\AndroidPush.pdb" />
+    <Content Include="bin\AndroidPush.XML" />
+    <Content Include="bin\CWK.WebService.Util.dll" />
+    <Content Include="bin\CWK.WebService.Util.pdb" />
+    <Content Include="bin\CWK.WebService.Util.XML" />
+    <Content Include="bin\IPortData.dll" />
+    <Content Include="bin\leo.dll" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="bin\Microsoft.Vbe.Interop.dll" />
+    <Content Include="bin\M_hmw.dll" />
+    <Content Include="bin\M_hmw.pdb" />
+    <Content Include="bin\M_hmw.vshost.exe" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\office.dll" />
+    <Content Include="bin\ServiceInterface.dll" />
+    <Content Include="bin\ThoughtWorks.QRCode.dll" />
+    <Content Include="Business\cdyy\AnchorShip.aspx" />
+    <Content Include="Business\cdyy\AnchorShip.html" />
+    <Content Include="Business\cdyy\BerthShip.aspx" />
+    <Content Include="Business\cdyy\BerthShip.html" />
+    <Content Include="Business\cdyy\CommunicationFee.aspx" />
+    <Content Include="Business\cdyy\CommunicationFee.html" />
+    <Content Include="Business\cdyy\ForeShip.aspx" />
+    <Content Include="Business\cdyy\ForeShip.html" />
+    <Content Include="Business\cdyy\IndeedShip.aspx" />
+    <Content Include="Business\cdyy\IndeedShip.html" />
+    <Content Include="Business\cdyy\MoveShip.aspx" />
+    <Content Include="Business\cdyy\MoveShip.html" />
+    <Content Include="Business\cdyy\PilotageFee.aspx" />
+    <Content Include="Business\cdyy\PilotageFee.html" />
+    <Content Include="Business\cdyy\PlanedShip.aspx" />
+    <Content Include="Business\cdyy\PlanedShip.html" />
+    <Content Include="Business\czyy\AnchorShip.aspx" />
+    <Content Include="Business\czyy\AnchorShip.html" />
+    <Content Include="Business\czyy\BerthShip.aspx" />
+    <Content Include="Business\czyy\BerthShip.html" />
+    <Content Include="Business\czyy\DeliveryNote.aspx" />
+    <Content Include="Business\czyy\IndeedShip.aspx" />
+    <Content Include="Business\czyy\IndeedShip.html" />
+    <Content Include="Business\czyy\MoveShip.aspx" />
+    <Content Include="Business\czyy\MoveShip.html" />
+    <Content Include="Business\czyy\OldDeliveryNote.aspx" />
+    <Content Include="Business\czyy\PlanedShip.aspx" />
+    <Content Include="Business\czyy\PlanedShip.html" />
+    <Content Include="Business\czyy\VehicleDeclaration.aspx" />
+    <Content Include="Business\czyy\VehicleDeclaration.html" />
+    <Content Include="Business\czyy\VehicleRegistration.aspx" />
+    <Content Include="Business\czyy\VehicleRegistration.html" />
+    <Content Include="Business\hdyy\CargoIn.aspx" />
+    <Content Include="Business\hdyy\CargoIn.html" />
+    <Content Include="Business\hdyy\CargoOut.aspx" />
+    <Content Include="Business\hdyy\CargoOut.html" />
+    <Content Include="Business\hdyy\CargoStock.aspx" />
+    <Content Include="Business\hdyy\CargoStock.html" />
+    <Content Include="Business\hdyy\Cc\CcGoodsBill.html" />
+    <Content Include="Business\hdyy\GoodsBill.aspx" />
+    <Content Include="Business\hdyy\GoodsBill.html" />
+    <Content Include="Business\hdyy\JobConsign.aspx" />
+    <Content Include="Business\hdyy\JobConsign.html" />
+    <Content Include="Business\hdyy\NoShipBusinessConsign.aspx" />
+    <Content Include="Business\hdyy\NoShipBusinessConsign.html" />
+    <Content Include="Business\hdyy\ShipBusinessConsign.aspx" />
+    <Content Include="Business\hdyy\ShipBusinessConsign.html" />
+    <Content Include="Business\hdyy\VehicleBalance.aspx" />
+    <Content Include="Business\hdyy\VehicleBalance.html" />
+    <Content Include="Business\hdyy\VehicleTransport.aspx" />
+    <Content Include="Business\hdyy\VehicleTransport.html" />
+    <Content Include="Business\hyyy\GetVehAttestByNGATENO.aspx" />
+    <Content Include="Business\hyyy\NewLandBridgeWorkPlan.aspx" />
+    <Content Include="Business\hyyy\NewLandBridgeWorkPlan.html" />
+    <Content Include="Business\hyyy\NoPassedTransportation.aspx" />
+    <Content Include="Business\hyyy\NoPassedTransportation.html" />
+    <Content Include="Business\hyyy\PassedTransportation.aspx" />
+    <Content Include="Business\hyyy\PassedTransportation.html" />
+    <Content Include="Business\hyyy\VehicleBalance.aspx" />
+    <Content Include="Business\hyyy\VehicleBalance.html" />
+    <Content Include="Business\hyyy\VehicleDeclaration.aspx" />
+    <Content Include="Business\hyyy\VehicleDeclaration.html" />
+    <Content Include="Business\hyyy\VehicleRegistration.aspx" />
+    <Content Include="Business\hyyy\VehicleRegistration.html" />
+    <Content Include="Business\hzyy\AnchorShip.aspx" />
+    <Content Include="Business\hzyy\AnchorShip.html" />
+    <Content Include="Business\hzyy\BerthShip.aspx" />
+    <Content Include="Business\hzyy\BerthShip.html" />
+    <Content Include="Business\hzyy\CargoBalance.aspx" />
+    <Content Include="Business\hzyy\CargoBalance.html" />
+    <Content Include="Business\hzyy\CargoDui.aspx" />
+    <Content Include="Business\hzyy\CargoDui.html" />
+    <Content Include="Business\hzyy\CargoIn.aspx" />
+    <Content Include="Business\hzyy\CargoIn.html" />
+    <Content Include="Business\hzyy\CargoOut.aspx" />
+    <Content Include="Business\hzyy\CargoOut.html" />
+    <Content Include="Business\hzyy\CargoSupply.aspx" />
+    <Content Include="Business\hzyy\CargoSupply.html" />
+    <Content Include="Business\hzyy\IndeedShip.aspx" />
+    <Content Include="Business\hzyy\IndeedShip.html" />
+    <Content Include="Business\hzyy\MoveShip.aspx" />
+    <Content Include="Business\hzyy\MoveShip.html" />
+    <Content Include="Business\hzyy\PlanedShip.aspx" />
+    <Content Include="Business\hzyy\PlanedShip.html" />
+    <Content Include="Business\hdyy\WeightNote.aspx" />
+    <Content Include="Business\hdyy\WeightNote.html" />
+    <Content Include="CardTask.html" />
+    <Content Include="Channel\C1_News.aspx" />
+    <Content Include="Channel\C1_News.html" />
+    <Content Include="Channel\C2_Ship.aspx" />
+    <Content Include="Channel\C2_Ship.html" />
+    <Content Include="Channel\C2_Ship2.aspx" />
+    <Content Include="Channel\C2_Ship3.aspx" />
+    <Content Include="Channel\C3_Railway.html" />
+    <Content Include="Channel\C4_Highway.html" />
+    <Content Include="Channel\C5_River.html" />
+    <Content Include="Channel\C6_Trade.html" />
+    <Content Include="Channel\C6_Trade2.aspx" />
+    <Content Include="Channel\C6_Trade3.aspx" />
+    <Content Include="Channel\C6_Trade4.aspx" />
+    <Content Include="Channel\C7_Storage.html" />
+    <Content Include="Channel\C3_Railway.aspx" />
+    <Content Include="Channel\C4_Highway.aspx" />
+    <Content Include="Channel\C5_River.aspx" />
+    <Content Include="Channel\C6_Trade.aspx" />
+    <Content Include="Channel\C7_Storage.aspx" />
+    <Content Include="Channel\News\locnews.aspx" />
+    <Content Include="Channel\News\locnews.html" />
+    <Content Include="Channel\News\lygnews.aspx" />
+    <Content Include="Channel\News\lygnews.html" />
+    <Content Include="Channel\ships\ships.aspx" />
+    <Content Include="Channel\ships\ships.html" />
+    <Content Include="Css\C1_News.css" />
+    <Content Include="Css\Common.css" />
+    <Content Include="Css\css.css" />
+    <Content Include="Css\jiesuan.css" />
+    <Content Include="Css\mychart.css" />
+    <Content Include="Css\C2_Ship.css" />
+    <Content Include="Css\C3_Railway.css" />
+    <Content Include="Css\C4_Highway.css" />
+    <Content Include="Css\C5_River.css" />
+    <Content Include="Css\C6_Trade.css" />
+    <Content Include="Css\C7_Storage.css" />
+    <Content Include="Detail\Detail_Message.aspx" />
+    <Content Include="Detail\Detail_Message.html" />
+    <Content Include="Detail\Detail_News.aspx" />
+    <Content Include="Detail\Detail_News.html" />
+    <Content Include="Detail\Detail_News2.aspx" />
+    <Content Include="Detail\Detail_News2.html" />
+    <Content Include="Detail\Detail_Price.aspx" />
+    <Content Include="Detail\Detail_Price.html" />
+    <Content Include="Detail\Detail_Table.aspx" />
+    <Content Include="Detail\Detail_Table.html" />
+    <Content Include="Detail\Detail_Table_forBusiness.aspx" />
+    <Content Include="Detail\Detail_Table_forBusiness.html" />
+    <Content Include="Detail\More_News.aspx" />
+    <Content Include="Detail\More_News.html" />
+    <Content Include="Detail\More_News_cangcuzixun.aspx" />
+    <Content Include="Detail\More_News_cangcuzixun.html" />
+    <Content Include="Detail\More_News_chuanbozixun.aspx" />
+    <Content Include="Detail\More_News_chuanbozixun.html" />
+    <Content Include="Detail\More_News_gangkouyaowen.aspx" />
+    <Content Include="Detail\More_News_gangkouyaowen.html" />
+    <Content Include="Detail\More_News_gongluzixun.aspx" />
+    <Content Include="Detail\More_News_gongluzixun.html" />
+    <Content Include="Detail\More_News_hangyeguancha.aspx" />
+    <Content Include="Detail\More_News_hangyeguancha.html" />
+    <Content Include="Detail\More_News_luqiaozixun.aspx" />
+    <Content Include="Detail\More_News_luqiaozixun.html" />
+    <Content Include="Detail\More_News_neihezixun.aspx" />
+    <Content Include="Detail\More_News_neihezixun.html" />
+    <Content Include="Detail\More_News_tiekuangshahangqing.aspx" />
+    <Content Include="Detail\More_News_tiekuangshahangqing.html" />
+    <Content Include="Detail\More_News_tiekuangshazixun.aspx" />
+    <Content Include="Detail\More_News_tiekuangshazixun1.html" />
+    <Content Include="Detail\More_News_tieluzixun.aspx" />
+    <Content Include="Detail\More_News_tieluzixun.html" />
+    <Content Include="Detail\More_News_yousekuanghangqing.aspx" />
+    <Content Include="Detail\More_News_yousekuanghangqing.html" />
+    <Content Include="Detail\More_News_yousekuangzixun.aspx" />
+    <Content Include="Detail\More_News_yousekuangzixun.html" />
+    <Content Include="Detail\More_Table_boweichuanbo.aspx" />
+    <Content Include="Detail\More_Table_boweichuanbo.html" />
+    <Content Include="Detail\More_Table_chuanbojihua.aspx" />
+    <Content Include="Detail\More_Table_chuanbojihua.html" />
+    <Content Include="Detail\More_Table_daichuhuoyuan.aspx" />
+    <Content Include="Detail\More_Table_daichuhuoyuan.html" />
+    <Content Include="Detail\More_Table_fangxingcheliang.aspx" />
+    <Content Include="Detail\More_Table_fangxingchheliang.html" />
+    <Content Include="Detail\More_Table_feiyongjiesuan.aspx" />
+    <Content Include="Detail\More_Table_feiyongjiesuan.html" />
+    <Content Include="Detail\More_Table_huowujiecun.aspx" />
+    <Content Include="Detail\More_Table_huowujiecun.html" />
+    <Content Include="Detail\More_Table_laigangquebao.aspx" />
+    <Content Include="Detail\More_Table_laigangquebao.html" />
+    <Content Include="Detail\More_Table_laigangquebao2.html" />
+    <Content Include="Detail\More_Table_matouxieche.aspx" />
+    <Content Include="Detail\More_Table_matouxieche.html" />
+    <Content Include="Detail\More_Table_matouzhuangche.aspx" />
+    <Content Include="Detail\More_Table_matouzhuangche.html" />
+    <Content Include="Detail\More_Table_meijiaogongying.aspx" />
+    <Content Include="Detail\More_Table_meijiaogongying.html" />
+    <Content Include="Detail\More_Table_meijiaohangqing.aspx" />
+    <Content Include="Detail\More_Table_meijiaohangqing.html" />
+    <Content Include="Detail\More_Table_meijiaoqiugou.aspx" />
+    <Content Include="Detail\More_Table_meijiaoqiugou.html" />
+    <Content Include="Detail\More_Table_meijiaozixun.aspx" />
+    <Content Include="Detail\More_Table_meijiaozixun.html" />
+    <Content Include="Detail\More_Table_neiheboweichuan.aspx" />
+    <Content Include="Detail\More_Table_neiheboweichuan.html" />
+    <Content Include="Detail\More_Table_neihequebaochuan.aspx" />
+    <Content Include="Detail\More_Table_neihequebaochuan.html" />
+    <Content Include="Detail\More_Table_neihequebaochuan2.aspx" />
+    <Content Include="Detail\More_Table_neihequebaochuan2.html" />
+    <Content Include="Detail\More_Table_sijixinxi.aspx" />
+    <Content Include="Detail\More_Table_sijixinxi.html" />
+    <Content Include="Detail\More_Table_tiekuangshagongqiu.aspx" />
+    <Content Include="Detail\More_Table_tiekuangshagongqiu.html" />
+    <Content Include="Detail\More_Table_wangshangcheyuan.aspx" />
+    <Content Include="Detail\More_Table_wangshangcheyuan.html" />
+    <Content Include="Detail\More_Table_yewushixiang.aspx" />
+    <Content Include="Detail\More_Table_yewushixiang.html" />
+    <Content Include="Detail\More_Table_yifuzhuangdan.aspx" />
+    <Content Include="Detail\More_Table_yifuzhuangdan.html" />
+    <Content Include="Detail\More_Table_yousekuanggongqiu.aspx" />
+    <Content Include="Detail\More_Table_yousekuanggongqiu.html" />
+    <Content Include="Detail\More_Table_yuanqucangchu.aspx" />
+    <Content Include="Detail\More_Table_yuanqucangchu.html" />
+    <Content Include="Function\cygn.aspx" />
+    <Content Include="Function\cygn.html" />
+    <Content Include="Function\cygnmanager.aspx" />
+    <Content Include="Function\cygnmanager.html" />
+    <Content Include="Function\gkjg.aspx" />
+    <Content Include="Function\gkjg.html" />
+    <Content Include="Function\jszx.aspx" />
+    <Content Include="Function\jszx.html" />
+    <Content Include="Function\mychart.html" />
+    <Content Include="Function\mychart.aspx" />
+    <Content Include="Function\wdcyw.aspx" />
+    <Content Include="Function\wdcyw.html" />
+    <Content Include="Function\wdcyw1.aspx" />
+    <Content Include="Function\wdcyw2.aspx" />
+    <Content Include="Function\wdcyw3.aspx" />
+    <Content Include="Function\wdcyw4.aspx" />
+    <Content Include="Function\wdcyw5.aspx" />
+    <Content Include="Function\wdhyw.aspx" />
+    <Content Include="Function\wdhyw.html" />
+    <Content Include="Function\wdhyw1.aspx" />
+    <Content Include="Function\wdhyw2.aspx" />
+    <Content Include="Function\wdhyw3.aspx" />
+    <Content Include="Function\wdhyw4.aspx" />
+    <Content Include="Function\wdhyw5.aspx" />
+    <Content Include="Function\wyts.aspx" />
+    <Content Include="Function\wyts.html" />
+    <Content Include="Function\ywsb.html" />
+    <Content Include="GetService\ChangePassword.aspx" />
+    <Content Include="GetService\DeviceBinding.aspx" />
+    <Content Include="GetService\DeviceResign.aspx" />
+    <Content Include="GetService\GetPersonDetailData.aspx" />
+    <Content Include="GetService\HmwUpdate.aspx" />
+    <Content Include="GetService\Scan\GetBasicInfo.aspx" />
+    <Content Include="GetService\Scan\GetHarbourPass.aspx" />
+    <Content Include="GetService\Scan\GetTransportDeclare.aspx" />
+    <Content Include="GetService\Scan\GetWeighRecord.aspx" />
+    <Content Include="GetService\UpdatePersonDetailData.aspx" />
+    <Content Include="Home\Detail\More_News_yaowenzixun.aspx" />
+    <Content Include="Home\Detail\More_News_yaowenzixun.html" />
+    <Content Include="Home\Detail\More_Table_kuangshizhuanqu.aspx" />
+    <Content Include="Home\Detail\More_Table_kuangshizhuanqu.html" />
+    <Content Include="Home\Detail\More_Table_meitanzhuanqu.aspx" />
+    <Content Include="Home\Detail\More_Table_meitanzhuanqu.html" />
+    <Content Include="Home\Detail\More_Table_zuixinchuanqi.aspx" />
+    <Content Include="Home\Detail\More_Table_zuixinchuanqi.html" />
+    <Content Include="Home\Detail\More_Table_zuixinyunli.aspx" />
+    <Content Include="Home\Detail\More_Table_zuixinyunli.html" />
+    <Content Include="Home\Detail\More_Table_zuixinhuopan.aspx" />
+    <Content Include="Home\Detail\More_Table_zuixinhuopan.html" />
+    <Content Include="Home\Detail\More_Table_zuixinhuoyuan.aspx" />
+    <Content Include="Home\Detail\More_Table_zuixinhuoyuan.html" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="Images\ad\tail.jpg" />
+    <Content Include="Images\Channel\delegation.png" />
+    <Content Include="Images\Channel\none.png" />
+    <Content Include="Images\Common\pagebg.png" />
+    <Content Include="Images\function\cygn.png" />
+    <Content Include="Images\function\fudh.png" />
+    <Content Include="Images\function\gkjg.png" />
+    <Content Include="Images\function\jszx.png" />
+    <Content Include="Images\function\wdcyw.png" />
+    <Content Include="Images\function\wdhyw.png" />
+    <Content Include="Images\function\wyts.png" />
+    <Content Include="Images\function\xxcx.png" />
+    <Content Include="Images\menu\bs.png" />
+    <Content Include="Images\menu\cb.png" />
+    <Content Include="Images\menu\cc.png" />
+    <Content Include="Images\menu\gl.png" />
+    <Content Include="Images\menu\my.png" />
+    <Content Include="Images\menu\nh.png" />
+    <Content Include="Images\menu\tl.png" />
+    <Content Include="Images\menu\zx.png" />
+    <Content Include="index.aspx" />
+    <Content Include="Images\ad\line.jpg" />
+    <Content Include="Images\Channel\headpic.png" />
+    <Content Include="Images\Common\head.png" />
+    <Content Include="Images\Common\list_sbg.png" />
+    <Content Include="Images\Common\retrurn.png" />
+    <Content Include="Images\Common\subtitle.png" />
+    <Content Include="Images\Slide\back_bg.png" />
+    <Content Include="Images\Slide\dot.png" />
+    <Content Include="Images\Slide\dot8.png" />
+    <Content Include="Images\Slide\dot9.png" />
+    <Content Include="Images\Slide\list_sbg.png" />
+    <Content Include="Images\Slide\menubg.png" />
+    <Content Include="Images\Slide\userbg.png" />
+    <Content Include="index.html" />
+    <Content Include="index1.aspx" />
+    <Content Include="index2.aspx" />
+    <Content Include="index3.aspx" />
+    <Content Include="index4.aspx" />
+    <Content Include="index5.aspx" />
+    <Content Include="Install\install.HTML" />
+    <Content Include="Jquery\app.js" />
+    <Content Include="Jquery\dev\css\mobiscroll.android-2.5.1.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.android-ics-2.5.2.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.animation-2.5.2.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.core-2.5.2.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.ios-2.5.1.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.jqm-2.5.1.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.sense-ui-2.5.1.css" />
+    <Content Include="Jquery\dev\css\mobiscroll.wp-2.5.2.css" />
+    <Content Include="Jquery\dev\css\wp_icons.png" />
+    <Content Include="Jquery\dev\css\wp_icons_light.png" />
+    <Content Include="Jquery\dev\js\mobiscroll.android-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.android-ics-2.5.2.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.core-2.5.2-zh.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.core-2.5.2.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.datetime-2.5.1-zh.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.datetime-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.ios-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.jqm-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.list-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.select-2.5.1.js" />
+    <Content Include="Jquery\dev\js\mobiscroll.wp-2.5.2.js" />
+    <Content Include="Jquery\jquery-1.7.1.min.js" />
+    <Content Include="Jquery\jquery.jqplot.css" />
+    <Content Include="Jquery\jquery.jqplot.min.js" />
+    <Content Include="Jquery\jquery.mobile-1.1.0.min.js" />
+    <Content Include="Jquery\jquery.mobile-1.4.2.min.css" />
+    <Content Include="Jquery\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Jquery\underscore-min.js" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Images\menu\Thumbs.db" />
+    <Content Include="bin\M_hmw.dll.config" />
+    <Content Include="bin\M_hmw.vshost.exe.config" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\PublishProfiles\fabu.pubxml" />
+    <None Include="Properties\PublishProfiles\webDeploy.pubxml" />
+    <None Include="Properties\PublishProfiles\配置文件6.pubxml" />
+    <None Include="Service References\CIService\CIService.wsdl" />
+    <Content Include="Service References\CIService\M_hmw.CIService.GetAttestFinishResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetAttestFullBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetAttestNoPassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetAttestPassNotBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetAttestSelfBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetAttestWait2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetAttestWaitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetConsignAllCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetConsignAllDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetConsignAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetConsignParasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetConsignSingleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetConsignStateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetConsignStatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetLedStaticInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetParasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetWorkDriverResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetXlqBillGoodsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CIService\M_hmw.CIService.GetXlqEntrustResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ConsignVehicleReport\M_hmw.ConsignVehicleReport.GetVehAttestByRIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ConsignVehicleReport\service.wsdl" />
+    <None Include="Service References\ConsignVehicleReport\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ConsignVehicleReport\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ConsignVehicleReport\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HMWServiceReference\ServiceHMW.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\slide.css" />
+    <Content Include="Css\footer.css" />
+    <Content Include="Function\ywsb.aspx" />
+    <Content Include="Images\Slide\01.jpg" />
+    <Content Include="Images\Slide\02.jpg" />
+    <Content Include="Images\Slide\03.jpg" />
+    <Content Include="Images\Slide\04.jpg" />
+    <Content Include="Images\Slide\05.jpg" />
+    <Content Include="Images\Slide\06.jpg" />
+    <Content Include="Images\ywsb\1.png" />
+    <Content Include="Images\ywsb\2.png" />
+    <Content Include="Images\ywsb\3.png" />
+    <Content Include="Images\ywsb\4.png" />
+    <Content Include="Images\ywsb\5.png" />
+    <Content Include="Images\ywsb\6.png" />
+    <Content Include="Images\ywsb\7.png" />
+    <Content Include="Jquery\jquery-2.1.0.js" />
+    <Content Include="Jquery\jquery-2.1.0.min.js" />
+    <Content Include="Jquery\jquery.Slide.2.1.1.js" />
+    <None Include="Service References\HMWServiceReference\ServiceHMW.disco" />
+    <None Include="Service References\HMWServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\HMWServiceReference\configuration.svcinfo" />
+    <None Include="Service References\HMWServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CIService\CIService.disco" />
+    <None Include="Service References\CIService\configuration91.svcinfo" />
+    <None Include="Service References\CIService\configuration.svcinfo" />
+    <None Include="Service References\CIService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ConsignVehicleReport\configuration91.svcinfo" />
+    <None Include="Service References\ConsignVehicleReport\configuration.svcinfo" />
+    <None Include="Service References\ConsignVehicleReport\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceHMW.asmx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\cdyy\AnchorShip.aspx.cs">
+      <DependentUpon>AnchorShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\cdyy\AnchorShip.aspx.designer.cs">
+      <DependentUpon>AnchorShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\cdyy\BerthShip.aspx.cs">
+      <DependentUpon>BerthShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\cdyy\BerthShip.aspx.designer.cs">
+      <DependentUpon>BerthShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\cdyy\CommunicationFee.aspx.cs">
+      <DependentUpon>CommunicationFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\cdyy\CommunicationFee.aspx.designer.cs">
+      <DependentUpon>CommunicationFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\cdyy\ForeShip.aspx.cs">
+      <DependentUpon>ForeShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\cdyy\ForeShip.aspx.designer.cs">
+      <DependentUpon>ForeShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\cdyy\IndeedShip.aspx.cs">
+      <DependentUpon>IndeedShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\cdyy\IndeedShip.aspx.designer.cs">
+      <DependentUpon>IndeedShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\cdyy\MoveShip.aspx.cs">
+      <DependentUpon>MoveShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\cdyy\MoveShip.aspx.designer.cs">
+      <DependentUpon>MoveShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\cdyy\PilotageFee.aspx.cs">
+      <DependentUpon>PilotageFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\cdyy\PilotageFee.aspx.designer.cs">
+      <DependentUpon>PilotageFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\cdyy\PlanedShip.aspx.cs">
+      <DependentUpon>PlanedShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\cdyy\PlanedShip.aspx.designer.cs">
+      <DependentUpon>PlanedShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\czyy\AnchorShip.aspx.cs">
+      <DependentUpon>AnchorShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\czyy\AnchorShip.aspx.designer.cs">
+      <DependentUpon>AnchorShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\czyy\BerthShip.aspx.cs">
+      <DependentUpon>BerthShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\czyy\BerthShip.aspx.designer.cs">
+      <DependentUpon>BerthShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\czyy\DeliveryNote.aspx.cs">
+      <DependentUpon>DeliveryNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\czyy\DeliveryNote.aspx.designer.cs">
+      <DependentUpon>DeliveryNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\czyy\IndeedShip.aspx.cs">
+      <DependentUpon>IndeedShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\czyy\IndeedShip.aspx.designer.cs">
+      <DependentUpon>IndeedShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\czyy\MoveShip.aspx.cs">
+      <DependentUpon>MoveShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\czyy\MoveShip.aspx.designer.cs">
+      <DependentUpon>MoveShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\czyy\OldDeliveryNote.aspx.cs">
+      <DependentUpon>OldDeliveryNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\czyy\OldDeliveryNote.aspx.designer.cs">
+      <DependentUpon>OldDeliveryNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\czyy\PlanedShip.aspx.cs">
+      <DependentUpon>PlanedShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\czyy\PlanedShip.aspx.designer.cs">
+      <DependentUpon>PlanedShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\czyy\VehicleDeclaration.aspx.cs">
+      <DependentUpon>VehicleDeclaration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\czyy\VehicleDeclaration.aspx.designer.cs">
+      <DependentUpon>VehicleDeclaration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\czyy\VehicleRegistration.aspx.cs">
+      <DependentUpon>VehicleRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\czyy\VehicleRegistration.aspx.designer.cs">
+      <DependentUpon>VehicleRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\CargoIn.aspx.cs">
+      <DependentUpon>CargoIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\CargoIn.aspx.designer.cs">
+      <DependentUpon>CargoIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\CargoOut.aspx.cs">
+      <DependentUpon>CargoOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\CargoOut.aspx.designer.cs">
+      <DependentUpon>CargoOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\CargoStock.aspx.cs">
+      <DependentUpon>CargoStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\CargoStock.aspx.designer.cs">
+      <DependentUpon>CargoStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\GoodsBill.aspx.cs">
+      <DependentUpon>GoodsBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\GoodsBill.aspx.designer.cs">
+      <DependentUpon>GoodsBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\JobConsign.aspx.cs">
+      <DependentUpon>JobConsign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\JobConsign.aspx.designer.cs">
+      <DependentUpon>JobConsign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\NoShipBusinessConsign.aspx.cs">
+      <DependentUpon>NoShipBusinessConsign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\NoShipBusinessConsign.aspx.designer.cs">
+      <DependentUpon>NoShipBusinessConsign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\ShipBusinessConsign.aspx.cs">
+      <DependentUpon>ShipBusinessConsign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\ShipBusinessConsign.aspx.designer.cs">
+      <DependentUpon>ShipBusinessConsign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\VehicleBalance.aspx.cs">
+      <DependentUpon>VehicleBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\VehicleBalance.aspx.designer.cs">
+      <DependentUpon>VehicleBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\VehicleTransport.aspx.cs">
+      <DependentUpon>VehicleTransport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\VehicleTransport.aspx.designer.cs">
+      <DependentUpon>VehicleTransport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hyyy\GetVehAttestByNGATENO.aspx.cs">
+      <DependentUpon>GetVehAttestByNGATENO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hyyy\GetVehAttestByNGATENO.aspx.designer.cs">
+      <DependentUpon>GetVehAttestByNGATENO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hyyy\NewLandBridgeWorkPlan.aspx.cs">
+      <DependentUpon>NewLandBridgeWorkPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hyyy\NewLandBridgeWorkPlan.aspx.designer.cs">
+      <DependentUpon>NewLandBridgeWorkPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hyyy\NoPassedTransportation.aspx.cs">
+      <DependentUpon>NoPassedTransportation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hyyy\NoPassedTransportation.aspx.designer.cs">
+      <DependentUpon>NoPassedTransportation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hyyy\PassedTransportation.aspx.cs">
+      <DependentUpon>PassedTransportation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hyyy\PassedTransportation.aspx.designer.cs">
+      <DependentUpon>PassedTransportation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hyyy\VehicleBalance.aspx.cs">
+      <DependentUpon>VehicleBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hyyy\VehicleBalance.aspx.designer.cs">
+      <DependentUpon>VehicleBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hyyy\VehicleDeclaration.aspx.cs">
+      <DependentUpon>VehicleDeclaration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hyyy\VehicleDeclaration.aspx.designer.cs">
+      <DependentUpon>VehicleDeclaration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hyyy\VehicleRegistration.aspx.cs">
+      <DependentUpon>VehicleRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hyyy\VehicleRegistration.aspx.designer.cs">
+      <DependentUpon>VehicleRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\AnchorShip.aspx.cs">
+      <DependentUpon>AnchorShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\AnchorShip.aspx.designer.cs">
+      <DependentUpon>AnchorShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\BerthShip.aspx.cs">
+      <DependentUpon>BerthShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\BerthShip.aspx.designer.cs">
+      <DependentUpon>BerthShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoBalance.aspx.cs">
+      <DependentUpon>CargoBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoBalance.aspx.designer.cs">
+      <DependentUpon>CargoBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoDui.aspx.cs">
+      <DependentUpon>CargoDui.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoDui.aspx.designer.cs">
+      <DependentUpon>CargoDui.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoIn.aspx.cs">
+      <DependentUpon>CargoIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoIn.aspx.designer.cs">
+      <DependentUpon>CargoIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoOut.aspx.cs">
+      <DependentUpon>CargoOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoOut.aspx.designer.cs">
+      <DependentUpon>CargoOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoSupply.aspx.cs">
+      <DependentUpon>CargoSupply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\CargoSupply.aspx.designer.cs">
+      <DependentUpon>CargoSupply.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\IndeedShip.aspx.cs">
+      <DependentUpon>IndeedShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\IndeedShip.aspx.designer.cs">
+      <DependentUpon>IndeedShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\MoveShip.aspx.cs">
+      <DependentUpon>MoveShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\MoveShip.aspx.designer.cs">
+      <DependentUpon>MoveShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hzyy\PlanedShip.aspx.cs">
+      <DependentUpon>PlanedShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hzyy\PlanedShip.aspx.designer.cs">
+      <DependentUpon>PlanedShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\hdyy\WeightNote.aspx.cs">
+      <DependentUpon>WeightNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\hdyy\WeightNote.aspx.designer.cs">
+      <DependentUpon>WeightNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C1_News.aspx.cs">
+      <DependentUpon>C1_News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C1_News.aspx.designer.cs">
+      <DependentUpon>C1_News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C2_Ship.aspx.cs">
+      <DependentUpon>C2_Ship.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C2_Ship.aspx.designer.cs">
+      <DependentUpon>C2_Ship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C2_Ship2.aspx.cs">
+      <DependentUpon>C2_Ship2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C2_Ship2.aspx.designer.cs">
+      <DependentUpon>C2_Ship2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C2_Ship3.aspx.cs">
+      <DependentUpon>C2_Ship3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C2_Ship3.aspx.designer.cs">
+      <DependentUpon>C2_Ship3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C3_Railway.aspx.cs">
+      <DependentUpon>C3_Railway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C3_Railway.aspx.designer.cs">
+      <DependentUpon>C3_Railway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C4_Highway.aspx.cs">
+      <DependentUpon>C4_Highway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C4_Highway.aspx.designer.cs">
+      <DependentUpon>C4_Highway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C5_River.aspx.cs">
+      <DependentUpon>C5_River.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C5_River.aspx.designer.cs">
+      <DependentUpon>C5_River.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C6_Trade.aspx.cs">
+      <DependentUpon>C6_Trade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C6_Trade.aspx.designer.cs">
+      <DependentUpon>C6_Trade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C6_Trade2.aspx.cs">
+      <DependentUpon>C6_Trade2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C6_Trade2.aspx.designer.cs">
+      <DependentUpon>C6_Trade2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C6_Trade3.aspx.cs">
+      <DependentUpon>C6_Trade3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C6_Trade3.aspx.designer.cs">
+      <DependentUpon>C6_Trade3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C6_Trade4.aspx.cs">
+      <DependentUpon>C6_Trade4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C6_Trade4.aspx.designer.cs">
+      <DependentUpon>C6_Trade4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\C7_Storage.aspx.cs">
+      <DependentUpon>C7_Storage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\C7_Storage.aspx.designer.cs">
+      <DependentUpon>C7_Storage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\News\locnews.aspx.cs">
+      <DependentUpon>locnews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\News\locnews.aspx.designer.cs">
+      <DependentUpon>locnews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\News\lygnews.aspx.cs">
+      <DependentUpon>lygnews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\News\lygnews.aspx.designer.cs">
+      <DependentUpon>lygnews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Channel\ships\ships.aspx.cs">
+      <DependentUpon>ships.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Channel\ships\ships.aspx.designer.cs">
+      <DependentUpon>ships.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Base64Tool.cs" />
+    <Compile Include="Common\DataTool\SQLTool_forBusiness.cs" />
+    <Compile Include="Common\DataTool\TableTool_forBusiness.cs" />
+    <Compile Include="Common\DeviceType.cs" />
+    <Compile Include="Common\FileTool.cs" />
+    <Compile Include="Common\LogTool.cs" />
+    <Compile Include="Common\RegistryKey1.cs" />
+    <Compile Include="Common\DataTool\SQL.cs" />
+    <Compile Include="Common\DataTool\TableItemTool.cs" />
+    <Compile Include="Common\TokenTool.cs" />
+    <Compile Include="Common\XmlTool.cs" />
+    <Compile Include="Detail\Detail_Message.aspx.cs">
+      <DependentUpon>Detail_Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\Detail_Message.aspx.designer.cs">
+      <DependentUpon>Detail_Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\Detail_News.aspx.cs">
+      <DependentUpon>Detail_News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\Detail_News.aspx.designer.cs">
+      <DependentUpon>Detail_News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\Detail_News2.aspx.cs">
+      <DependentUpon>Detail_News2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\Detail_News2.aspx.designer.cs">
+      <DependentUpon>Detail_News2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\Detail_Price.aspx.cs">
+      <DependentUpon>Detail_Price.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\Detail_Price.aspx.designer.cs">
+      <DependentUpon>Detail_Price.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\Detail_Table.aspx.cs">
+      <DependentUpon>Detail_Table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\Detail_Table.aspx.designer.cs">
+      <DependentUpon>Detail_Table.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\Detail_Table_forBusiness.aspx.cs">
+      <DependentUpon>Detail_Table_forBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\Detail_Table_forBusiness.aspx.designer.cs">
+      <DependentUpon>Detail_Table_forBusiness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News.aspx.cs">
+      <DependentUpon>More_News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News.aspx.designer.cs">
+      <DependentUpon>More_News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_cangcuzixun.aspx.cs">
+      <DependentUpon>More_News_cangcuzixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_cangcuzixun.aspx.designer.cs">
+      <DependentUpon>More_News_cangcuzixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_chuanbozixun.aspx.cs">
+      <DependentUpon>More_News_chuanbozixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_chuanbozixun.aspx.designer.cs">
+      <DependentUpon>More_News_chuanbozixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_gangkouyaowen.aspx.cs">
+      <DependentUpon>More_News_gangkouyaowen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_gangkouyaowen.aspx.designer.cs">
+      <DependentUpon>More_News_gangkouyaowen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_gongluzixun.aspx.cs">
+      <DependentUpon>More_News_gongluzixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_gongluzixun.aspx.designer.cs">
+      <DependentUpon>More_News_gongluzixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_hangyeguancha.aspx.cs">
+      <DependentUpon>More_News_hangyeguancha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_hangyeguancha.aspx.designer.cs">
+      <DependentUpon>More_News_hangyeguancha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_luqiaozixun.aspx.cs">
+      <DependentUpon>More_News_luqiaozixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_luqiaozixun.aspx.designer.cs">
+      <DependentUpon>More_News_luqiaozixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_neihezixun.aspx.cs">
+      <DependentUpon>More_News_neihezixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_neihezixun.aspx.designer.cs">
+      <DependentUpon>More_News_neihezixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_tiekuangshahangqing.aspx.cs">
+      <DependentUpon>More_News_tiekuangshahangqing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_tiekuangshahangqing.aspx.designer.cs">
+      <DependentUpon>More_News_tiekuangshahangqing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_tiekuangshazixun.aspx.cs">
+      <DependentUpon>More_News_tiekuangshazixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_tiekuangshazixun.aspx.designer.cs">
+      <DependentUpon>More_News_tiekuangshazixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_tieluzixun.aspx.cs">
+      <DependentUpon>More_News_tieluzixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_tieluzixun.aspx.designer.cs">
+      <DependentUpon>More_News_tieluzixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_yousekuanghangqing.aspx.cs">
+      <DependentUpon>More_News_yousekuanghangqing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_yousekuanghangqing.aspx.designer.cs">
+      <DependentUpon>More_News_yousekuanghangqing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_News_yousekuangzixun.aspx.cs">
+      <DependentUpon>More_News_yousekuangzixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_News_yousekuangzixun.aspx.designer.cs">
+      <DependentUpon>More_News_yousekuangzixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_boweichuanbo.aspx.cs">
+      <DependentUpon>More_Table_boweichuanbo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_boweichuanbo.aspx.designer.cs">
+      <DependentUpon>More_Table_boweichuanbo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_chuanbojihua.aspx.cs">
+      <DependentUpon>More_Table_chuanbojihua.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_chuanbojihua.aspx.designer.cs">
+      <DependentUpon>More_Table_chuanbojihua.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_daichuhuoyuan.aspx.cs">
+      <DependentUpon>More_Table_daichuhuoyuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_daichuhuoyuan.aspx.designer.cs">
+      <DependentUpon>More_Table_daichuhuoyuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_fangxingcheliang.aspx.cs">
+      <DependentUpon>More_Table_fangxingcheliang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_fangxingcheliang.aspx.designer.cs">
+      <DependentUpon>More_Table_fangxingcheliang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_feiyongjiesuan.aspx.cs">
+      <DependentUpon>More_Table_feiyongjiesuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_feiyongjiesuan.aspx.designer.cs">
+      <DependentUpon>More_Table_feiyongjiesuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_huowujiecun.aspx.cs">
+      <DependentUpon>More_Table_huowujiecun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_huowujiecun.aspx.designer.cs">
+      <DependentUpon>More_Table_huowujiecun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_laigangquebao.aspx.cs">
+      <DependentUpon>More_Table_laigangquebao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_laigangquebao.aspx.designer.cs">
+      <DependentUpon>More_Table_laigangquebao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_matouxieche.aspx.cs">
+      <DependentUpon>More_Table_matouxieche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_matouxieche.aspx.designer.cs">
+      <DependentUpon>More_Table_matouxieche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_matouzhuangche.aspx.cs">
+      <DependentUpon>More_Table_matouzhuangche.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_matouzhuangche.aspx.designer.cs">
+      <DependentUpon>More_Table_matouzhuangche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_meijiaogongying.aspx.cs">
+      <DependentUpon>More_Table_meijiaogongying.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_meijiaogongying.aspx.designer.cs">
+      <DependentUpon>More_Table_meijiaogongying.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_meijiaohangqing.aspx.cs">
+      <DependentUpon>More_Table_meijiaohangqing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_meijiaohangqing.aspx.designer.cs">
+      <DependentUpon>More_Table_meijiaohangqing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_meijiaoqiugou.aspx.cs">
+      <DependentUpon>More_Table_meijiaoqiugou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_meijiaoqiugou.aspx.designer.cs">
+      <DependentUpon>More_Table_meijiaoqiugou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_meijiaozixun.aspx.cs">
+      <DependentUpon>More_Table_meijiaozixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_meijiaozixun.aspx.designer.cs">
+      <DependentUpon>More_Table_meijiaozixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_neiheboweichuan.aspx.cs">
+      <DependentUpon>More_Table_neiheboweichuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_neiheboweichuan.aspx.designer.cs">
+      <DependentUpon>More_Table_neiheboweichuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_neihequebaochuan.aspx.cs">
+      <DependentUpon>More_Table_neihequebaochuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_neihequebaochuan.aspx.designer.cs">
+      <DependentUpon>More_Table_neihequebaochuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_neihequebaochuan2.aspx.cs">
+      <DependentUpon>More_Table_neihequebaochuan2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_neihequebaochuan2.aspx.designer.cs">
+      <DependentUpon>More_Table_neihequebaochuan2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_sijixinxi.aspx.cs">
+      <DependentUpon>More_Table_sijixinxi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_sijixinxi.aspx.designer.cs">
+      <DependentUpon>More_Table_sijixinxi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_tiekuangshagongqiu.aspx.cs">
+      <DependentUpon>More_Table_tiekuangshagongqiu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_tiekuangshagongqiu.aspx.designer.cs">
+      <DependentUpon>More_Table_tiekuangshagongqiu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_wangshangcheyuan.aspx.cs">
+      <DependentUpon>More_Table_wangshangcheyuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_wangshangcheyuan.aspx.designer.cs">
+      <DependentUpon>More_Table_wangshangcheyuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_yewushixiang.aspx.cs">
+      <DependentUpon>More_Table_yewushixiang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_yewushixiang.aspx.designer.cs">
+      <DependentUpon>More_Table_yewushixiang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_yifuzhuangdan.aspx.cs">
+      <DependentUpon>More_Table_yifuzhuangdan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_yifuzhuangdan.aspx.designer.cs">
+      <DependentUpon>More_Table_yifuzhuangdan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_yousekuanggongqiu.aspx.cs">
+      <DependentUpon>More_Table_yousekuanggongqiu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_yousekuanggongqiu.aspx.designer.cs">
+      <DependentUpon>More_Table_yousekuanggongqiu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\More_Table_yuanqucangchu.aspx.cs">
+      <DependentUpon>More_Table_yuanqucangchu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail\More_Table_yuanqucangchu.aspx.designer.cs">
+      <DependentUpon>More_Table_yuanqucangchu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\cygn.aspx.cs">
+      <DependentUpon>cygn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\cygn.aspx.designer.cs">
+      <DependentUpon>cygn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\cygnmanager.aspx.cs">
+      <DependentUpon>cygnmanager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\cygnmanager.aspx.designer.cs">
+      <DependentUpon>cygnmanager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\gkjg.aspx.cs">
+      <DependentUpon>gkjg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\gkjg.aspx.designer.cs">
+      <DependentUpon>gkjg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\jszx.aspx.cs">
+      <DependentUpon>jszx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\jszx.aspx.designer.cs">
+      <DependentUpon>jszx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\mychart.aspx.cs">
+      <DependentUpon>mychart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\mychart.aspx.designer.cs">
+      <DependentUpon>mychart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdcyw.aspx.cs">
+      <DependentUpon>wdcyw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdcyw.aspx.designer.cs">
+      <DependentUpon>wdcyw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdcyw1.aspx.cs">
+      <DependentUpon>wdcyw1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdcyw1.aspx.designer.cs">
+      <DependentUpon>wdcyw1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdcyw2.aspx.cs">
+      <DependentUpon>wdcyw2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdcyw2.aspx.designer.cs">
+      <DependentUpon>wdcyw2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdcyw3.aspx.cs">
+      <DependentUpon>wdcyw3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdcyw3.aspx.designer.cs">
+      <DependentUpon>wdcyw3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdcyw4.aspx.cs">
+      <DependentUpon>wdcyw4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdcyw4.aspx.designer.cs">
+      <DependentUpon>wdcyw4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdcyw5.aspx.cs">
+      <DependentUpon>wdcyw5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdcyw5.aspx.designer.cs">
+      <DependentUpon>wdcyw5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdhyw.aspx.cs">
+      <DependentUpon>wdhyw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdhyw.aspx.designer.cs">
+      <DependentUpon>wdhyw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdhyw1.aspx.cs">
+      <DependentUpon>wdhyw1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdhyw1.aspx.designer.cs">
+      <DependentUpon>wdhyw1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdhyw2.aspx.cs">
+      <DependentUpon>wdhyw2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdhyw2.aspx.designer.cs">
+      <DependentUpon>wdhyw2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdhyw3.aspx.cs">
+      <DependentUpon>wdhyw3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdhyw3.aspx.designer.cs">
+      <DependentUpon>wdhyw3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdhyw4.aspx.cs">
+      <DependentUpon>wdhyw4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdhyw4.aspx.designer.cs">
+      <DependentUpon>wdhyw4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wdhyw5.aspx.cs">
+      <DependentUpon>wdhyw5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\wdhyw5.aspx.designer.cs">
+      <DependentUpon>wdhyw5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wyts.aspx.cs">
+      <DependentUpon>wyts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\wyts.aspx.designer.cs">
+      <DependentUpon>wyts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function\ywsb.aspx.cs">
+      <DependentUpon>ywsb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Function\ywsb.aspx.designer.cs">
+      <DependentUpon>ywsb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\DeviceBinding.aspx.cs">
+      <DependentUpon>DeviceBinding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\DeviceBinding.aspx.designer.cs">
+      <DependentUpon>DeviceBinding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\DeviceResign.aspx.cs">
+      <DependentUpon>DeviceResign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\DeviceResign.aspx.designer.cs">
+      <DependentUpon>DeviceResign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\GetPersonDetailData.aspx.cs">
+      <DependentUpon>GetPersonDetailData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\GetPersonDetailData.aspx.designer.cs">
+      <DependentUpon>GetPersonDetailData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\HmwUpdate.aspx.cs">
+      <DependentUpon>HmwUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\HmwUpdate.aspx.designer.cs">
+      <DependentUpon>HmwUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\Scan\GetBasicInfo.aspx.cs">
+      <DependentUpon>GetBasicInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\Scan\GetBasicInfo.aspx.designer.cs">
+      <DependentUpon>GetBasicInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\Scan\GetHarbourPass.aspx.cs">
+      <DependentUpon>GetHarbourPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\Scan\GetHarbourPass.aspx.designer.cs">
+      <DependentUpon>GetHarbourPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\Scan\GetTransportDeclare.aspx.cs">
+      <DependentUpon>GetTransportDeclare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\Scan\GetTransportDeclare.aspx.designer.cs">
+      <DependentUpon>GetTransportDeclare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\Scan\GetWeighRecord.aspx.cs">
+      <DependentUpon>GetWeighRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\Scan\GetWeighRecord.aspx.designer.cs">
+      <DependentUpon>GetWeighRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetService\UpdatePersonDetailData.aspx.cs">
+      <DependentUpon>UpdatePersonDetailData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetService\UpdatePersonDetailData.aspx.designer.cs">
+      <DependentUpon>UpdatePersonDetailData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Detail\More_News_yaowenzixun.aspx.cs">
+      <DependentUpon>More_News_yaowenzixun.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Detail\More_News_yaowenzixun.aspx.designer.cs">
+      <DependentUpon>More_News_yaowenzixun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_kuangshizhuanqu.aspx.cs">
+      <DependentUpon>More_Table_kuangshizhuanqu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_kuangshizhuanqu.aspx.designer.cs">
+      <DependentUpon>More_Table_kuangshizhuanqu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_meitanzhuanqu.aspx.cs">
+      <DependentUpon>More_Table_meitanzhuanqu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_meitanzhuanqu.aspx.designer.cs">
+      <DependentUpon>More_Table_meitanzhuanqu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_zuixinchuanqi.aspx.cs">
+      <DependentUpon>More_Table_zuixinchuanqi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_zuixinchuanqi.aspx.designer.cs">
+      <DependentUpon>More_Table_zuixinchuanqi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_zuixinyunli.aspx.cs">
+      <DependentUpon>More_Table_zuixinyunli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_zuixinyunli.aspx.designer.cs">
+      <DependentUpon>More_Table_zuixinyunli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_zuixinhuopan.aspx.cs">
+      <DependentUpon>More_Table_zuixinhuopan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_zuixinhuopan.aspx.designer.cs">
+      <DependentUpon>More_Table_zuixinhuopan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_zuixinhuoyuan.aspx.cs">
+      <DependentUpon>More_Table_zuixinhuoyuan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Detail\More_Table_zuixinhuoyuan.aspx.designer.cs">
+      <DependentUpon>More_Table_zuixinhuoyuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index1.aspx.cs">
+      <DependentUpon>index1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index1.aspx.designer.cs">
+      <DependentUpon>index1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index2.aspx.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index2.aspx.designer.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index3.aspx.cs">
+      <DependentUpon>index3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index3.aspx.designer.cs">
+      <DependentUpon>index3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index4.aspx.cs">
+      <DependentUpon>index4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index4.aspx.designer.cs">
+      <DependentUpon>index4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index5.aspx.cs">
+      <DependentUpon>index5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index5.aspx.designer.cs">
+      <DependentUpon>index5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataList.cs" />
+    <Compile Include="Model\HmwCustomerService.cs" />
+    <Compile Include="Model\HmwCustomerServiceList.cs" />
+    <Compile Include="Model\HmwCustomerServiceType.cs" />
+    <Compile Include="Model\HmwCustomerServiceTypeList.cs" />
+    <Compile Include="Model\HmwHelpPicture.cs" />
+    <Compile Include="Model\HmwHelpPictureList.cs" />
+    <Compile Include="Model\HmwLoadingPicture.cs" />
+    <Compile Include="Model\HmwLoadingPictureList.cs" />
+    <Compile Include="Model\HmwMainPageAnchorShip.cs" />
+    <Compile Include="Model\HmwMainPageAnchorShipList.cs" />
+    <Compile Include="Model\HmwMainPageCoalZone.cs" />
+    <Compile Include="Model\HmwMainPageCoalZoneList.cs" />
+    <Compile Include="Model\HmwMainPageCommonFunc.cs" />
+    <Compile Include="Model\HmwMainPageCommonFuncList.cs" />
+    <Compile Include="Model\HmwMainPageImptNews.cs" />
+    <Compile Include="Model\HmwMainPageImptNewsList.cs" />
+    <Compile Include="Model\HmwMainPageInoutPortPlan.cs" />
+    <Compile Include="Model\HmwMainPageInoutPortPlanList.cs" />
+    <Compile Include="Model\HmwMainPageLatestGoodsSource.cs" />
+    <Compile Include="Model\HmwMainPageLatestGoodsSourceList.cs" />
+    <Compile Include="Model\HmwMainPageLatestPallet.cs" />
+    <Compile Include="Model\HmwMainPageLatestPalletList.cs" />
+    <Compile Include="Model\HmwMainPageLatestShipment.cs" />
+    <Compile Include="Model\HmwMainPageLatestShipmentList.cs" />
+    <Compile Include="Model\HmwMainPageLatestTransCap.cs" />
+    <Compile Include="Model\HmwMainPageLatestTransCapList.cs" />
+    <Compile Include="Model\HmwMainPageNavItem.cs" />
+    <Compile Include="Model\HmwMainPageNavItemList.cs" />
+    <Compile Include="Model\HmwMainPageOreZone.cs" />
+    <Compile Include="Model\HmwMainPageOreZoneList.cs" />
+    <Compile Include="Model\HmwMainPagePortShip.cs" />
+    <Compile Include="Model\HmwMainPagePortShipList.cs" />
+    <Compile Include="Model\HmwMainPageRollingPicture.cs" />
+    <Compile Include="Model\HmwMainPageRollingPictureList.cs" />
+    <Compile Include="Model\HmwMessage.cs" />
+    <Compile Include="Model\HmwMessageList.cs" />
+    <Compile Include="Model\HmwSysLogin.cs" />
+    <Compile Include="Model\HmwSysLoginList.cs" />
+    <Compile Include="Model\HmwSysPersonInfo.cs" />
+    <Compile Include="Model\HmwSysPersonInfoList.cs" />
+    <Compile Include="Model\signin.cs" />
+    <Compile Include="Model\signinList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CIService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ConsignVehicleReport\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HMWServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceHMW.asmx.cs">
+      <DependentUpon>ServiceHMW.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\BaseUtil\BaseService.cs" />
+    <Compile Include="Service\BaseUtil\BaseServiceMC.cs" />
+    <Compile Include="Service\BaseUtil\BaseServiceBS.cs" />
+    <Compile Include="Service\BaseUtil\BaseServiceH.cs" />
+    <Compile Include="Service\BaseUtil\BaseServiceJZ.cs" />
+    <Compile Include="Service\BaseUtil\BaseServiceLYG.cs" />
+    <Compile Include="Service\BaseUtil\BaseServiceT.cs" />
+    <Compile Include="Service\BaseUtil\BaseServiceWL.cs" />
+    <Compile Include="Service\BaseUtil\IBaseService.cs" />
+    <Compile Include="Service\CangChuService\CangChuZiXunService22.cs" />
+    <Compile Include="Service\CangChuService\DaiChuHuoYuanService24.cs" />
+    <Compile Include="Service\CangChuService\LaiGangQueBaoService25.cs" />
+    <Compile Include="Service\CangChuService\YuanQuCangChuService23.cs" />
+    <Compile Include="Service\ChuanBoService\ChuanBoZiXunService29.cs" />
+    <Compile Include="Service\ChuanBoService\JiZhuangXiangChuanQiService30.cs" />
+    <Compile Include="Service\ChuanBoService\MaoDiChuanService35.cs" />
+    <Compile Include="Service\ChuanBoService\YunJiaService31.cs" />
+    <Compile Include="Service\ChuanBoService\ZaiBoChuanService34.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanYunJia\ZaSanYunJiaDongNanYaService132.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanYunJia\ZaSanYunJiaFeiZhouService131.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanYunJia\ZaSanYunJiaHanGuoService125.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanYunJia\ZaSanYunJiaMeiZhouService128.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanYunJia\ZaSanYunJiaNeiZhiService127.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanYunJia\ZaSanYunJiaOuZhouService129.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanYunJia\ZaSanYunJiaRiBenService126.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanYunJia\ZaSanYunJiaZhongDongService130.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangYunJia\ZhengXiangYunJiaDongNanYaService124.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangYunJia\ZhengXiangYunJiaFeiZhouService123.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangYunJia\ZhengXiangYunJiaHanGuoService117.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangYunJia\ZhengXiangYunJiaMeiZhouService120.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangYunJia\ZhengXiangYunJiaNeiZhiService119.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangYunJia\ZhengXiangYunJiaOuZhouService121.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangYunJia\ZhengXiangYunJiaRiBenService118.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangYunJia\ZhengXiangYunJiaZhongDongService122.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanChuanQiService32.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanChuanQi\ZaSanChuanQiDongNanYaService116.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanChuanQi\ZaSanChuanQiFeiZhouService115.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanChuanQi\ZaSanChuanQiHanGuoService109.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanChuanQi\ZaSanChuanQiMeiZhouService112.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanChuanQi\ZaSanChuanQiNeiZhiService111.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanChuanQi\ZaSanChuanQiOuZhouService113.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanChuanQi\ZaSanChuanQiRiBenService110.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanChuanQi\ZaSanChuanQiZhongDongService114.cs" />
+    <Compile Include="Service\ChuanBoService\ZaSanYunJiaService33.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangChuanQi\ZhengXiangChuanQiRiBenService102.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangChuanQi\ZhengXiangChuanQiDongNanYaService108.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangChuanQi\ZhengXiangChuanQiFeiZhouService107.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangChuanQi\ZhengXiangChuanQiZhongDongService106.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangChuanQi\ZhengXiangChuanQiOuZhouService105.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangChuanQi\ZhengXiangChuanQiMeiZhouService104.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangChuanQi\ZhengXiangChuanQiNeiZhiService103.cs" />
+    <Compile Include="Service\ChuanBoService\ZhengXiangChuanQi\ZhengXiangChuanQiHanGuoService101.cs" />
+    <Compile Include="Service\DetailService\GetDaiChuHuoYuanDetailList180.cs" />
+    <Compile Include="Service\DetailService\GetFeiYongJieSuanDetailList193.cs" />
+    <Compile Include="Service\DetailService\GetGuanHeGuoJiBoWeiChuanDetailList173.cs" />
+    <Compile Include="Service\DetailService\GetGuanHeGuoJiQueBaoChuanDetailList171.cs" />
+    <Compile Include="Service\DetailService\GetHuoWuChuGangDetailList191.cs" />
+    <Compile Include="Service\DetailService\GetHuoWuJieCunDetailList192.cs" />
+    <Compile Include="Service\DetailService\GetHuoWuJingGangDetailList190.cs" />
+    <Compile Include="Service\DetailService\GetJiZhuangXiangChuanQiDetailList159.cs" />
+    <Compile Include="Service\DetailService\GetJiZhuangXiangYunJiaDetailList160.cs" />
+    <Compile Include="Service\DetailService\GetLaiGangQueBaoDetailList165.cs" />
+    <Compile Include="Service\DetailService\GetLaiGangQueBaoDetailList181.cs" />
+    <Compile Include="Service\DetailService\GetMainPageAnchorShipDetailList151.cs" />
+    <Compile Include="Service\DetailService\GetMainPageCoalZoneDetailList156.cs" />
+    <Compile Include="Service\DetailService\GetMainPageInoutPortPlanDetailList152.cs" />
+    <Compile Include="Service\DetailService\GetMainPageLatestGoodsSourceDetailList158.cs" />
+    <Compile Include="Service\DetailService\GetMainPageLatestPalletDetailList154.cs" />
+    <Compile Include="Service\DetailService\GetMainPageLatestShipmentDetailList153.cs" />
+    <Compile Include="Service\DetailService\GetMainPageLatestTransCapDetailList157.cs" />
+    <Compile Include="Service\DetailService\GetMainPageOreZoneDetailList155.cs" />
+    <Compile Include="Service\DetailService\GetMainPagePortShipDetailList150.cs" />
+    <Compile Include="Service\DetailService\GetMaoDiChuanDetailList164.cs" />
+    <Compile Include="Service\DetailService\GetMaTouXieCheJiHuaDetailList166.cs" />
+    <Compile Include="Service\DetailService\GetMaTouZhuangCheJiHuaDetailList167.cs" />
+    <Compile Include="Service\DetailService\GetMeiJiaoGongYingDetailList175.cs" />
+    <Compile Include="Service\DetailService\GetMeiJiaoQiuGouDetailList176.cs" />
+    <Compile Include="Service\DetailService\GetSanJiaChuanQiDetailList161.cs" />
+    <Compile Include="Service\DetailService\GetSanJiaChuanQiDetailList183.cs" />
+    <Compile Include="Service\DetailService\GetSanJiaYunJiaDetailList162.cs" />
+    <Compile Include="Service\DetailService\GetSanJiaYunJiaDetailList185.cs" />
+    <Compile Include="Service\DetailService\GetSiJiXinXiDetailList170.cs" />
+    <Compile Include="Service\DetailService\GetTieKuangShaGongQiuDetailList178.cs" />
+    <Compile Include="Service\DetailService\GetWangShangCheYuanDetailList169.cs" />
+    <Compile Include="Service\DetailService\GetWoBoWeiChuanBoDetailList200.cs" />
+    <Compile Include="Service\DetailService\GetWoDeChuanBoJiHuaDetailList201.cs" />
+    <Compile Include="Service\DetailService\GetWoDeGaoPinHuaFeiDetailList199.cs" />
+    <Compile Include="Service\DetailService\GetWoDePiaoHuoDetailList189.cs" />
+    <Compile Include="Service\DetailService\GetWoDeQueBaoChuanDetailList197.cs" />
+    <Compile Include="Service\DetailService\GetWoDeYinHangFeiYongDetailList198.cs" />
+    <Compile Include="Service\DetailService\GetWoDeYuBaoChuanDetailList196.cs" />
+    <Compile Include="Service\DetailService\GetWoDeYeWuShiXiangDetailList194.cs" />
+    <Compile Include="Service\DetailService\GetWoDeYiFuZhangDanDetailList195.cs" />
+    <Compile Include="Service\DetailService\GetWuChuanZuoYeDetailList187.cs" />
+    <Compile Include="Service\DetailService\GetXinYunTaiBoWeiChuanDetailList174.cs" />
+    <Compile Include="Service\DetailService\GetXinYunTaiQueBaoChuanDetailList172.cs" />
+    <Compile Include="Service\DetailService\GetYouChuanZuoYeDetailList186.cs" />
+    <Compile Include="Service\DetailService\GetYouSeKuangGongQiuDetailList177.cs" />
+    <Compile Include="Service\DetailService\GetYuanQuCangChuDetailList179.cs" />
+    <Compile Include="Service\DetailService\GetZaiChuanBoDetailList163.cs" />
+    <Compile Include="Service\DetailService\GetZhengXiangChuanQiDetailList182.cs" />
+    <Compile Include="Service\DetailService\GetZhengXiangYunJiaDetailList184.cs" />
+    <Compile Include="Service\DetailService\GetZuoYeWeiTuoDetailList188.cs" />
+    <Compile Include="Service\GongLuService\SiJiXinXiService3.cs" />
+    <Compile Include="Service\JieSuanZhongXinService\MyGeRenXinXiService55.cs" />
+    <Compile Include="Service\JieSuanZhongXinService\MyYeWuShiXiangService57.cs" />
+    <Compile Include="Service\JieSuanZhongXinService\MyYiFuZhangDanService56.cs" />
+    <Compile Include="Service\MainPageService\GetMainPageAnchorShipList142.cs" />
+    <Compile Include="Service\MainPageService\GetMainPageCoalZoneList147.cs" />
+    <Compile Include="Service\MainPageService\GetMainPageImptNewsList140.cs" />
+    <Compile Include="Service\MainPageService\GetMainPageInoutPortPlanList143.cs" />
+    <Compile Include="Service\MainPageService\GetMainPageLatestGoodsSourceList149.cs" />
+    <Compile Include="Service\MainPageService\GetMainPageLatestPalletList145.cs" />
+    <Compile Include="Service\MainPageService\GetMainPageLatestShipmentList144.cs" />
+    <Compile Include="Service\MainPageService\GetMainPageLatestTransCapList148.cs" />
+    <Compile Include="Service\MainPageService\GetMainPageOreZoneList146.cs" />
+    <Compile Include="Service\MainPageService\GetMainPagePortShipList141.cs" />
+    <Compile Include="Service\MaoYiService\GangKouMeiJiaoZiXunService11.cs" />
+    <Compile Include="Service\GongLuService\GongLuZiXunService0.cs" />
+    <Compile Include="Service\BaseUtil\ServiceFactory.cs" />
+    <Compile Include="Service\MaoYiService\JiaoTanHangQingService15.cs" />
+    <Compile Include="Service\MaoYiService\MeiJiaoGongYingService12.cs" />
+    <Compile Include="Service\MaoYiService\MeiJiaoHangQingService14.cs" />
+    <Compile Include="Service\MaoYiService\MeiJiaoQiuGouService13.cs" />
+    <Compile Include="Service\MaoYiService\TieKuangShaGongQiuService20.cs" />
+    <Compile Include="Service\MaoYiService\TieKuangShaHangQingService21.cs" />
+    <Compile Include="Service\MaoYiService\TieKuangShaZiXunService19.cs" />
+    <Compile Include="Service\MaoYiService\YouSeKuangGongQiuService17.cs" />
+    <Compile Include="Service\MaoYiService\YouSeKuangHangQingService18.cs" />
+    <Compile Include="Service\MaoYiService\YouSeKuangZiXunService16.cs" />
+    <Compile Include="Service\MyChuanService\MyBoWeiChuanBoService45.cs" />
+    <Compile Include="Service\MyChuanService\MyChuanBoJiHuaService46.cs" />
+    <Compile Include="Service\MyChuanService\MyGaoPingHuaFeiService44.cs" />
+    <Compile Include="Service\MyChuanService\MyQueBaoChuanService42.cs" />
+    <Compile Include="Service\MyChuanService\MyYinHangFeiService43.cs" />
+    <Compile Include="Service\MyChuanService\MyYuBaoChuanService41.cs" />
+    <Compile Include="Service\MyHuoService\MyFeiYongJieSuanService58.cs" />
+    <Compile Include="Service\MyHuoService\MyHuoWuChuGangService52.cs" />
+    <Compile Include="Service\MyHuoService\MyHuoWuJieCunService53.cs" />
+    <Compile Include="Service\MyHuoService\MyHuoWuJinGangService51.cs" />
+    <Compile Include="Service\MyHuoService\MyPiaoHuoService50.cs" />
+    <Compile Include="Service\MyHuoService\MyYeWuWeiTuoWuChuanService48.cs" />
+    <Compile Include="Service\MyHuoService\MyYeWuWeiTuoYouChuanService47.cs" />
+    <Compile Include="Service\MyHuoService\MyZuoYeWeiTuoService49.cs" />
+    <Compile Include="Service\MyInfoService\MyChuanDaiHuoDaiService54.cs" />
+    <Compile Include="Service\NeiHeService\GuanHeGuoJiBoWeiChuanService7.cs" />
+    <Compile Include="Service\NeiHeService\GuanHeGuoJiQueBaoChuanService5.cs" />
+    <Compile Include="Service\MaoYiService\GuoJiMeiJiaoZiXunService9.cs" />
+    <Compile Include="Service\MaoYiService\GuoNeiMeiJiaoZiXunService10.cs" />
+    <Compile Include="Service\NeiHeService\NeiHeZiXunService4.cs" />
+    <Compile Include="Service\GongLuService\WangShangCheYuanService2.cs" />
+    <Compile Include="Service\NeiHeService\XinYunTaiBoWeiChuanService8.cs" />
+    <Compile Include="Service\NeiHeService\XinYunTaiQueBaoChuaService6.cs" />
+    <Compile Include="Service\GongLuService\YiFangXingCheLiangService1.cs" />
+    <Compile Include="Service\TieLuService\LaiGangHuoCheQueBaoService37.cs" />
+    <Compile Include="Service\TieLuService\MaTouXieCheJiHuaService38.cs" />
+    <Compile Include="Service\TieLuService\MaTouZhuangCheJiHuaService39.cs" />
+    <Compile Include="Service\TieLuService\TieLuZiXunService36.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\BenDiXinWen\BenDiXinWenLanZhouService59.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\BenDiXinWen\BenDiXinWenSanXiService60.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\BenDiXinWen\BenDiXinWenXiAnService61.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\BenDiXinWen\BenDiXinWenXiNingService65.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\BenDiXinWen\BenDiXinWenXinJiangService62.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\BenDiXinWen\BenDiXinWenYinChuanService64.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\BenDiXinWen\BenDiXinWenZhengZhouService63.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\GangKouYaoWenService26.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\HangYeGuanChaService28.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\JinJiFaZhan\JinJiFaZhanLanZhouService66.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\JinJiFaZhan\JinJiFaZhanSanXiService67.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\JinJiFaZhan\JinJiFaZhanXiAnService68.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\JinJiFaZhan\JinJiFaZhanXiNingService72.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\JinJiFaZhan\JinJiFaZhanXinJiangService69.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\JinJiFaZhan\JinJiFaZhanYinChuanService71.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\JinJiFaZhan\JinJiFaZhanZhengZhouService70.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\JinRiTouTiaoService40.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\LianYunGang\BenDiXinWenLianYunGangService133.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\LianYunGang\HaiYunXinWenLianYunGangService138.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\LianYunGang\JingJiFaZhanLianYunGangService134.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\LianYunGang\LuQiaoJiShiLianYunGangService139.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\LianYunGang\WenHuaHuoDongLianYunGangService136.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\LianYunGang\WuLiuMaoYiLianYunGangService135.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\LianYunGang\ZhaoShangYinZiLianYunGangService137.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\LuQiaoZiXunService27.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WenHuaHuoDong\WenHuaHuoDongLanZhouService80.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WenHuaHuoDong\WenHuaHuoDongSanXiService81.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WenHuaHuoDong\WenHuaHuoDongXiAnService82.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WenHuaHuoDong\WenHuaHuoDongXinJiangService83.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WenHuaHuoDong\WenHuaHuoDongZhengZhouService84.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WenHuaHuoDong\WenHuaHuoDongYinChuanService85.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WenHuaHuoDong\WenHuaHuoDongXiNingService86.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\DiFangFengQing\DiFangFengQingLanZhouService94.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\DiFangFengQing\DiFangFengQingSanXiService95.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\DiFangFengQing\DiFangFengQingXiAnService96.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\DiFangFengQing\DiFangFengQingXiNingService100.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\DiFangFengQing\DiFangFengQingXinJiangService97.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\DiFangFengQing\DiFangFengQingYinChuanService99.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\DiFangFengQing\DiFangFengQingZhengZhouService98.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\ZhaoShangYinZi\ZhaoShangYinZiLanZhouService87.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\ZhaoShangYinZi\ZhaoShangYinZiSanXiService88.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\ZhaoShangYinZi\ZhaoShangYinZiXiAnService89.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\ZhaoShangYinZi\ZhaoShangYinZiXiNingService93.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\ZhaoShangYinZi\ZhaoShangYinZiXinJiangService90.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\ZhaoShangYinZi\ZhaoShangYinZiYinChuanService92.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\ZhaoShangYinZi\ZhaoShangYinZiZhengZhouService91.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WuLiuMaoYi\WuLiuMaoYiLanZhouService73.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WuLiuMaoYi\WuLiuMaoYiSanXiService74.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WuLiuMaoYi\WuLiuMaoYiXiAnService75.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WuLiuMaoYi\WuLiuMaoYiXiNingService79.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WuLiuMaoYi\WuLiuMaoYiXinJiangService76.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WuLiuMaoYi\WuLiuMaoYiYinChuanService78.cs" />
+    <Compile Include="Service\TieLuService\ZiXunService\WuLiuMaoYi\WuLiuMaoYiZhengZhouService77.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CIService\" />
+    <WCFMetadataStorage Include="Service References\ConsignVehicleReport\" />
+    <WCFMetadataStorage Include="Service References\HMWServiceReference\" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5140</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5140/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

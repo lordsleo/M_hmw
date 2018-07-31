@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=640" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="">
+<meta name="format-detection" content="telephone=no">
+<title>内河</title>
+
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script src="../Jquery/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../Jquery/jquery.Slide.2.1.1.js"></script>
+ <script>
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTab(name,cursel,n){
+for(i=1;i<=n;i++){
+var menu=document.getElementById(name+i);
+var con=document.getElementById("con_"+name+"_"+i);
+menu.className=i==cursel?"hover":"";
+con.style.display=i==cursel?"block":"none";
+}
+}
+//-->
+</script>
+
+    <script type="text/javascript">
+
+        function DetailNewsClick(info) {
+            //实现详细资讯页面的跳转
+            window.location.href = '../Detail/Detail_News.html?info=' + info;
+        }
+        function DetailTableClick(info) {
+            //实现详细表格页面的跳转
+            window.location.href = '../Detail/Detail_Table.html?info=' + info;
+        }
+
+        $(function () {
+            $.getJSON("http://218.92.115.55/M_Hmw/Channel/C5_River.aspx?callback=?", null, function (ret) {
+
+                $("#table1").empty();
+                $("#table2").empty();
+                //$("#table3").empty();
+                $("#table4").empty();
+                $("#table5").empty();
+
+                //内河资讯
+                for (i = 0; i < ret[0].length; ++i) {
+                    var title = ret[0][i][2].length > 18 ? ret[0][i][2].substr(0, 18) + '...' : ret[0][i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + ret[0][i][0] + '+' + ret[0][i][1] + "')\"><span>" + title + "</span></li>")
+                    //$('#table1').append("<li onclick=\"DetailNewsClick('" + ret[0][i][0] + '+' + ret[0][i][1] + "')\"><span>" + ret[0][i][2].substr(0, 12) + '...' + "</span><span class='addtime'>" + ret[0][i][3] + "</span></li>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table1').append("<tr><td colspan=\"1\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                /*内河确报船*/
+                //灌河国际
+                //for (i = 0; i < ret[1].length; ++i) {
+                //    ret[1][i][0] = (ret[1][i][0] == "DBNULL") ? "" : ret[1][i][0];
+                //    ret[1][i][1] = (ret[1][i][1] == "DBNULL") ? "" : ret[1][i][1];
+                //    $('#table2').append("<tr class='td4'><td>" + ret[1][i][0] + "</td><td>" + ret[1][i][1] + "</td></tr>")
+                //}
+                //新云台
+                $('#table2').append("<tr class='td3'><th>船名</th><th>公司</th><th>发布时间</th></tr>");
+                for (i = 0; i < ret[1].length; ++i) {
+                    $('#table2').append("<tr class='td4' onclick=\"DetailTableClick('" + 21 + '+' + ret[1][i][0] + "')\"><td>" + ret[1][i][1] + "</td><td>" + ret[1][i][2] + "</td><td>" + ret[1][i][3] + "</td></tr>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table2').append("<tr><td colspan=\"3\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                /*内河泊位船*/
+                //灌河国际
+                $('#table4').append("<tr class='td3'><th>船名</th><th>发布时间</th></tr>");
+                for (i = 0; i < ret[3].length; ++i) {
+                    ret[3][i][0] = (ret[3][i][0] == "DBNULL") ? "" : ret[3][i][0];
+                    ret[3][i][1] = (ret[3][i][1] == "DBNULL") ? "" : ret[3][i][1]
+                    $('#table4').append("<tr class='td4' class='td4' onclick=\"DetailTableClick('" + 23 + '+' + ret[3][i][0] + "')\"><td>" + ret[3][i][1] + "</td><td>" + ret[3][i][2] + "</td></tr>")
+                }
+                if (0 == ret[3].length) {
+                    $('#table4').append("<tr><td colspan=\"2\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //新云台
+                $('#table5').append("<tr class='td3'><th>船名</th><th>发布时间</th></tr>");
+                for (i = 0; i < ret[4].length; ++i) {
+                    $('#table5').append("<tr class='td4' class='td4' onclick=\"DetailTableClick('" + 24 + '+' + ret[4][i][0] + "')\"><td>" + ret[4][i][1] + "</td><td>" + ret[4][i][2] + "</td></tr>")
+                }
+                if (0 == ret[4].length) {
+                    $('#table5').append("<tr><td colspan=\"2\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table1").trigger("create");
+                $("#table2").trigger("create");
+                //$("#table3").trigger("create");
+                $("#table4").trigger("create");
+                $("#table5").trigger("create");
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="search_l">
+        <div class="back">
+            <a href="../index.html" class="disapper">返回</a>
+        </div>
+        <div class="title">内河</div>
+    </div>
+
+
+    <div class="focusOuter">
+      <div class="focusBox">
+        <ul class="pic">
+          <li><a href="#" target="_blank"><img src="../images/slide/01.jpg"/></a></li>
+          <li><a href="#" target="_blank"><img src="../images/slide/02.jpg"/></a></li>
+          <li><a href="#" target="_blank"><img src="../images/slide/03.jpg"/></a></li>
+		  <li><a href="#" target="_blank"><img src="../images/slide/04.jpg"/></a></li>
+        </ul>
+        <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+        <ul class="hd">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <script type="text/javascript">
+		/*鼠标移过，左右按钮显示*/
+		jQuery(".focusBox").hover(function(){ jQuery(this).find(".prev,.next").stop(true,true).fadeTo("show",0.2) },function(){ jQuery(this).find(".prev,.next").fadeOut() });
+		/*SuperSlide图片切换*/
+		jQuery(".focusBox").slide({ mainCell:".pic",effect:"fold", autoPlay:true, delayTime:600, trigger:"click"});
+	</script> 
+  </div>
+	
+	<div class="bk20"></div>
+	<div class="stylebox">
+		<div class="titlebox">内河资讯<a class="more" href="../Detail/More_News_neihezixun.html">更多</a></div>
+		<ul id="table1" class="styel1" style="margin:5px 10px">
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+		</ul>
+		
+       
+		<!--<div class="titlebox">内河确报船<a class="more" href="../Detail/More_Table_neihequebaochuan.html">更多</a></div>
+		<div id="Tab2">
+		<div class="Menubox2">
+			<ul>
+				<li id="one1" onMouseOver="setTab('one',1,2)"  class="hover">灌河国际</li>
+				<li id="one2" onMouseOver="setTab('one',2,2)" >新云台</li>
+			</ul>
+		</div>
+		<div class="Contentbox2a" style="background-color:#ffffff">
+					<div id="con_one_1" class="hover">
+                        <table id="table2" style="width:100%">
+
+                        </table>
+                    </div>
+					<div id="con_one_2" style="display:none">
+                        <table id="table3" style="width:100%">
+
+                        </table>
+					</div>
+		  </div>
+	</div>-->
+
+    <div class="bk20"></div>
+    <div class="stylebox">
+        <div class="titlebox">内河确报船<a class="more" href="../Detail/More_Table_neihequebaochuan2.html">更多</a></div>
+        <table id="table2" style="width:100%">
+            <tr class='td3'><th>车牌号</th><th>公司</th><th>地点</th></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        </table>
+    </div>
+	
+    <div class="bk20"></div>
+	<!--<div class="titlebox">内河泊位船<a class="more" href="../Detail/More_Table_neiheboweichuan.html">更多</a></div>-->
+	<div id="Tab2">
+		<div class="Menubox2">
+			<ul>
+				<li id="two1" onMouseOver="setTab('two',1,2)"  class="hover">灌河国际</li>
+				<li id="two2" onMouseOver="setTab('two',2,2)" >新云台</li>
+			</ul>
+		</div>
+		<div class="Contentbox2a" style="background-color:#ffffff">
+					<div id="con_two_1" class="hover">
+                        <table id="table4"  style="width:100%">
+                            <tr class='td3'><th>车牌号</th><th>公司</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+					</div>
+					<div id="con_two_2" style="display:none">
+                        <table id="table5"  style="width:100%">
+                            <tr class='td3'><th>船名</th><th>发布时间</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+					</div>
+					<div class="bk20"></div>
+		  </div>
+	</div>
+	
+	
+	</div>
+	<div class="pic"><img style="width:100%" src="../Images/ad/line.jpg" /></div>
+	
+	
+	<!--<div class="foot">连云港港口集团有限公司版权所有<br />连云港港口集团通信信息工程公司建设运营</div>-->
+</div>
+</body>
+</html>
+	

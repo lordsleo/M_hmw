@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=640" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="">
+<meta name="format-detection" content="telephone=no">
+
+<link href="../css/css.css" rel="stylesheet" type="text/css" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../Jquery/jquery.Slide.2.1.1.js"></script>
+ <script>
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTab(name,cursel,n){
+for(i=1;i<=n;i++){
+var menu=document.getElementById(name+i);
+var con=document.getElementById("con_"+name+"_"+i);
+menu.className=i==cursel?"hover":"";
+con.style.display=i==cursel?"block":"none";
+}
+}
+//-->
+</script>
+
+    <script type="text/javascript">
+
+        var str = document.location.search;
+        //var str = "info=1190";
+        //var str = "info=227"
+        var str1 = str.split("=", 2);
+        var userCode = str1[1];
+
+        function Click1(userCode) {
+            window.location.href = '../Detail/More_Table_yewushixiang.html?info=' + userCode;
+        }
+        function Click2(userCode) {
+            window.location.href = '../Detail/More_Table_yifuzhuangdan.html?info=' + userCode;
+        }
+        function DetailTableClick(info) {
+            //实现详细表格页面的跳转
+            window.location.href = '../Detail/Detail_Table.html?info=' + info;
+        }
+
+        $(function () {
+            $.getJSON("http://218.92.115.55/M_Hmw/Function/jszx.aspx?userCode=" + userCode + "&callback=?", null, function (ret) {
+
+                $("#table1").empty();
+                $("#table2").empty();
+
+                //户名
+                $('#Labname').text(ret[0][0][0]);
+                //手机号
+                $('#Labtel').text(ret[0][0][1]);
+                //公司
+                $('#Labcompany').text(ret[0][0][2]);
+                //港口结算余额
+                $('#Labzhye').text(ret[0][0][3]);
+                //本月支付
+                $('#Labbyzf').text(ret[0][0][4]);
+
+                //我的业务事项
+                $('#table1').append("<tr class='td3'><th>作业时间</th><th>类型</th><th>数量</th><th>作业公司</th></tr>");
+                for (i = 0; i < ret[1].length; ++i) {
+                    $('#table1').append("<tr  class='td4' onclick=\"DetailTableClick('" + 44 + '+' + ret[1][i][0] + "')\"><td>" + ret[1][i][1] + "</td><td>" + ret[1][i][2] + '-' + ret[1][i][3] + "</td><td>" + ret[1][i][4] + ':' + ret[1][i][5] + ret[1][i][6] + "</td><td>" + ret[1][i][7] + "</td></tr>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table1').append("<tr><td colspan=\"4\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //我的已付账单
+                $('#table2').append("<tr class='td3'><th>时间</th><th>费用类型</th><th>金额</th></tr>");
+                for (i = 0; i < ret[2].length; ++i) {
+                    $('#table2').append("<tr class='td4' onclick=\"DetailTableClick('" + 45 + '+' + ret[2][i][0] + "')\"><td>" + ret[2][i][1] + "</td><td>" + ret[2][i][2] + '---' + ret[2][i][3] + "</td><td>" + ret[2][i][4] + "元</td></tr>")
+                }
+                if (0 == ret[2].length) {
+                    $('#table2').append("<tr><td colspan=\"3\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table1").trigger("create");
+                $("#table2").trigger("create");
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>	</div>
+            <div class="title">结算中心</div>
+    </div>
+    <div class="bk10" style="background-color:#ffffff"></div>
+	<div class="jiesuan">
+		<table style="width:100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td width="21%" height="60" class="jiesuan_td1">户名</td>
+    <td width="33%" class="jiesuan_td2"><strong id="Labname"></strong></td>
+    <td width="17%" class="jiesuan_td1">手机号</td>
+    <td width="29%" class="jiesuan_td2"><strong id="Labtel"></strong></td>
+  </tr>
+  <tr>
+    <td height="60" class="jiesuan_td1">公司</td>
+    <td colspan="3" class="jiesuan_td2"><strong id="Labcompany"></strong></td>
+    </tr>
+  <tr>
+    <td height="60" class="jiesuan_td1">港口结算余额</td>
+    <td colspan="3" class="jiesuan_td2"><span id="Labzhye"></span></td>
+    </tr>
+  <tr>
+    <td height="60" class="jiesuan_td1">本月支付</td>
+    <td colspan="3" class="jiesuan_td2"><span id="Labbyzf"></span></td>
+    </tr>
+</table>
+
+	</div>
+    <div class="bk20"></div>
+    <div class="pic"><iframe src="mychart.html" frameborder="0" style="width: 100% ;height:210px" scrolling="no"></iframe></div>
+    <div class="bk20"></div>
+    <div class="stylebox">
+        <div class="titlebox">业务事项<a class="more" onclick="Click1(userCode)">更多</a></div>
+        <table class="styel1" style="width :100%" id="table1">
+            <tr class='td3'><th>作业时间</th><th>类型</th><th>数量</th><th>作业公司</th></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        </table>
+    </div>
+
+    <div class="bk20"></div>
+    <div class="stylebox">
+        <div class="titlebox">已付账单<a class="more" onclick="Click2(userCode)">更多</a></div>
+        <table class="styel1" style="width :100%" id="table2">
+            <tr class='td3'><th>时间</th><th>费用类型</th><th>金额</th></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        </table>
+    </div>
+
+    <div class="bk20"></div>
+</div>
+</body>
+</html>
+	

@@ -1,0 +1,162 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>费用结算</title>
+    <link href="../Css/css.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+
+    <script>
+
+        var str = document.location.search;
+        var str = "info=1190";
+        var str1 = str.split("=", 2);
+        var userCode = str1[1];
+
+        var headline = "费用结算";
+        var sqlId = 58;
+        var tableId = sqlId - 15;
+        var message = sqlId + " " +userCode;
+        var retarry;
+
+        function DetailTableClick(info) {
+            //实现详细表格页面的跳转
+            window.location.href = 'Detail_Table.html?info=' + info;
+        }
+
+        $(document).ready(function () {
+
+            var num = 1;
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Detail/More_Table_feiyongjiesuan.aspx?message=" + message + "&callback=?", null, function (ret) {
+
+                $("#table1").empty();
+                //标题
+                $('#headlines').text(headline);
+                //页码
+                if (0 == Math.floor(ret.length / 15)) {
+                    sumPage = 1;
+                }
+                else if ((Math.floor(ret.length / 15) >= 1) && ((ret.length % 15) > 0)) {
+                    sumPage = Math.floor(ret.length / 15) + 1;
+                }
+                else {
+                    sumPage = ret.length / 15;
+                }
+
+                var newsNum = (ret.length <= num * 15) ? ret.length : num * 15;
+                var page = num + "/" + sumPage;
+                $('#pagenum').text(page);
+                //我的费用结算
+                $('#table1').append("<tr><th>日期</th><th>航次</th><th>作业公司</th><th>金额(元)</th></tr>");
+                for (i = 15 * (num - 1) ; i < newsNum; ++i) {
+                    if (i % 2 == 0) {
+                        $('#table1').append("<tr class='tr1' onclick=\"DetailTableClick('" + tableId + '+' + ret[i][0] + "')\"><td>" + ret[i][1] + "</td><td>" + ret[i][2] + "</td><td>" + ret[i][3] + "</td><td>" + ret[i][4] + "</td></tr>")
+                        continue;
+                    }
+                    else {
+                        $('#table1').append("<tr class='tr2' onclick=\"DetailTableClick('" + tableId + '+' + ret[i][0] + "')\"><td>" + ret[i][1] + "</td><td>" + ret[i][2] + "</td><td>" + ret[i][3] + "</td><td>" + ret[i][4] + "</td></tr>")
+                    }
+                }
+                if (0 == newsNum) {
+                    $('#table1').append("<tr><td colspan=\"4\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+                $("#table1").trigger("create");
+                $(".turepage").css("display","block");
+
+                retarry = ret;
+            })
+
+
+            $("#prev").click(function () {
+
+                if (1 == num) {
+                    return;
+                }
+                else {
+                    num--;
+                }
+
+                var newsNum = (retarry.length <= num * 15) ? retarry.length : num * 15;
+                var page = num + "/" + sumPage;
+
+                $("#table1").empty();
+                $('#pagenum').text(page);
+                $('#table1').append("<tr><th>日期</th><th>航次</th><th>作业公司</th><th>金额(元)</th></tr>");
+                for (i = 15 * (num - 1) ; i < newsNum; ++i) {
+                    if (i % 2 == 0) {
+                        $('#table1').append("<tr class='tr1' onclick=\"DetailTableClick('" + tableId + '+' + retarry[i][0] + "')\"><td>" + retarry[i][1] + "</td><td>" + retarry[i][2] + "</td><td>" + retarry[i][3] + "</td><td>" + retarry[i][4] + "</td></tr>")
+                        continue;
+                    }
+                    else {
+                        $('#table1').append("<tr class='tr2' onclick=\"DetailTableClick('" + tableId + '+' + retarry[i][0] + "')\"><td>" + retarry[i][1] + "</td><td>" + retarry[i][2] + "</td><td>" + retarry[i][3] + "</td><td>" + retarry[i][4] + "</td></tr>")
+                    }
+                }
+                $("#table1").trigger("create");
+            });
+
+
+            $("#next").click(function () {
+
+                if (sumPage == num) {
+                    return;
+                }
+                else {
+                    num++;
+                }
+
+                var newsNum = (retarry.length <= num * 15) ? retarry.length : num * 15;
+                var page = num + "/" + sumPage;
+
+                $("#table1").empty();
+                $('#pagenum').text(page);
+                $('#table1').append("<tr><th>日期</th><th>航次</th><th>作业公司</th><th>金额(元)</th></tr>");
+                for (i = 15 * (num - 1) ; i < newsNum; ++i) {
+                    if (i % 2 == 0) {
+                        $('#table1').append("<tr class='tr1' onclick=\"DetailTableClick('" + tableId + '+' + retarry[i][0] + "')\"><td>" + retarry[i][1] + "</td><td>" + retarry[i][2] + "</td><td>" + retarry[i][3] + "</td><td>" + retarry[i][4] + "</td></tr>")
+                        continue;
+                    }
+                    else {
+                        $('#table1').append("<tr class='tr2' onclick=\"DetailTableClick('" + tableId + '+' + retarry[i][0] + "')\"><td>" + retarry[i][1] + "</td><td>" + retarry[i][2] + "</td><td>" + retarry[i][3] + "</td><td>" + retarry[i][4] + "</td></tr>")
+                    }
+                }
+                $("#table1").trigger("create");
+            });
+
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title" id="headlines"></div>
+        </div>
+
+        <div class="stylebox">
+            <table id="table1" class="tab" style="width:100%;background-color:#ffffff"></table>
+        </div>
+
+        <div class="turepage">
+            <button type="button" id="prev">上一页</button>
+            <p id="pagenum"></p>
+            <button type="button" id="next">下一页</button>
+        </div>
+
+        <!--页尾-->
+        <div class="bk20"></div>
+        <!--<div class="foot">连云港港口集团有限公司版权所有 <br />连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+
+</body>
+</html>

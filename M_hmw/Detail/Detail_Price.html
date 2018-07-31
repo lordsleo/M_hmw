@@ -1,0 +1,113 @@
+﻿<!--********************************************************************
+//	创建时间:	2014/12/2
+//	作者:		sh
+//********************************************************************
+//	文件: 	Detail_Price.html
+//	功能：  详细行情页面
+//  说明：
+*********************************************************************-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>详细内容</title>
+
+    <script src="../Jquery/jquery-2.1.0.js"></script>
+    <script src="../Jquery/jquery.mobile-1.4.2.min.js"></script>
+    <link href="../Css/footer.css" rel="stylesheet" />
+    <link href="../Css/css.css" rel="stylesheet" />
+
+    <script>
+
+        $(document).ready(function () {
+
+            var str = document.location.search;
+            var str1 = str.split("?", 2);
+            var message = str1[1];
+            var str2 = message.split("=", 2);
+            var str3 = str2[1].split("+", 2);
+            var classId = str3[0];
+
+            $.getJSON("Detail_Price.aspx?message=" + message, null, function (ret) {
+
+                //$.getJSON("Detail_Price.aspx?message=" + message + "&callback=?", null, function (ret) {
+
+                //标题
+                $('#headnews').text(ret[0][0]);
+                //来源
+                $('#source').text("来源：" + ret[0][1] + '   ' + ret[0][2]);
+                //内容
+                var decode = decodeURIComponent(ret[0][3]);
+                $('#table1').html(decode);
+
+                //if (classId == 99) {//煤炭行情
+                //    //标题
+                //    $('#headnews').text(ret[0][0]);
+                //    //来源
+                //    $('#source').text("来源：" + ret[0][1] + '   ' + ret[0][2]);
+                //    //内容
+                //    var decode = decodeURIComponent(ret[0][3]);
+
+                //    $('#table1').html(decode);
+                //}
+                //else if (classId = 100) {//焦炭行情
+                //    //标题
+                //    $('#headnews').text(ret[0][0]);
+                //    //来源
+                //    $('#source').text("来源：" + ret[0][1] + '   ' + ret[0][2]);
+                //    //内容
+                //    var decode = decodeURIComponent(ret[0][3]);
+
+                //    $('#table1').html(decode);
+                //}
+                //else if (classId = 101) {//有色矿行情
+                //    //标题
+                //    $('#headnews').text(ret[0][0]);
+                //    //来源
+                //    $('#source').text("来源：" + ret[0][1] + '   ' + ret[0][2]);
+                //    $('#table1').html(decode);
+                //}
+                //else if (classId = 102) {//铁矿砂行情
+                //    //标题
+                //    $('#headnews').text(ret[0][0]);
+                //    //来源
+                //    $('#source').text("来源：" + ret[0][1] + '   ' + ret[0][2]);
+                //    $('#table1').html(decode);
+                //}
+            })
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);">返回</a>
+            </div>
+            <div class="title">详细行情</div>
+        </div>
+
+        <div id="detailnews">
+            <h3 id="headnews" style="color: #000000; margin: 10px 10px 10px 10px; font-size:20px; "></h3>
+            <p id="source" style="margin: 0px 10px 10px 10px;"></p>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <table id="table1" class="styel1" style=" border: 1.5px solid #808080;">
+
+            </table>
+        </div>
+
+        <!--页尾-->
+        <!--<div class="footer">
+            连云港港口集团有限公司版权所有<br>连云港港口集团通信信息工程公司建设运营
+        </div>-->
+    </div>
+
+</body>
+</html>

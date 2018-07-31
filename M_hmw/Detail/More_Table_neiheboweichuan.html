@@ -1,0 +1,289 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>内河泊位船</title>
+    <link href="../Css/css.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+    <script>
+    <!--
+    /*第一种形式 第二种形式 更换显示样式*/
+    function setTab(name,cursel,n){
+    for(i=1;i<=n;i++){
+    var menu=document.getElementById(name+i);
+    var con=document.getElementById("con_"+name+"_"+i);
+    menu.className=i==cursel?"hover":"";
+    con.style.display=i==cursel?"block":"none";
+    }
+    }
+    //-->
+    </script>
+
+    <script>
+
+        //var str = document.location.search;
+        //var str1 = str.split("=", 2);
+        //var sqlId = str1[1];
+        var headline = "内河泊位船";
+        var sqlId = "";
+        var retarry;
+
+        function DetailTableClick(info) {
+            //实现详细表格页面的跳转
+            window.location.href = 'Detail_Table.html?info=' + info;
+        }
+        $(document).ready(function () {
+
+            var num1 = 1;
+            var num2 = 1;
+            //总页数
+            var sumPage1
+            var sumPage2;
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Detail/More_Table_neiheboweichuan.aspx?sqlId=" + sqlId + "&callback=?", null, function (ret) {
+
+                $("#table1").empty();
+                $("#table2").empty();
+                //标题
+                $('#headlines').text(headline);
+
+                /*灌河国际*/
+                //页码
+                if (0 == Math.floor(ret[0].length / 15)) {
+                    sumPage1 = 1;
+                }
+                else if ((Math.floor(ret[0].length / 15) >= 1) && ((ret[0].length % 15) > 0)) {
+                    sumPage1 = Math.floor(ret[1].length / 15) + 1;
+                }
+                else {
+                    sumPage1 = ret[0].length / 15;
+                }
+
+                var newsNum1 = (ret[0].length <= num1 * 15) ? ret[0].length : num1 * 15;
+                var page1 = num1 + "/" + sumPage1;
+                $('#pagenum1').text(page1);
+                $('#table1').append("<tr><th>船名</th><th>发布时间</th></tr>");
+                for (i = 15 * (num1 - 1) ; i < newsNum1; ++i) {   
+                    if (i % 2 == 0) {
+                        $('#table1').append("<tr class='tr1' onclick=\"DetailTableClick('" + 23 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td></tr>")
+                        continue;
+                    }
+                    else {
+                        $('#table1').append("<tr class='tr2' onclick=\"DetailTableClick('" + 23 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td></tr>")
+                    }
+                }
+                if (0 == newsNum1) {
+                    $('#table1').append("<tr><td colspan=\"2\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                /*新云台*/
+                //页码
+                if (0 == Math.floor(ret[1].length / 15)) {
+                    sumPage2 = 1;
+                }
+                else if ((Math.floor(ret[1].length / 15) >= 1) && ((ret[1].length % 15) > 0)) {
+                    sumPage2 = Math.floor(ret[0].length / 15) + 1;
+                }
+                else {
+                    sumPage2 = ret[1].length / 15;
+                }
+
+                var newsNum2 = (ret[1].length <= num2 * 15) ? ret[1].length : num2 * 15;
+                var page2 = num2 + "/" + sumPage2;
+                $('#pagenum2').text(page2);
+                $('#table2').append("<tr><th>船名</th><th>发布时间</th></tr>");
+                for (i = 15 * (num2 - 1) ; i < newsNum2; ++i) {
+                    ret[1][i][0] = (ret[1][i][0] == "DBNULL") ? "" : ret[1][i][0];
+                    ret[1][i][1] = (ret[1][i][1] == "DBNULL") ? "" : ret[1][i][1];
+                    if (i % 2 == 0) {
+                        $('#table2').append("<tr class='tr1' onclick=\"DetailTableClick('" + 24 + '+' + ret[1][i][0] + "')\"><td>" + ret[1][i][1] + "</td><td>" + ret[1][i][2] + "</td></tr>")
+                        continue;
+                    }
+                    else {
+                        $('#table2').append("<tr class='tr2' onclick=\"DetailTableClick('" + 24 + '+' + ret[1][i][0] + "')\"><td>" + ret[1][i][1] + "</td><td>" + ret[1][i][2] + "</td></tr>")
+                    }
+                }
+                if (0 == newsNum2) {
+                    $('#table2').append("<tr><td colspan=\"2\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table1").trigger("create");
+                $("#table2").trigger("create");
+                $(".turepage").css("display", "block");
+
+                retarry = ret;
+            })
+
+
+            $("#prev1").click(function () {
+
+                if (1 == num1) {
+                    return;
+                }
+                else {
+                    num1--;
+                }
+
+                var newsNum1 = (retarry[0].length <= num1 * 15) ? retarry[0].length : num1 * 15;
+                var page1 = num1 + "/" + sumPage1;
+
+                $("#table1").empty();
+                $('#pagenum1').text(page1);
+                $('#table1').append("<tr><th>船名</th><th>发布时间</th></tr>");
+                for (i = 15 * (num1 - 1) ; i < newsNum1; ++i) {
+                    if (i % 2 == 0) {
+                        $('#table1').append("<tr class='tr1' onclick=\"DetailTableClick('" + 23 + '+' + retarry[0][i][0] + "')\"><td>" + retarry[0][i][1] + "</td><td>" + retarry[0][i][2] + "</td></tr>")
+                        continue;
+                    }
+                    else {
+                        $('#table1').append("<tr class='tr2' onclick=\"DetailTableClick('" + 23 + '+' + retarry[0][i][0] + "')\"><td>" + retarry[0][i][1] + "</td><td>" + retarry[0][i][2] + "</td></tr>")
+                    }
+                }
+                $("#table1").trigger("create");
+            });
+
+
+            $("#next1").click(function () {
+
+                if (sumPage1 == num1) {
+                    return;
+                }
+                else {
+                    num1++;
+                }
+
+                var newsNum1 = (retarry[0].length <= num1 * 15) ? retarry[0].length : num1 * 15;
+                var page1 = num1 + "/" + sumPage1;
+
+                $("#table1").empty();
+                $('#pagenum1').text(page1);
+                $('#table1').append("<tr><th>船名</th><th>发布时间</th></tr>");
+                for (i = 15 * (num1 - 1) ; i < newsNum1; ++i) {
+                    if (i % 2 == 0) {
+                        $('#table1').append("<tr class='tr1' onclick=\"DetailTableClick('" + 23 + '+' + retarry[0][i][0] + "')\"><td>" + retarry[0][i][1] + "</td><td>" + retarry[0][i][2] + "</td></tr>")
+                        continue;
+                    }
+                    else {
+                        $('#table1').append("<tr class='tr2' onclick=\"DetailTableClick('" + 23 + '+' + retarry[0][i][0] + "')\"><td>" + retarry[0][i][1] + "</td><td>" + retarry[0][i][2] + "</td></tr>")
+                    }
+                }
+                $("#table1").trigger("create");
+            });
+
+            $("#prev2").click(function () {
+
+                if (1 == num2) {
+                    return;
+                }
+                else {
+                    num2--;
+                }
+
+                var newsNum2 = (retarry[1].length <= num2 * 15) ? retarry[1].length : num2 * 15;
+                var page2 = num2 + "/" + sumPage2;
+
+                $("#table2").empty();
+                $('#pagenum2').text(page2);
+                $('#table2').append("<tr><th>船名</th><th>发布时间</th></tr>");
+                for (i = 15 * (num2 - 1) ; i < newsNum2; ++i) {
+                    retarry[1][i][0] = (retarry[1][i][0] == "DBNULL") ? "" : retarry[1][i][0];
+                    retarry[1][i][1] = (retarry[1][i][1] == "DBNULL") ? "" : retarry[1][i][1];
+                    if (i % 2 == 0) {
+                        $('#table2').append("<tr class='tr1' onclick=\"DetailTableClick('" + 24 + '+' + retarry[0][i][0] + "')\"><td>" + retarry[1][i][1] + "</td><td>" + retarry[1][i][2] + "</td></tr>")
+                        continue;
+                    }
+                    else {
+                        $('#table2').append("<tr class='tr2' onclick=\"DetailTableClick('" + 24 + '+' + retarry[0][i][0] + "')\"><td>" + retarry[1][i][1] + "</td><td>" + retarry[1][i][2] + "</td></tr>")
+                    }
+                }
+
+                $("#table2").trigger("create");
+            });
+
+
+            $("#next2").click(function () {
+
+                if (sumPage2 == num2) {
+                    return;
+                }
+                else {
+                    num2++;
+                }
+
+                var newsNum2 = (retarry[0].length <= num2 * 15) ? retarry[0].length : num2 * 15;
+                var page2 = num2 + "/" + sumPage2;
+
+                $("#table2").empty();
+                $('#pagenum2').text(page2);
+                $('#table2').append("<tr><th>船名</th><th>发布时间</th></tr>");
+                for (i = 15 * (num2 - 1) ; i < newsNum2; ++i) {
+                    retarry[1][i][0] = (retarry[1][i][0] == "DBNULL") ? "" : retarry[1][i][0];
+                    retarry[1][i][1] = (retarry[1][i][1] == "DBNULL") ? "" : retarry[1][i][1];
+                    if (i % 2 == 0) {
+                        $('#table2').append("<tr class='tr1' onclick=\"DetailTableClick('" + 24 + '+' + retarry[0][i][0] + "')\"><td>" + retarry[1][i][1] + "</td><td>" + retarry[1][i][2] + "</td></tr>")
+                        continue;
+                    }
+                    else {
+                        $('#table2').append("<tr class='tr2' onclick=\"DetailTableClick('" + 24 + '+' + retarry[0][i][0] + "')\"><td>" + retarry[1][i][1] + "</td><td>" + retarry[1][i][2] + "</td></tr>")
+                    }
+                }
+
+                $("#table2").trigger("create");
+            });
+
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title" id="headlines"></div>
+        </div>
+
+        <div id="Tab2">
+            <div class="Menubox2">
+                <ul>
+                    <li id="one1" onmouseover="setTab('one',1,2)" class="hover">灌河国际</li>
+                    <li id="one2" onmouseover="setTab('one',2,2)">新云台</li>
+                </ul>
+            </div>
+            <div class="Contentbox2a" style="background-color:#ffffff">
+                <div id="con_one_1" class="hover">
+                    <table id="table1" class="tab" style="width:100%"></table>
+                    <div class="turepage">
+                        <button type="button" id="prev1">上一页</button>
+                        <p id="pagenum1"></p>
+                        <button type="button" id="next1">下一页</button>
+                    </div>
+                </div>
+                <div id="con_one_2" style="display:none">
+                    <table id="table2" class="tab" style="width:100%"></table>
+                    <div class="turepage">
+                        <button type="button" id="prev2">上一页</button>
+                        <p id="pagenum2"></p>
+                        <button type="button" id="next2">下一页</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--页尾-->
+        <div class="bk20"></div>
+        <!--<div class="foot">连云港港口集团有限公司版权所有 <br />连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+
+</body>
+</html>

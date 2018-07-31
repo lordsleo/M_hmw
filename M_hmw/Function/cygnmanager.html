@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>常用功能</title>
+    <link href="../Css/css.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+
+    <script type="text/javascript">
+
+        var str = document.location.search;
+        //var str = "info=11";
+        var str1 = str.split("=", 2);
+        var userCode = str1[1];
+
+
+
+        function save() {
+            var box = document.getElementsByName('cygn');
+            var cygnlist = "";
+            for (i = 0; i < box.length; i++) {
+                if (box[i].checked) {
+                    cygnlist = cygnlist + "1";
+                }
+                else {
+                    cygnlist = cygnlist + "0";
+                }
+            }
+            $.getJSON("cygnmanager.aspx?userCode=" + userCode + "&cygnlist=" + cygnlist + "&callback=?", null, function (ret) {
+                alert("保存成功，请返回！");
+            })
+
+        }
+        $(function () {
+            $.getJSON("cygn.aspx?userCode=" + userCode + "&callback=?", null, function (ret) {
+
+                var i = 0;
+                var a = ret[0].toString();
+                for (i = 0; i < a.length; i++) {
+                    if (a.charAt(i) == "1") {
+                        $('#f' + i).attr("checked", true);
+                    }
+                }
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+    <div class="wrapper" style="background-color:#f3f3f3;">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title">常用功能选择</div>
+            <div class="user" id="manager">保存</div>
+        </div>
+
+        <div class="icon2">
+            <ul>
+                <li><img src="../Images/menu/zx.png" style="padding-left:42px;" /><p >港口要闻，陆桥资讯，行业观察，地方资讯</p><input type="checkbox" name="cygn" id="f0"></li>
+                <li><img src="../Images/menu/cb.png" style="padding-left:42px;" /><p>船舶资讯，集装箱船期，集装箱运价，散杂船期，在泊船，锚地船</p><input type="checkbox" name="cygn" id="f1"></li>
+                <li><img src="../Images/menu/tl.png" style="padding-left:42px;" /><p>铁路资讯，来港确报，码头卸车计划，码头装车计划</p><input type="checkbox" name="cygn" id="f2"></li>
+                <li><img src="../Images/menu/gl.png" style="padding-left:42px;" /><p>公路资讯，已放行车辆，网上车源，司机信息</p><input type="checkbox" name="cygn" id="f3"></li>
+                <li><img src="../Images/menu/nh.png" style="padding-left:42px;" /><p>内河资讯，内河确报船，内河泊位船</p><input type="checkbox" name="cygn" id="f4"></li>
+                <li><img src="../Images/menu/my.png" style="padding-left:42px;" /><p>煤焦资讯，煤焦供应，煤焦求购，煤焦行情，有色矿资讯，有色矿供求，有色矿行情</p><input type="checkbox" name="cygn" id="f5"></li>
+                <li><img src="../Images/menu/cc.png" style="padding-left:42px;" /><p>仓储资讯，园区仓储，待储货源</p><input type="checkbox" name="cygn" id="f6"></li>
+                <li><img src="../Images/menu/bs.png" style="padding-left:42px;" /><p>暂无</p><input type="checkbox" name="cygn" id="f7"></li>
+                <li><img src="../Images/function/wdcyw.png" /><p style="padding-left:14px;">我的预报船，我的确报船，我的引航费用，我的高频话费，泊位船舶，船舶计划</p><input type="checkbox" name="cygn" id="f8"></li>
+                <li><img src="../Images/function/wdhyw.png" style="padding-left:22px;" /><p style="padding-left:14px;">我的业务委托，我的票货，货物进出港，货物港存，费用结算</p><input type="checkbox" name="cygn" id="f9"></li>
+                <li><img src="../Images/function/jszx.png" style="padding-left:34px;" /><p style="padding-left:24px;">客户在港事前、事中、事后的作业及账务信息</p><input type="checkbox" name="cygn" id="f10"></li>
+                <li><img src="../Images/function/gkjg.png" style="padding-left:32px;" /><p style="padding-left:28px;">港口办事机构列表</p><input type="checkbox" name="cygn" id="f11"></li>
+                <li><img src="../Images/function/wyts.png" style="padding-left:24px;" /><p style="padding-left:16px;">投诉客服</p><input type="checkbox" name="cygn" id="f12"></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="manage">
+            <button type="button" , onclick="save()" id="manage" style="margin:0px auto;">保存</button>
+        </div>
+        <div class="bk20"></div>
+
+        <!--<div class="foot">连云港港口集团有限公司版权所有<br>连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+</body>
+</html>
+

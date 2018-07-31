@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的货业务</title>
+    <link href="../css/css.css" rel="stylesheet" type="text/css" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../Jquery/jquery.Slide.2.1.1.js"></script>
+    <script>
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTab(name,cursel,n){
+for(i=1;i<=n;i++){
+var menu=document.getElementById(name+i);
+var con=document.getElementById("con_"+name+"_"+i);
+menu.className=i==cursel?"hover":"";
+con.style.display=i==cursel?"block":"none";
+}
+}
+//-->
+    </script>
+
+    <script type="text/javascript">
+
+        var str = document.location.search;
+        //var str = "info=227";
+        var str1 = str.split("=", 2);
+        var userCode = str1[1];
+
+        function Click1(userCode) {
+            window.location.href = '../Detail/More_Table_huowujiecun.html?info=' + userCode;
+        }
+        function Click2(userCode) {
+            window.location.href = '../Detail/More_Table_feiyongjiesuan.html?info=' + userCode;
+        }
+        function DetailTableClick(info) {
+            //实现详细表格页面的跳转
+            window.location.href = '../Detail/Detail_Table.html?info=' + info;
+        }
+
+        $(function () {
+            $.getJSON("http://218.92.115.55/M_Hmw/Function/wdhyw.aspx?userCode=" + userCode + "&callback=?", null, function (ret) {
+
+                $("#table1").empty();
+                /*我的业务委托、作业委托、票货*/
+                //有船作业
+                $('#table1').append("<tr class='td3'><th>船名</th><th>船次</th><th>作业项目</th><th>起运港</th><th>到达港</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table1').append("<tr class='td4' onclick=\"DetailTableClick('" + 36 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td><td>" + ret[0][i][3] + "</td><td>" + ret[0][i][4] + "</td><td>" + ret[0][i][5] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table1').append("<tr><td colspan=\"5\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table1").trigger("create");
+            })
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Function/wdhyw1.aspx?userCode=" + userCode + "&callback=?", null, function (ret) {
+                ;
+                $("#table5").empty();
+
+                /*我的货物进出港*/
+                //进港
+                $('#table5').append("<tr class='td3'><th>日期</th><th>作业公司</th><th>货种</th><th>数量(吨)</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table5').append("<tr class='td4' onclick=\"DetailTableClick('" + 40 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td><td>" + ret[0][i][3] + "</td><td>" + ret[0][i][4] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table5').append("<tr><td colspan=\"4\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table5").trigger("create");
+            })
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Function/wdhyw2.aspx?userCode=" + userCode + "&callback=?", null, function (ret) {
+
+                $("#table7").empty();
+
+                //我的货物结存
+                $('#table7').append("<tr class='td3'><th>货种</th><th>数量(吨)</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table7').append("<tr class='td4' onclick=\"DetailTableClick('" + 42 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table7').append("<tr><td colspan=\"2\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table7").trigger("create");
+            })
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Function/wdhyw3.aspx?userCode=" + userCode + "&callback=?", null, function (ret) {
+
+                $("#table8").empty();
+
+                //我的费用结算
+                $('#table8').append("<tr class='td3'><th>日期</th><th>航次</th><th>作业公司</th><th>金额(元)</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table8').append("<tr class='td4' onclick=\"DetailTableClick('" + 43 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td><td>" + ret[0][i][3] + "</td><td>" + ret[0][i][4] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table8').append("<tr><td colspan=\"4\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table8").trigger("create");
+            })
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Function/wdhyw4.aspx?userCode=" + userCode + "&callback=?", null, function (ret) {
+
+                $("#table2").empty();
+                $("#table3").empty();
+                $("#table4").empty();
+
+                /*我的业务委托、作业委托、票货*/
+                //无船作业
+                $('#table2').append("<tr class='td3'><th>作业项目</th><th>起运港</th><th>到达港</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table2').append("<tr  class='td4' onclick=\"DetailTableClick('" + 37 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td><td>" + ret[0][i][3] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table2').append("<tr><td colspan=\"3\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //我的作业委托
+                $('#table3').append("<tr class='td3'><th>名称</th><th>委托人</th><th>公司</th><th>计划体积</th><th>委托号</th></tr>");
+                for (i = 0; i < ret[1].length; ++i) {
+                    $('#table3').append("<tr  class='td4' onclick=\"DetailTableClick('" + 38 + '+' + ret[1][i][0] + "')\"><td>" + ret[1][i][1] + "</td><td>" + ret[1][i][2] + "</td><td>" + ret[1][i][3] + "</td><td>" + ret[1][i][4] + "</td><td>" + ret[1][i][5] + "</td></tr>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table3').append("<tr><td colspan=\"5\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //我的票货
+                $('#table4').append("<tr class='td3'><th>货名</th><th>进出口</th><th>内外贸</th><th>件重</th><th>唛头</th></tr>");
+                for (i = 0; i < ret[2].length; ++i) {
+                    $('#table4').append("<tr  class='td4' onclick=\"DetailTableClick('" + 39 + '+' + ret[2][i][0] + "')\"><td>" + ret[2][i][1] + "</td><td>" + ret[2][i][2] + "</td><td>" + ret[2][i][3] + "</td><td>" + ret[2][i][4] + "</td><td>" + ret[2][i][5] + "</td></tr>")
+                }
+                if (0 == ret[2].length) {
+                    $('#table4').append("<tr><td colspan=\"5\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table2").trigger("create");
+                $("#table3").trigger("create");
+                $("#table4").trigger("create");
+            })
+
+            $.getJSON("http://218.92.115.55/M_Hmw/Function/wdhyw5.aspx?userCode=" + userCode + "&callback=?", null, function (ret) {
+
+                $("#table6").empty();
+
+                //出港
+                $('#table6').append("<tr class='td3'><th>日期</th><th>作业公司</th><th>货种</th><th>数量(吨)</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table6').append("<tr class='td4' onclick=\"DetailTableClick('" + 41 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td><td>" + ret[0][i][3] + "</td><td>" + ret[0][i][4] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table6').append("<tr><td colspan=\"4\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table6").trigger("create");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title">我的货业务</div>
+        </div>
+        <div class="focusOuter">
+            <div class="focusBox">
+                <ul class="pic">
+                    <li><a href="#" target="_blank"><img src="../images/slide/01.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../images/slide/02.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../images/slide/03.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../images/slide/04.jpg" /></a></li>
+                </ul>
+                <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+                <ul class="hd">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                /*鼠标移过，左右按钮显示*/
+                jQuery(".focusBox").hover(function () { jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.2) }, function () { jQuery(this).find(".prev,.next").fadeOut() });
+                /*SuperSlide图片切换*/
+                jQuery(".focusBox").slide({ mainCell: ".pic", effect: "fold", autoPlay: true, delayTime: 600, trigger: "click" });
+            </script>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div id="Tab3">
+                <div class="Menubox4">
+                    <ul>
+                        <li id="one1" onmouseover="setTab('one',1,4)" class="hover">有船作业</li>
+                        <li id="one2" onmouseover="setTab('one',2,4)">无船作业</li>
+                        <li id="one3" onmouseover="setTab('one',3,4)">作业委托</li>
+                        <li id="one4" onmouseover="setTab('one',4,4)">我的票货</li>
+                    </ul>
+                </div>
+                <div class="Contentbox4">
+                    <div id="con_one_1" class="hover">
+                        <table class="styel1" style="width:100%" id="table1">
+                            <tr class='td3'><th>船名</th><th>船次</th><th>作业项目</th><th>起运港</th><th>到达港</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                    <div id="con_one_2" style="display:none">
+                        <table class="styel1" style="width:100%" id="table2">
+                            <tr class='td3'><th>作业项目</th><th>起运港</th><th>到达港</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                    <div id="con_one_3" style="display:none">
+                        <table class="styel1" style="width:100%" id="table3">
+                            <tr class='td3'><th>名称</th><th>委托人</th><th>公司</th><th>计划体积</th><th>委托号</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                    <div id="con_one_4" style="display:none">
+                        <table class="styel1" id="table4" style="width:100%">
+                            <tr class='td3'><th>货名</th><th>进出口</th><th>内外贸</th><th>件重</th><th>唛头</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                    <div class="bk30"></div>
+                </div>
+            </div>
+
+            <div id="Tab2">
+                <div class="Menubox2">
+                    <ul>
+                        <li id="two1" onmouseover="setTab('two',1,2)" class="hover">货物进港</li>
+                        <li id="two2" onmouseover="setTab('two',2,2)">货物出港</li>
+                    </ul>
+                </div>
+                <div class="Contentbox2a">
+                    <div id="con_two_1" class="hover">
+                        <table class="styel1" id="table5" style="width:100%">
+                            <tr class='td3'><th>货名</th><th>进出口</th><th>内外贸</th><th>件重</th></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                    </div>
+                    <div id="con_two_2" style="display:none">
+                        <table class="styel1" id="table6" style="width:100%"></table>
+                    </div>
+                    <div class="bk20"></div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="pic"><img style="width:100%" src="../Images/ad/line.jpg" /></div>
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div class="titlebox">货物港存<a class="more" onclick="Click1(userCode)">更多</a></div>
+            <table id="table7" style="width:100%"></table>
+        </div>
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div class="titlebox">费用结算<a class="more" onclick="Click2(userCode)">更多</a></div>
+            <table class="styel1" style="width:100%" id="table8"></table>
+        </div>
+        <div class="bk20"></div>
+        <!--<div class="foot">连云港港口集团有限公司版权所有<br />连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+</body>
+</html>

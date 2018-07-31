@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="Jquery/jquery-2.1.0.min.js"></script>
+    <title></title>
+    <script>
+        var str = document.location.search;
+        if (str == "")
+        {
+            str = "?info=1111";
+        }
+        var str1 = str.split("=", 2);
+        var content1 = str1[1];
+        $(function () {
+            $('#content').text(content1);
+        })
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <h1 id="content"></h1>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,611 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CWK.WebService.Util</name>
+    </assembly>
+    <members>
+        <member name="M:CWK.WebService.Util.Common.LogTool.WriteLog(System.Type,System.Exception)">
+            <summary>
+            输出日志到Log4Net
+            </summary>
+            <param name="t"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:CWK.WebService.Util.Common.LogTool.WriteLog(System.Type,System.String)">
+            <summary>
+            输出日志到Log4Net
+            </summary>
+            <param name="t"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.BaseConfig.Config">
+            <summary>
+            全局配置项
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.BaseConfig.Config.config">
+            <summary>
+            全局配置对象
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.Config.getConfig">
+            <summary>
+            获取全局配置对象
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.Config.dataBaseConfig">
+            <summary>
+            数据库配置项
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.Config.WebService">
+            <summary>
+            WebService配置项
+            </summary>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.BaseConfig.DataBaseConfig">
+            <summary>
+            数据库配置参数
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.DataBaseConfig.Name">
+            <summary>
+            数据库配置的标识名称
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.DataBaseConfig.DataBaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.DataBaseConfig.Source">
+            <summary>
+            数据库名
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.DataBaseConfig.Port">
+            <summary>
+            数据库端口
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.DataBaseConfig.SourceString">
+            <summary>
+            完整的数据库连接字符串，用于特殊数据库连接
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.DataBaseConfig.Item(System.String)">
+            <summary>
+            获取Identity配置节
+            </summary>
+            <param name="name">元素name</param>
+            <returns>Identity对象</returns>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.BaseConfig.DataBaseUnit">
+            <summary>
+            数据库配置的集合
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.DataBaseUnit.Item(System.String)">
+            <summary>
+            获取DataBaseConfig配置节
+            </summary>
+            <param name="name">元素name</param>
+            <returns>DataBaseConfig对象</returns>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.BaseConfig.Identity">
+            <summary>
+            数据库身份配置
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.Identity.Name">
+            <summary>
+            身份别名
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.Identity.UserID">
+            <summary>
+            数据库用户名
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.Identity.Source">
+            <summary>
+            当前账户的数据库连接源
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.Identity.SourceType">
+            <summary>
+            当前账户的数据库类型
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.Identity.SourcePort">
+            <summary>
+            当前账户的数据库端口
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.Identity.Password">
+            <summary>
+            数据库密码
+            </summary>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.BaseConfig.WebServiceConfig">
+            <summary>
+            WebService的配置参数
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.BaseConfig.WebServiceConfig.WebServiceNamespace">
+            <summary>
+            WebService命名空间
+            </summary>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient">
+            <summary>
+            数据库控制器，用于执行数据库操作
+            </summary>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForString(System.String)">
+            <summary>
+            查询并得到一个字符串结果
+            </summary>
+            <param name="sql">要执行的查询语句，需包含唯一返回列</param>
+            <returns>查询到的字符串，如果有多条记录只返回第一条，如果查询失败、值为空则返回空字符串</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForString(System.String,System.String)">
+            <summary>
+            查询并得到一个字符串结果
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <param name="column">要返回的列</param>
+            <returns>查询到的字符串，如果有多条记录只返回第一条，如果查询失败、值为空则返回空字符串</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForInt(System.String)">
+            <summary>
+            查询并得到一个整型结果
+            </summary>
+            <param name="sql">要执行的查询语句，需包含唯一返回列</param>
+            <returns>查询到的整数，如果有多条记录只返回第一条，如果查询失败、值为空则抛出异常</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForInt(System.String,System.String)">
+            <summary>
+            查询并得到一个整型结果
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <param name="column">要返回的列</param>
+            <returns>查询到的整数，如果有多条记录只返回第一条，如果查询失败、值为空则抛出异常</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForFloat(System.String)">
+            <summary>
+            查询并得到一个浮点型结果
+            </summary>
+            <param name="sql">要执行的查询语句，需包含唯一返回列</param>
+            <returns>查询到的浮点数，如果有多条记录只返回第一条，如果查询失败、值为空则抛出异常</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForFloat(System.String,System.String)">
+            <summary>
+            查询并得到一个浮点型结果
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <param name="column">要返回的列</param>
+            <returns>查询到的浮点数，如果有多条记录只返回第一条，如果查询失败、值为空则抛出异常</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForDouble(System.String)">
+            <summary>
+            查询并得到一个双精度浮点型结果
+            </summary>
+            <param name="sql">要执行的查询语句，需包含唯一返回列</param>
+            <returns>查询到的双精度浮点数，如果有多条记录只返回第一条，如果查询失败、值为空则抛出异常</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForDouble(System.String,System.String)">
+            <summary>
+            查询并得到一个双精度浮点型结果
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <param name="column">要返回的列</param>
+            <returns>查询到的双精度浮点数，如果有多条记录只返回第一条，如果查询失败、值为空则抛出异常</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForBoolean(System.String)">
+            <summary>
+            查询并得到一个布尔型结果
+            </summary>
+            <param name="sql">要执行的查询语句，需包含唯一返回列</param>
+            <returns>查询到的布尔值，如果有多条记录只返回第一条，如果查询失败、值为空则抛出异常</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForBoolean(System.String,System.String)">
+            <summary>
+            查询并得到一个布尔型结果
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <param name="column">要返回的列</param>
+            <returns>查询到的布尔值，如果有多条记录只返回第一条，如果查询失败、值为空则抛出异常</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForRow(System.String)">
+            <summary>
+            查询并得到一行记录
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <returns>返回第一条记录，如果查询失败或结果为空都会返回null</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForRow(System.String,System.Int32)">
+            <summary>
+            查询并得到一行记录
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <param name="position">要返回的记录索引，从0编号</param>
+            <returns>返回指定索引处的记录，如果查询失败或索引越界都会返回null</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForTable(System.String)">
+            <summary>
+            查询并得到结果表
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <returns>返回结果集，如果查询失败或结果为空则返回内容为空的DataTable</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForTable(System.String,System.Int32,System.Int32)">
+            <summary>
+            查询并得到结果表
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <param name="startIndex">要获取的记录开始索引，从0编号</param>
+            <param name="count">要查询的记录数</param>
+            <returns>返回从索引位置开始的指定条数的结果集，如果查询失败、索引越界或结果为空则返回内容为空的DataTable</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.QueryForSet(System.String)">
+            <summary>
+            查询并得到结果集
+            </summary>
+            <param name="sql">要执行的查询语句</param>
+            <returns>返回结果集，如果查询失败则返内容为空的DataSet</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseClient.ExecuteQuery(System.String)">
+            <summary>
+            执行 SQL 语句并返回受影响的行数，
+            主要用于执行UPDATE、INSERT 和 DELETE 语句
+            </summary>
+            <param name="sql">要执行的SQL语句</param>
+            <returns>
+            对于 UPDATE、INSERT 和 DELETE 语句，
+            返回值为该命令所影响的行数。
+            对于 CREATE TABLE 和 DROP TABLE 语句，返回值为 0。
+            对于所有其他类型的语句，返回值为 -1。
+            </returns>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataBase.DataBaseManger">
+            <summary>
+            数据库管理工具
+            </summary>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseManger.getDataClient(CWK.WebService.Util.UtilCollection.BaseConfig.Identity)">
+            <summary>
+            获取一个数据库控制器
+            </summary>
+            <param name="identity">数据库身份配置</param>
+            <returns>DataBaseClient对象</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseManger.getDataClient(CWK.WebService.Util.UtilCollection.DataBase.DataBaseType,System.String)">
+            <summary>
+            获取一个数据库控制器
+            </summary>
+            <param name="type">数据库类型</param>
+            <param name="dataBaseSource">完整的数据库链接字符串</param>
+            <returns>DataBaseClient对象</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseManger.Oracle(CWK.WebService.Util.UtilCollection.BaseConfig.Identity)">
+            <summary>
+            得到oracle数据库控制器
+            </summary>
+            <param name="identity">数据库身份配置</param>
+            <returns>对应的oracle链接的DataBaseClient</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.DataBaseManger.Oracle(System.String)">
+            <summary>
+            得到oracle数据库控制器
+            </summary>
+            <param name="dataBaseSource">完整的数据库链接字符串</param>
+            <returns>DataBaseClient对象</returns>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataBase.DataBaseType">
+            <summary>
+            数据库类型枚举
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataBase.DataBaseType.Oracle">
+            <summary>
+            Oracle数据库
+            </summary>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataBase.OracleDatabaseClient">
+            <summary>
+            Oracle数据库类型的控制器
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataBase.OracleDatabaseClient.connection">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataBase.OracleDatabaseClient.command">
+            <summary>
+            数据库命令对象
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataBase.OracleDatabaseClient.dataReader">
+            <summary>
+            数据库读取对象
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataBase.OracleDatabaseClient.dataAdapter">
+            <summary>
+            数据适配器
+            </summary>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.OracleDatabaseClient.#ctor(System.Data.OracleClient.OracleConnection)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="connection">连接对象</param>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.OracleDatabaseClient.close">
+            <summary>
+            关闭对象释放资源
+            </summary>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataBase.OracleDatabaseClient.open(System.String)">
+            <summary>
+            开启对象
+            </summary>
+            <param name="sql">传入的sql语句</param>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataHandle.BuildXML">
+            <summary>
+            用于组合XML的工具接口
+            </summary>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.BuildXML.getXML(System.String,System.String)">
+            <summary>
+            获取一个序列化的值
+            </summary>
+            <param name="key">标签名</param>
+            <param name="value">值</param>
+            <returns>返回XML字符串</returns>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataHandle.BuildXMLHasNull">
+            <summary>
+            用于组合XML的实现类，
+            XML可以存在空值
+            </summary>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.BuildXMLHasNull.getXML(System.String,System.String)">
+            <summary>
+            获取一个序列化的值
+            </summary>
+            <param name="key">标签名</param>
+            <param name="value">值</param>
+            <returns>返回XML字符串</returns>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataHandle.BuildXMLNoNull">
+            <summary>
+            用于组合XML的实现类，
+            XML中可能为空的标签值会被以"DBNULL"填充
+            </summary>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.BuildXMLNoNull.getXML(System.String,System.String)">
+            <summary>
+            获取一个序列化的值
+            </summary>
+            <param name="key">标签名</param>
+            <param name="value">值</param>
+            <returns>返回XML字符串</returns>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataHandle.DataSourceType">
+            <summary>
+            数据源类型,
+            用于指示将要序列化值的数据来源，
+            以及XML键值对对应方式
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataHandle.DataSourceType.NoneData">
+            <summary>
+            不填充数据
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataHandle.DataSourceType.DataFromHashTable">
+            <summary>
+            数据源来自哈希表，
+            其中key将作为XML标签名，
+            value将作为对应值
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataHandle.DataSourceType.DataFromDataTable">
+            <summary>
+            数据源来自DataTable，
+            需配合列名映射集合使用，
+            映射集合中key将作为XML标签名，
+            映射集合中value为从DataTable中取对应值得列名
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataHandle.DataSourceType.DataOnlyDataTable">
+            <summary>
+            数据源仅来自DataTable，
+            XML标签名将使用DataTable的列名，
+            XML值为DataTable中对应值
+            </summary>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataCollection">
+            <summary>
+            webservice返回数据的集合装配工具
+            </summary>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataCollection.ToArray">
+            <summary>
+            序列化数据为二维数组，
+            优先使用DataDataTable作为数据源，
+            如果DataDataTable为空则会检查DataHashtables数据源
+            </summary>
+            <returns>
+            返回仅由数据源值数据组合的交错二维数组，
+            其中每行为数据源的一行记录值，
+            数据源异常会返回null
+            </returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataCollection.ToStringArray">
+            <summary>
+            序列化数据为字符串二维数组，
+            优先使用DataDataTable作为数据源，
+            如果DataDataTable为空则会检查DataHashtables数据源
+            </summary>
+            <returns>
+            返回仅由数据源值数据组合的交错二维数组，
+            其中每行为数据源的一行记录值，
+            数据源异常会返回null
+            </returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataCollection.HashTableSource">
+            <summary>
+            哈希表数据源装配
+            </summary>
+            <returns>返回二维数组</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataCollection.DataTableSource">
+            <summary>
+            DataTable数据源装配
+            </summary>
+            <returns>返回二维数组</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataCollection.HashTableSourceString">
+            <summary>
+            哈希表数据源装配
+            </summary>
+            <returns>返回二维数组</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataCollection.DataTableSourceString">
+            <summary>
+            DataTable数据源装配
+            </summary>
+            <returns>返回二维数组</returns>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataCollection.DataHashtables">
+            <summary>
+            要返回的数据源集合的Hashtable数组，
+            每一条记录为一个Hashtable集合，
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataCollection.DataDataTable">
+            <summary>
+            要返回的DataTable数据源集合，
+            其中包含全部的返回数据
+            </summary>
+        </member>
+        <member name="T:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML">
+            <summary>
+            webservice返回数据的XML序列化工具
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.rootName">
+            <summary>
+            XML根标签名，默认为"Root"
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.listName">
+            <summary>
+            XML数据集合标签名，默认为"Table"
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.rowName">
+            <summary>
+            XML单条数据记录标签名，默认为"Row"
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.XmlNoNull">
+            <summary>
+            指示ToXmlString方法返回的XML字符串是否不包含空，
+            默认为true，实际为空的标签值会被填充"DBNULL"
+            </summary>
+        </member>
+        <member name="F:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.buildXML">
+            <summary>
+            用于组合XML的工具类
+            </summary>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.ToXmlString">
+            <summary>
+            序列化数据为XML字符串
+            </summary>
+            <returns>返回拼接后的XML字符串</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.HashTableSourceXML">
+            <summary>
+            哈希表数据源序列化
+            </summary>
+            <returns>返回XML字符串</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.DataTableSourceXML">
+            <summary>
+            DataTable数据源配合ColumnDictionary列映射序列化
+            </summary>
+            <returns>返回XML字符串</returns>
+        </member>
+        <member name="M:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.OnlyDataTableSourceXML">
+            <summary>
+            仅DataTable数据源序列化，XML标签名为数据库列名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.Success">
+            <summary>
+            服务执行结果
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.Message">
+            <summary>
+            服务回显消息
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.RootName">
+            <summary>
+            XML根标签名，默认为"Root"
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.ListName">
+            <summary>
+            XML数据集合标签名，默认为"Table"
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.RowName">
+            <summary>
+            XML单条数据记录标签名，默认为"Row"
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.DataHashtables">
+            <summary>
+            要返回的数据源集合的Hashtable数组，
+            每一条记录为一个Hashtable集合，
+            其中key为XML标签名，value为对应值
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.DataDataTable">
+            <summary>
+            要返回的DataTable数据源集合，
+            其中包含全部的返回数据
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.isXmlNoNull">
+            <summary>
+            指示ToXmlString方法返回的XML字符串是否不包含空，
+            默认为true，实际为空的标签值会被填充"DBNULL"
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.ColumnDictionary">
+            <summary>
+            标签名与列名映射字典，
+            当SourceType指定为DataFromDataTable类型时有效，
+            与DataDataTable配合使用，
+            其中key为XML标签名，
+            value为数据库对应取值列名
+            </summary>
+        </member>
+        <member name="P:CWK.WebService.Util.UtilCollection.DataHandle.WebServiceDataXML.SourceType">
+            <summary>
+            数据源类型，指示XML数据来源和装配方式
+            </summary>
+        </member>
+    </members>
+</doc>

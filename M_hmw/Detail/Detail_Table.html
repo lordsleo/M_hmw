@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>详细信息</title>
+    <link href="../css/css.css" rel="stylesheet" type="text/css" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+
+    <script>
+
+        var str = document.location.search;
+        //var str = "info=0+355827";
+        var str1 = str.split("=", 2);
+        var id = str1[1];
+
+        $(document).ready(function () {
+
+            //$.getJSON("http://218.92.115.55/M_Hmw/Detail/Detail_Table.aspx?message=" + message + "&callback=?", null, function (ret) {
+                $.getJSON("Detail_Table.aspx?message=" + id, null, function (ret) {
+                
+                $('#table1').empty();
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table1').append("<tr><td class='td5'>" + ret[0][i] + "</td><td class='td6'>" + ret[1][0][i] + "</td></tr>");
+                }
+                $('#table1').trigger("create");
+            })
+        })
+    </script>
+
+  
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title">详细信息</div>
+        </div>
+
+        <div class="stylebox">
+            <table id="table1" style="width:100%;background-color:#ffffff"></table>
+        </div>
+
+        <!--页尾-->
+       <!-- <div class="bk20"></div>-->
+       <!--<div class="foot">连云港港口集团有限公司版权所有 <br />连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+
+</body>
+</html>

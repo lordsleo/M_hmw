@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>内河资讯</title>
+    <link href="../Css/css.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+
+    <script>
+
+        function DetailNewsClick(info) {
+            //实现详细资讯页面的跳转
+            window.location.href = 'Detail_News.html?info=' + info;
+        }
+
+        var str = document.location.search;
+        if (str == "") {
+            var str = "info=1";
+        }
+        var str1 = str.split("=", 2);
+        var num;
+        if (str1[1] == null) {
+            num = 1;
+        }
+        else {
+            num = str1[1];
+        }
+
+        $(document).ready(function () {
+
+            var minRow = (num - 1) * 15 + 1;
+            var maxRow = num * 15;
+            str = minRow + '+' + maxRow;
+
+            $.getJSON("More_News_neihezixun.aspx?message=" + str, null, function (ret) {
+
+                if (ret == 0 && num != 1) {
+                    num--;
+                    alert("当前页无数据，请返回！");
+                    window.location.href = 'More_News_neihezixun.html?info=' + num;
+                    return;
+                }
+
+                $('#table1').empty();
+                var page = '第' + num + '页';
+                $('#pagenum').text(page);
+                //路桥资讯
+                for (var i = 0; i < ret.length; ++i) {
+                    var title = ret[i][2].length > 18 ? ret[i][2].substr(0, 18) + '...' : ret[i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + ret[i][0] + '+' + ret[i][1] + "')\"><span>" + title + "</span></li>")
+                    //$('#table1').append("<li onclick=\"DetailNewsClick('" + ret[i][0] + '+' + ret[i][1] + "')\"><span>" + ret[i][2].substr(0, 12) + '...' + "</span><span class='addtime'>" + ret[i][3] + "</span></li>")
+                }
+
+                if (0 == ret) {
+                    $('#table1').append("<tr><td colspan=\"1\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+                $(".turepage").css("display", "block");
+            })
+
+
+            $("#prev").click(function () {
+                if (1 == num) {
+                    return;
+                }
+                else {
+                    num--;
+                }
+
+                window.location.href = 'More_News_neihezixun.html?info=' + num;
+            });
+
+
+            $("#next").click(function () {
+                num++;
+                window.location.href = 'More_News_neihezixun.html?info=' + num;
+            });
+
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title" id="headlines"></div>
+        </div>
+
+        <div class="stylebox">
+            <ul id="table1" class="styel3" style="margin:15px 10px 10px 10px"></ul>
+        </div>
+
+        <div class="turepage">
+            <button type="button" id="prev">上一页</button>
+            <p id="pagenum"></p>
+            <button type="button" id="next">下一页</button>
+        </div>
+
+        <!--页尾-->
+        <div class="bk20"></div>
+        <!--<div class="foot">连云港港口集团有限公司版权所有 <br />连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+
+</body>
+</html>

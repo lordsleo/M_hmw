@@ -1,0 +1,380 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>陆桥航贸</title>
+
+    <link href="Css/css.css" rel="stylesheet" type="text/css" />
+    <script src="Jquery/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="Jquery/jquery.Slide.2.1.1.js"></script>
+    <script>
+    <!--
+    /*第一种形式 第二种形式 更换显示样式*/
+    function setTab(name,cursel,n){
+    for(i=1;i<=n;i++){
+    var menu=document.getElementById(name+i);
+    var con=document.getElementById("con_"+name+"_"+i);
+    menu.className=i==cursel?"hover":"";
+    con.style.display=i==cursel?"block":"none";
+    }
+    }
+    //-->
+    </script>
+
+    <script type="text/javascript">
+
+        function DetailClick(info) {
+            //实现页面的跳转
+            window.location.href = 'Detail/Detail_Table.html?info=' + info;
+        }
+
+        function DetailNewsClick(info) {
+            //实现详细资讯页面的跳转
+            window.location.href = 'Detail/Detail_News2.html?info=' + info;
+        }
+
+        $(function () {
+            $.getJSON("index.aspx", null, function (ret) {
+                $("#table1").empty();
+                //要闻资讯
+                for (i = 0; i < ret[0].length; ++i) {
+                    ret[0][i][1] = (ret[0][i][1] == "DBNULL") ? "" : ret[0][i][1];
+                    ret[0][i][2] = (ret[0][i][2] == "DBNULL") ? "" : ret[0][i][2];
+
+                    //$('#table1').append("<li onclick=\"DetailNewsClick('" + ret[0][i][0] + "')\"><span>" + ret[0][i][1].substr(0, 12) + '...' + "</span><span class='addtime'>" + ret[0][i][2] + "</span></li>")
+                    var title = ret[0][i][1].length > 18 ? ret[0][i][1].substr(0, 18) + '...' : ret[0][i][1];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + ret[0][i][0] + "')\"><span>" + title + "</span></li>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table1').append("<tr><td colspan=\"1\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table1").trigger("create");
+            })
+
+            $.getJSON("index1.aspx", null, function (ret) {
+                $("#table2").empty();
+                //在岗船舶
+                $('#table2').append("<tr class='td3'><th>船代</th><th>船名</th><th>泊位</th><th>作业公司</th><th>状态</th><th>余吨</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table2').append("<tr class='td4' onclick=\"DetailClick('" + 0 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td><td><span class='td_front'>" + ret[0][i][3] + "</span><span>" + ' ' + "</span><span>" + ret[0][i][4] + "</span></td><td>" + ret[0][i][5] + "</td><td>" + ret[0][i][6] + "</td><td>" + ret[0][i][7] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table2').append("<tr><td colspan=\"6\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+          
+                $("#table2").trigger("create");
+            })
+
+            $.getJSON("index2.aspx", null, function (ret) {;
+                $("#table3").empty();
+                $("#table4").empty();
+                /*锚地船舶、进出港计划*/
+                //锚地船舶
+                $('#table3').append("<tr class='td3'><th>船代</th><th>船名</th><th>吃水</th><th>贸别</th><th>抵锚时间</th><th>引水</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table3').append("<tr  class='td4' onclick=\"DetailClick('" + 1 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td><td><span class='td_front'>" + ret[0][i][3] + "</span><span>" + ' ' + "</span><span>" + ret[0][i][4] + "</span></td><td>" + ret[0][i][5] + "</td><td>" + ret[0][i][6] + "</td><td>" + ret[0][i][7] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table3').append("<tr><td colspan=\"6\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //进出港计划
+                $('#table4').append("<tr class='td3'><th>船代</th><th>船名</th><th>泊位</th><th>属性</th><th>引水</th></tr>");
+                for (i = 0; i < ret[1].length; ++i) {
+                    $('#table4').append("<tr  class='td4' onclick=\"DetailClick('" + 2 + '+' + ret[1][i][0] + "')\"><td>" + ret[1][i][1] + "</td><td>" + ret[1][i][2] + "</td><td><span class='td_front'>" + ret[1][i][3] + "</span><span>" + ' ' + "</span><span>" + ret[1][i][4] + "</span></td><td>" + ret[1][i][5] + "</td><td>" + ret[1][i][6] + "</td></tr>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table4').append("<tr><td colspan=\"5\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table3").trigger("create");
+                $("#table4").trigger("create");
+            })
+
+            $.getJSON("index3.aspx", null, function (ret) {
+                $("#table5").empty();
+                $("#table6").empty();
+                //最新船期
+                $('#table5').append("<tr class='td3'><th>起始港</th><th>目的港</th><th>货名</th><th>重量</th><th>开航日期</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table5').append("<tr class='td4' onclick=\"DetailClick('" + 3 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td><td>" + ret[0][i][3] + "</td><td>" + ret[0][i][4] + "</td><td>" + ret[0][i][5] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table5').append("<tr><td colspan=\"5\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //最新货盘
+                $('#table6').append("<tr class='td3'><th>起始港</th><th>目的港</th><th>F20/F40</th><th>物流公司</th></tr>");
+                for (i = 0; i < ret[1].length; ++i) {
+                    $('#table6').append("<tr class='td4' onclick=\"DetailClick('" + 4 + '+' + ret[1][i][0] + "')\"><td>" + ret[1][i][1] + "</td><td>" + ret[1][i][2] + "</td><td><span class='td_front'>" + ret[1][i][3] + "</span><span>" + '/' + "</span><span>" + ret[1][i][4] + "</span><td>" + ret[1][i][5] + "</td></tr>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table6').append("<tr><td colspan=\"4\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table5").trigger("create");
+                $("#table6").trigger("create");
+            })
+
+
+            $.getJSON("index4.aspx", null, function (ret) {
+                $("#table7").empty();
+                $("#table8").empty();
+                //矿石专区
+                $('#table7').append("<tr class='td3'><th>类型</th><th>品名</th><th>规格</th><th>吨数</th><th>产地</th><th>交货日期</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table7').append("<tr class='td4' onclick=\"DetailClick('" + 5 + '+' + ret[0][i][0] + "')\"><td>" + ret[0][i][1] + "</td><td>" + ret[0][i][2] + "</td><td>" + ret[0][i][3] + "</td><td>" + ret[0][i][4] + "</td><td>" + ret[0][i][5] + "</td><td>" + ret[0][i][6] + "</td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table7').append("<tr><td colspan=\"6\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //煤炭专区
+                $('#table8').append("<tr class='td3'><th>类型</th><th>煤种</th><th>吨数</th><th>地区</th><th>发布日期</th></tr>");
+                for (i = 0; i < ret[1].length; ++i) {
+                    $('#table8').append("<tr class='td4' onclick=\"DetailClick('" + 6 + '+' + ret[1][i][0] + "')\"><td>" + ret[1][i][1] + "</td><td>" + ret[1][i][2] + "</td><td>" + ret[1][i][3] + "</td><td>" + ret[1][i][4] + "</td><td>" + ret[1][i][5] + "</td></tr>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table8').append("<tr><td colspan=\"5\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table7").trigger("create");
+                $("#table8").trigger("create");
+            })
+
+            $.getJSON("index5.aspx", null, function (ret) {
+                $("#table9").empty();
+                $("#table10").empty();
+                //最新运力
+                $('#table9').append("<tr class='td3'><th>车型/车号</th><th>吨位/车长</th><th>起-至</th></tr>");
+                for (i = 0; i < ret[0].length; ++i) {
+                    $('#table9').append("<tr class='td4' onclick=\"DetailClick('" + 7 + '+' + ret[0][i][0] + "')\"><td><span class='td_front'>" + ret[0][i][1] + "</span><span>" + '/' + "</span><span>" + ret[0][i][2] + "</span></td><td><span class='td_front'>" + ret[0][i][2] + "</span><span>" + '/' + "</span><span>" + ret[0][i][4] + "</span></td><td><span class='td_front'>" + ret[0][i][5] + "</span><span>" + '/' + "</span><span>" + ret[0][i][6] + "</span></td></tr>")
+                }
+                if (0 == ret[0].length) {
+                    $('#table9').append("<tr><td colspan=\"4\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //最新货源
+                $('#table10').append("<tr class='td3'><th>名称/数量</th><th>起-至</th><th>截止日期</th></tr>");
+                for (i = 0; i < ret[1].length; ++i) {
+                    $('#table10').append("<tr class='td4' onclick=\"DetailClick('" + 8 + '+' + ret[1][i][0] + "')\"><td><span class='td_front'>" + ret[1][i][1] + "</span><span>" + '/' + "</span><span>" + ret[1][i][2] + "</span></td><td><span class='td_front'>" + ret[1][i][3] + "</span><span>" + '-' + "</span><span>" + ret[1][i][4] + "</span></td><td>" + ret[1][i][5] + "</td></tr>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table10').append("<tr><td colspan=\"6\"><img src=\"Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                $("#table9").trigger("create");
+                $("#table10").trigger("create");
+            })
+
+
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="title1">大陆桥国际航贸网</div>
+            <!--<div class="user">离线</div>-->
+        </div>
+        <div class="focusOuter">
+            <div class="focusBox">
+                <ul class="pic">
+                    <li><a href="#" target="_blank"><img src="images/slide/01.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="images/slide/02.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="images/slide/03.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="images/slide/04.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="images/slide/05.jpg" /></a></li>
+                </ul>
+                <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+                <ul class="hd">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                /*鼠标移过，左右按钮显示*/
+                jQuery(".focusBox").hover(function () { jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.4) }, function () { jQuery(this).find(".prev,.next").fadeOut() });
+                /*SuperSlide图片切换*/
+                jQuery(".focusBox").slide({ mainCell: ".pic", effect: "fold", autoPlay: true, delayTime: 600, trigger: "click" });
+            </script>
+        </div>
+        <div class="bk20"></div>
+        <div class="menu">
+            <ul>
+                <li><a href="Channel/C1_News.html" rel="external"><img src="Images/menu/zx.png" /></a></li>
+                <li><a href="Channel/C2_Ship.html" rel="external"><img src="Images/menu/cb.png" /></a></li>
+                <li><a href="Channel/C3_Railway.html" rel="external"><img src="Images/menu/tl.png" /></a></li>
+                <li><a href="Channel/C4_Highway.html" rel="external"><img src="Images/menu/gl.png" /></a></li>
+                <li><a href="Channel/C5_River.html" rel="external"><img src="Images/menu/nh.png" /></a></li>
+                <li><a href="Channel/C6_Trade.html" rel="external"><img src="Images/menu/my.png" /></a></li>
+                <li><a href="Channel/C7_Storage.html" rel="external"><img src="Images/menu/cc.png" /></a></li>
+                <li><a href="" rel="external"><img src="Images/menu/bs.png" /></a></li>
+            </ul>
+        </div>
+        <div class="bk20"></div>
+        <!--<div class="bk20"></div>
+        <div class="icon">
+            <ul>
+                <li><a href="Function/ywsb.html" rel="external"><span><img src="Images/function/fudh.png"/></span></a></li>
+                <li><a href="Function/wdcyw.html" rel="external"><span><img src="Images/function/wyts.png"/></span></a></li>
+                <li><a href="Function/cygn.html" rel="external"><span><img src="Images/function/cygn.png"/></span></a></li>
+                <li><a href="Function/gkjg.html" rel="external"><span><img src="Images/function/gkjg.png" /></span></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>-->
+        <!--<div class="bk20"></div>
+        <div class="bk20"></div>-->
+        <!--<div class="bk20"></div>-->
+        <div style="display:none;" class="stylebox">
+            <div class="titlebox">兼容性窗体<a style="float:right;padding-right:20px; font:bold; color:#ffffff; text-decoration:none; " href="Home/Detail/More_News.html">更多</a></div>
+        </div>
+        <div class="stylebox">
+            <div class="titlebox2">要闻资讯<a class="more" href="http://218.92.115.55/M_Hmw/Home/Detail/More_News_yaowenzixun.html">更多</a></div>
+            <ul id="table1" class="styel1" style="margin:15px 10px 10px 10px">
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+            </ul>
+        </div>
+        <div class="bk20"></div>
+        <div id="Tab1">
+            <div class="Menubox">
+                <ul>
+                    <li id="one1" onmouseover="setTab('one',1,3)" class="hover">在港船舶</li>
+                    <li id="one2" onmouseover="setTab('one',2,3)">锚地船舶</li>
+                    <li id="one3" onmouseover="setTab('one',3,3)">进出港计划</li>
+                </ul>
+            </div>
+            <div class="Contentbox">
+                <div id="con_one_1" class="hover">
+                    <table id="table2" style="width:100%">
+                        <tr class='td3'><th>船代</th><th>船名</th><th>泊位</th><th>作业公司</th><th>状态</th><th>余吨</th></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    </table>
+                </div>
+                <div id="con_one_2" style="display:none">
+                    <table id="table3" style="width:100%">
+                        <tr class='td3'><th>船代</th><th>船名</th><th>吃水</th><th>贸别</th><th>抵锚时间</th><th>引水</th></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    </table>
+                </div>
+                <div id="con_one_3" style="display:none">
+                    <table id="table4" style="width:100%">
+                        <tr class='td3'><th>船代</th><th>船名</th><th>泊位</th><th>属性</th><th>引水</th></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div class="titlebox2">最新船期<a class="more" href="http://218.92.115.55/M_Hmw/Home/Detail/More_Table_zuixinchuanqi.html">更多</a></div>
+            <table id="table5" style="width:100%">
+                <tr class='td3'><th>起始港</th><th>目的港</th><th>货名</th><th>重量</th><th>开航日期</th></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </table>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div class="titlebox2">最新货盘<a class="more" href="http://218.92.115.55/M_Hmw/Home/Detail/More_Table_zuixinhuopan.html">更多</a></div>
+            <table id="table6" style="width:100%">
+                <tr class='td3'><th>起始港</th><th>目的港</th><th>F20/F40</th><th>物流公司</th></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </table>
+        </div>
+
+        <div class="bk20"></div>
+
+        <div class="stylebox">
+            <div class="titlebox2">矿石专区<a class="more" href="http://218.92.115.55/M_Hmw/Home/Detail/More_Table_kuangshizhuanqu.html">更多</a></div>
+            <table id="table7" style="width:100%">
+                <tr class='td3'><th>类型</th><th>品名</th><th>规格</th><th>吨数</th><th>产地</th><th>交货日期</th></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </table>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="pic"><img src="images/ad/line.jpg" width="640" height="130" /></div>
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div class="titlebox2">煤炭专区<a class="more" href="http://218.92.115.55/M_Hmw/Home/Detail/More_Table_meitanzhuanqu.html">更多</a></div>
+            <table id="table8" style="width:100%">
+                <tr class='td3'><th>类型</th><th>煤种</th><th>吨数</th><th>地区</th><th>发布日期</th></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </table>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div class="titlebox2">最新运力<a class="more" href="http://218.92.115.55/M_Hmw/Home/Detail/More_Table_zuixinyunli.html">更多</a></div>
+            <table id="table9" style="width:100%">
+                <tr class='td3'><th>车型/车号</th><th>吨位/车长</th><th>起-至</th></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </table>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div class="titlebox2">最新货源<a class="more" href="http://218.92.115.55/M_Hmw/Home/Detail/More_Table_zuixinhuoyuan.html">更多</a></div>
+            <table id="table10" style="width:100%">
+                <tr class='td3'><th>名称/数量</th><th>起-至</th><th>截止日期</th></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr class="td4"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            </table>
+        </div>
+        <div class="pic"><img src="images/ad/tail.jpg" width="640" height="180" /></div>
+    </div>
+    <div class="foot">连云港港口集团有限公司版权所有 <br />苏ICP备07020600号-3 </div>
+</body>
+</html>

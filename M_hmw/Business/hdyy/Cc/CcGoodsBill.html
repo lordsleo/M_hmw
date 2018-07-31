@@ -1,0 +1,179 @@
+﻿<!--********************************************************************
+//	创建时间:	2014/11/24
+//	作者:		sh
+//********************************************************************
+//	文件: 	Inspect_reported.html
+//	功能：  报检上报页面
+//  说明：
+*********************************************************************-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>保税公司报检详细</title>
+    <style type="text/css">
+        table{
+            width:100%;
+        }
+        .table {
+            padding-left:50px;
+            padding-top:10px;
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 50px;          
+        }
+        .table .td1{     
+            width:26%;
+        }
+        .table .td2{
+            width:60%;
+        }
+        .table .td3{
+            width:14%;
+        }
+    </style>
+    <link href="../../../Jquery/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <script src="../../../Jquery/jquery-2.1.0.min.js"></script>
+    <script src="../../../Jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../../../Jquery/dev/js/mobiscroll.core-2.5.2.js"></script>
+    <script src="../../../Jquery/dev/js/mobiscroll.core-2.5.2-zh.js"></script>
+    <link href="../../../Jquery/dev/css/mobiscroll.core-2.5.2.css" rel="stylesheet" />
+    <link href="../../../Jquery/dev/css/mobiscroll.animation-2.5.2.css" rel="stylesheet" />
+    <script src="../../../Jquery/dev/js/mobiscroll.datetime-2.5.1.js"></script>
+    <script src="../../../Jquery/dev/js/mobiscroll.datetime-2.5.1-zh.js"></script>
+    <script src="../../../Jquery/dev/js/mobiscroll.android-ics-2.5.2.js"></script>
+    <link href="../../../Jquery/dev/css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+
+        var strUrl = document.location.search;
+        //var str = "info=111+000+%E8%BF%9C%E5%A4%A7+HR1255032";
+        //var str = "info=111+1542+HR1255032";
+        //var str1 = str.split("=", 2);
+        //var str2 = str1[1].split("+", 3);
+        //var userId = str2[0];
+        //var inspectionId = str2[1];
+        //var blno = str2[1];
+
+        $(function () {
+            var currYear = (new Date()).getFullYear();
+            var opt = {};
+            opt.date = { preset: 'date' };
+            //opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+            opt.datetime = { preset: 'datetime' };
+            opt.time = { preset: 'time' };
+            opt.default = {
+                theme: 'android-ics light', //皮肤样式
+                display: 'modal', //显示方式
+                mode: 'scroller', //日期选择模式
+                lang: 'zh',
+                startYear: currYear - 10, //开始年份
+                endYear: currYear + 10 //结束年份
+            };
+
+            var optDateTime = $.extend(opt['datetime'], opt['default']);
+            var optTime = $.extend(opt['time'], opt['default']);
+            $("#text1").mobiscroll(optDateTime).datetime(optTime);
+            $("#text2").mobiscroll(optDateTime).datetime(optTime);
+
+            //var str = decodeURIComponent(strUrl);
+            //var str1 = str.split("=", 2);
+            //var str2 = str1[1].split("+", 3);
+            //var userId = str2[0];
+            //var inspectionId = str2[1];
+            //var blno = str2[1];
+
+            //if (/android/i.test(navigator.userAgent)) {
+            //    // android设备识别
+            //    $("#rerurnId").hide();
+            //    // 在这里加上隐藏返回栏的代码
+            //}
+
+            //function draw1(inspectTime) {
+            //    var confirmMess = "提单号: " + blno + " 确认报检？";
+            //    var truthBeTold = window.confirm(confirmMess);
+            //    if (truthBeTold) {
+            //        if (inspectTime == '') {
+            //            window.alert("请输入报检时间！");
+            //            return;
+            //        }
+            //        $.getJSON("Inspect2.aspx?message=" + userId + "+" + inspectionId + "+" + inspectTime, null, function (ret) {
+            //            var alertMess;
+            //            if (ret[0][0] == "ture") {
+            //                alertMess = "提单号: " + blno + " 报检成功！";
+            //            }
+            //            else {
+            //                alertMess = "提单号: " + blno + " 报检失败！";
+            //            }
+            //            window.alert(alertMess);
+            //        })
+            //    }
+            //}
+
+            //function draw2(releaseTime, remark) {
+            //    var confirmMess = "提单号: " + blno + " 确认放行？";
+            //    var truthBeTold = window.confirm(confirmMess);
+            //    if (truthBeTold) {
+            //        if (releaseTime == '') {
+            //            window.alert("请输入放行时间！");
+            //            return;
+            //        }
+
+            //        var remarkUtf8 = encodeURIComponent(remark);
+            //        $.getJSON("Inspect3.aspx?message=" + userId + "+" + inspectionId + "+" + releaseTime + "+" + remarkUtf8, null, function (ret) {
+            //            var alertMess;
+            //            if (ret[0][0] == "default") {
+            //                alertMess = "提单号: " + blno + " 不能再次放行！";
+            //            }
+            //            else if (ret[0][0] == "ture") {
+            //                alertMess = "提单号: " + blno + " 放行成功！";
+            //            }
+            //            else {
+            //                alertMess = "提单号: " + blno + " 放行失败！";
+            //            }
+            //            window.alert(alertMess);
+            //        })
+            //    }
+            //}
+
+
+            //$("#sure1").click(function () {
+            //    var inspectTime = $("#text1").val();
+            //    draw1(inspectTime);
+            //});
+            //$("#sure2").click(function () {
+            //    var releaseTime = $("#text2").val();
+            //    var remark = $("#textare-1").val();
+            //    draw2(releaseTime, remark);
+            //});
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div>
+
+        <div>
+            <table id="Table" class="table">
+                <tr>
+                    <td class="td1">开始时间：</td>
+                    <td class="td2"><input type="text" id="text1"></td>
+                    <td class="td3"></td>
+                </tr>
+                <tr>
+                    <td class="td1">已结束时间：</td>
+                    <td class="td2"><input type="text" id="text2"></td>
+                    <td class="td3"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <iframe src="../GoodsBill.html" frameborder="0" style="width:100%; height:1200px" scrolling="no"></iframe>
+        </div>
+      
+    </div>
+</body>
+</html>

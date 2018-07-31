@@ -1,0 +1,187 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>资讯</title>
+
+    <link href="../css/css.css" rel="stylesheet" type="text/css" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../Jquery/jquery.Slide.2.1.1.js"></script>
+
+
+
+    <script>
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTab(name,cursel,n){
+for(i=1;i<=n;i++){
+var menu=document.getElementById(name+i);
+var con=document.getElementById("con_"+name+"_"+i);
+menu.className=i==cursel?"hover":"";
+con.style.display=i==cursel?"block":"none";
+}
+}
+     //-->
+    </script>
+
+    <script type="text/javascript">
+
+        function DetailNewsClick(info) {
+            //实现详细资讯页面的跳转
+            window.location.href = '../Detail/Detail_News.html?info=' + info;
+        }
+
+        $(function () {
+            $.getJSON("http://218.92.115.55/M_Hmw/Channel/C1_News.aspx?callback=?", null, function (ret) {
+
+                $("#table1").empty();
+                $("#table2").empty();
+                $("#table3").empty();
+
+                //头条标题
+                $('#headnews').text(ret[0][0][2]);
+
+                document.getElementById("headnews").onclick = function () { window.location.href = "../Detail/Detail_News.html?message=" + ret[0][0][0] + "+" + ret[0][0][1]; }
+                //头条摘要
+                var decode = decodeURIComponent(ret[0][0][4]);
+                var str = decode.split("。", 2);
+                var subtitle = str[0];
+                subtitle = subtitle + "。";
+                $('#headabstract').html(subtitle);
+
+                //港口要闻
+                for (i = 0; i < ret[1].length; ++i) {
+                    var title = ret[1][i][2].length > 18 ? ret[1][i][2].substr(0, 18) + '...' : ret[1][i][2];
+                    $('#table1').append("<li onclick=\"DetailNewsClick('" + ret[1][i][0] + '+' + ret[1][i][1] + "')\"><span>" + title + "</span></li>")
+                    //$('#table1').append("<li onclick=\"DetailNewsClick('" + ret[1][i][0] + '+' + ret[1][i][1] + "')\"><span>" + ret[1][i][2].substr(0, 12) + '...' + "</span><span class='addtime'>" + ret[1][i][3] + "</span></li>")
+                }
+                if (0 == ret[1].length) {
+                    $('#table1').append("<tr><td colspan=\"1\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //路桥资讯
+                for (i = 0; i < ret[2].length; ++i) {
+                    var title = ret[2][i][2].length > 18 ? ret[2][i][2].substr(0, 18) + '...' : ret[2][i][2];
+                    $('#table2').append("<li onclick=\"DetailNewsClick('" + ret[2][i][0] + '+' + ret[2][i][1] + "')\"><span>" + title + "</span></li>")
+                    //$('#table2').append("<li onclick=\"DetailNewsClick('" + ret[2][i][0] + '+' + ret[2][i][1] + "')\"><span>" + ret[2][i][2].substr(0, 13) + "</span><span class='addtime'>" + ret[2][i][3] + "</span></li>")
+                }
+                if (0 == ret[2].length) {
+                    $('#table2').append("<tr><td colspan=\"1\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+                //行业观察
+                for (i = 0; i < ret[3].length; ++i) {
+                    var title = ret[3][i][2].length > 18 ? ret[3][i][2].substr(0, 18) + '...' : ret[3][i][2];
+                    $('#table3').append("<li onclick=\"DetailNewsClick('" + ret[3][i][0] + '+' + ret[3][i][1] + "')\"><span>" + title + "</span></li>")
+                    //$('#table3').append("<li onclick=\"DetailNewsClick('" + ret[3][i][0] + '+' + ret[3][i][1] + "')\"><span>" + ret[3][i][2].substr(0, 12) + '...' + "</span><span class='addtime'>" + ret[3][i][3] + "</span></li>")
+                }
+                if (0 == ret[3].length) {
+                    $('#table3').append("<tr><td colspan=\"1\"><img src=\"..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="../index.html" class="disapper">返回</a>
+            </div>
+            <div class="title">新闻</div>
+        </div>
+        <div class="menu1">
+            <ul>
+                <li><a href="News/lygnews.html">连云港</a></li>
+                <li><a href="News/locnews.html?1">兰州</a></li>
+                <li><a href="News/locnews.html?2">山西</a></li>
+                <li><a href="News/locnews.html?3">西安</a></li>
+                <li><a href="News/locnews.html?4">新疆</a></li>
+                <li><a href="News/locnews.html?5">郑州</a></li>
+                <li><a href="News/locnews.html?6">银川</a></li>
+                <li><a href="News/locnews.html?7">西宁</a></li>
+            </ul>
+        </div>
+
+        <div class="focusOuter">
+            <div class="focusBox">
+                <ul class="pic">
+                    <li><a href="#" target="_blank"><img src="../images/slide/01.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../images/slide/02.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../images/slide/03.jpg" /></a></li>
+                    <li><a href="#" target="_blank"><img src="../images/slide/04.jpg" /></a></li>
+                </ul>
+                <a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+                <ul class="hd">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                /*鼠标移过，左右按钮显示*/
+                jQuery(".focusBox").hover(function () { jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.2) }, function () { jQuery(this).find(".prev,.next").fadeOut() });
+                /*SuperSlide图片切换*/
+                jQuery(".focusBox").slide({ mainCell: ".pic", effect: "fold", autoPlay: true, delayTime: 600, trigger: "click" });
+            </script>
+        </div>
+        <div class="bk20"></div>
+        <div class="detail">
+            <h2 id="headnews"></h2>
+            <h3 id="headabstract"></h3>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div class="titlebox">港口要闻<a class="more" href="../Detail/More_News.html?message=26">更多</a></div>
+            <ul id="table1" class="styel1" style="margin:15px 10px 10px 10px">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="pic"><img style="width:100%" src="../Images/ad/line.jpg" /></div>
+        <div class="bk20"></div>
+        <div class="stylebox">
+            <div class="titlebox">陆桥资讯<a class="more" href="../Detail/More_News.html?message=27">更多</a></div>
+            <ul id="table2" class="styel1" style="margin:15px 10px 10px 10px">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="bk20"></div>
+
+        <div class="stylebox">
+            <div class="titlebox">行业观察<a class="more" href="../Detail/More_News.html?message=28">更多</a></div>
+            <ul id="table3" class="styel1" style="margin:15px 10px 10px 10px">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+
+
+
+        <div class="bk20"></div>
+        <!--<div class="foot">连云港港口集团有限公司版权所有 <br />连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+</body>
+</html>

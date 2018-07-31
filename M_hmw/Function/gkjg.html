@@ -1,0 +1,708 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<meta name="viewport" content="width=640" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="format-detection" content="telephone=no">    
+    <title>港口机构</title>
+    <link href="../Jquery/jquery.mobile-1.4.2.min.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+    <script src="../Jquery/jquery.mobile-1.4.5.min.js"></script>
+    
+    <style>
+        .search_l { 
+            background:#e2404b; 
+            height:45px; 
+            display:none;
+        }
+        .search_l .title { 
+            text-align:center; 
+            font-size:1.2em; 
+            line-height:45px; 
+            color:#ffffff; 
+            position:relative; 
+            font-weight:bold
+
+        }
+        .disapper {
+        display:none;
+        }
+        .foot { 
+            clear:both; 
+            margin:auto; 
+            line-height:1.5em; 
+            font-size:0.8em; 
+            background-color:#e6e6e6;
+            text-align:center;
+            padding-bottom:14px; 
+            padding-top:14px; 
+            color:#676767;
+        }
+
+        /*导航按钮*/
+        .ui-navbar li .ui-btn {
+	        font-size: 14px;
+            font:bold;
+	        display: block;
+	        margin: 0;
+	        border-right-width: 0;
+            background-color:#fff;  /*添加背景色为白色*/
+            /*background:url(../Images/Common/head.png) repeat-x;*/
+            border-color:	 		#ffffff; 
+        }
+        /* Active button */
+        .ui-page-theme-a .ui-btn.ui-btn-active,
+        html .ui-bar-a .ui-btn.ui-btn-active,
+        html .ui-body-a .ui-btn.ui-btn-active,
+        html body .ui-group-theme-a .ui-btn.ui-btn-active,
+        html head + body .ui-btn.ui-btn-a.ui-btn-active{
+            background:#ee2e67;
+	        border-color:	 		#ff0000; 
+	        color: 					#ffffff;
+	        text-shadow: 0  0px  0  #ffffff; /*字体阴影*/
+            box-shadow: 0 0 0px     #ff0000  /*删除边框阴影*/
+        }
+        /* Focus */
+        .ui-page-theme-a .ui-btn:focus,
+        html .ui-bar-a .ui-btn:focus,
+        html .ui-body-a .ui-btn:focus,
+        html body .ui-group-theme-a .ui-btn:focus,
+        html head + body .ui-btn.ui-btn-a:focus,
+        /* Focus buttons and text inputs with div wrap */
+        .ui-page-theme-a .ui-focus,
+        html .ui-bar-a .ui-focus,
+        html .ui-body-a .ui-focus,
+        html body .ui-group-theme-a .ui-focus,
+        html head + body .ui-btn-a.ui-focus,
+        html head + body .ui-body-a.ui-focus {
+	        -webkit-box-shadow: 0 0 0px 	#ff0000; /*删除边框阴影*/
+	        -moz-box-shadow: 0 0 0px 		#ff0000; /*删除边框阴影*/
+	        box-shadow: 0 0 0px 			#ff0000; /*删除边框阴影*/
+        }
+
+    </style>
+
+
+</head>
+<body>
+	<div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>	</div>
+            <div class="title">港口机构</div>
+    </div>
+    <div data-role="tabs">
+            <div data-role="navbar" class="navbar_body" data-grid="a">
+                <ul>
+                    <li><a href="#fragment-1" class="ui-btn-active"><div class="navbar_title">按业务</div></a></li>
+                    <li><a href="#fragment-2"><div class="navbar_title">按组织</div></a></li>
+                </ul>
+            </div>
+        <div class="wrapper" style="padding-left:10px;">
+            <div id="fragment-1">
+                <div data-role="collapsible" data-inset="false">
+                    <h3>港口管理</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口管理局</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口管理局</li>
+                                    <li>地址：江苏省连云港市连云区东园路16 号</li>
+                                    <li>电话：</li>
+                                    <li>传真号：</li>
+                                    <li>email：gkjbgs@lyg.gov.cn</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港海关</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港海关</li>
+                                    <li>地址：江苏省连云港市连云区中华西路48号</li>
+                                    <li>电话：0518-82368114</li>
+                                    <li>传真号：</li>
+                                    <li>email：http://nanjing.customs.gov.cn/publi</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港出入境检验检疫局</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港出入境检验检疫局</li>
+                                    <li>地址：江苏省连云港市连云区中山中路339号</li>
+                                    <li>电话：0518－82320060</li>
+                                    <li>传真号：</li>
+                                    <li>email：http://www.ciqbridge.gov.cn/</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港边防检查检站</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港边防检查检站</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：0518-82310663-110</li>
+                                    <li>传真号：</li>
+                                    <li>email：http://bj.lygport.com.cn</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港海事局</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港海事局</li>
+                                    <li>地址：江苏省连云港市连云区院前路11号</li>
+                                    <li>电话：0518-82230449</li>
+                                    <li>传真号：</li>
+                                    <li>email：http://new.lygmsa.gov.cn/</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>码头经营</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团有限公司</li>
+                                    <li>地址：江苏省连云港市连云区中华西路</li>
+                                    <li>电话：86-0518-82383501</li>
+                                    <li>传真号：86-0518-8238870</li>
+                                    <li>email：www.lygport.com.cn</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>江苏连云港港口股份有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：江苏连云港港口股份有限公司</li>
+                                    <li>地址：江苏省连云港市连云区中华西路</li>
+                                    <li>电话：86-0518-82389257</li>
+                                    <li>传真号：</li>
+                                    <li>email：gkjbgs@lyg.gov.cn</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>散杂货</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口股份有限公司东联分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口股份有限公司东联分公司</li>
+                                    <li>地址：江苏省连云港市连云区中山东路99号</li>
+                                    <li>电话：86-0518-82384372</li>
+                                    <li>传真号：0518-82382833</li>
+                                    <li>email：www.lygdlport.com</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口股份有限公司东源分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口股份有限公司东源分公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82382398</li>
+                                    <li>传真号：</li>
+                                    <li>email：</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口股份有限公司东泰分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口股份有限公司东泰分公司</li>
+                                    <li>地址：江苏省连云港市连云区大港路</li>
+                                    <li>电话：</li>
+                                    <li>传真号：0518-82380437</li>
+                                    <li>email：www.dongtaiport.com</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口股份有限公司东润分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口股份有限公司东润分公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82384149</li>
+                                    <li>传真号：0518-82384198</li>
+                                    <li>email：</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>新陆桥(连云港)码头有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：新陆桥(连云港)码头有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82388226</li>
+                                    <li>传真号：0518-82387905</li>
+                                    <li>email：:http://www.lygxlq.com/</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港新新苏港矿石码头分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港新新苏港矿石码头分公司</li>
+                                    <li>地址：江苏省连云港市连云区中山东路2号</li>
+                                    <li>电话：86-0518-82389159</li>
+                                    <li>传真号：0518-82389136</li>
+                                    <li>email：http://www.umetal.com/html/lygksmt</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>集装箱</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港新东方国际货柜码头有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港新东方国际货柜码头有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82383827</li>
+                                    <li>传真号：0518-82383627</li>
+                                    <li>email：http://www.lnoct.com/</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>拖轮引航</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团轮驳公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团轮驳公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82383797</li>
+                                    <li>传真号：</li>
+                                    <li>email：www.lyglbgs.com.cn</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>港口理货</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港中理外轮理货有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港中理外轮理货有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82383841</li>
+                                    <li>传真号：0518-82383814</li>
+                                    <li>email：http://www.lygtally.com/</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>货运代理</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港凯达国际物流有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港凯达国际物流有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82384174</li>
+                                    <li>传真号：0518-82383720</li>
+                                    <li>email：http://www.lyg-kaida.com/</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>铁路运输</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团铁运公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团铁运公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82382757</li>
+                                    <li>传真号：0518-82384067</li>
+                                    <li>email：www.lygtygs.com</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>港口IT</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团通信信息工程公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团通信信息工程公司</li>
+                                    <li>地址：江苏省连云港市连云区中山东路99号港医巷十号</li>
+                                    <li>电话：0518-82382700</li>
+                                    <li>传真号：0518-82382560</li>
+                                    <li>email：http://www.lygport.com.cn/txgs/</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港电子口岸信息发展有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港电子口岸信息发展有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82389006</li>
+                                    <li>传真号：</li>
+                                    <li>email：webmaster@lygedi.com</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>港口物流</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团物流有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团物流有限公司</li>
+                                    <li>地址：江苏省连云港市连云区阳光国际D座30楼</li>
+                                    <li>电话：86-0518-82388659</li>
+                                    <li>传真号：0518-82383612</li>
+                                    <li>email：http://www.lygwl.com.cn/</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>建设单位</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团港务工程公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团港务工程公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82385119</li>
+                                    <li>传真号：0518-82383403</li>
+                                    <li>email：</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>辅助服务</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团物资公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团物资公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82382670</li>
+                                    <li>传真号：0518-82383002</li>
+                                    <li>email：admin@lygport.com.cn</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港公安局</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港公安局</li>
+                                    <li>地址：江苏省连云港市连云区中山东路港医巷</li>
+                                    <li>电话：86-0518-82384215</li>
+                                    <li>传真号：0518-82382401</li>
+                                    <li>email：</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港外轮服务公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港外轮服务公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82380707</li>
+                                    <li>传真号：0518-82384085</li>
+                                    <li>email：http://www.penavicolyg.com/</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>中韩班轮</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团国际客运站</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团国际客运站</li>
+                                    <li>地址：江苏省连云港市连云区中山中路129号</li>
+                                    <li>电话：86-0518-82388935</li>
+                                    <li>传真号：</li>
+                                    <li>email：051882383198.locoso.com</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+            </div>
+            <div id="fragment-2">
+                <div data-role="collapsible" data-inset="false">
+                    <h3>口岸单位</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口管理局</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口管理局</li>
+                                    <li>地址：江苏省连云港市连云区东园路16 号</li>
+                                    <li>电话：</li>
+                                    <li>传真号：</li>
+                                    <li>email：gkjbgs@lyg.gov.cn</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港海关</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港海关</li>
+                                    <li>地址：江苏省连云港市连云区中华西路48号</li>
+                                    <li>电话：0518-82368114</li>
+                                    <li>传真号：</li>
+                                    <li>email：http://nanjing.customs.gov.cn/publi</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港出入境检验检疫局</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港出入境检验检疫局</li>
+                                    <li>地址：江苏省连云港市连云区中山中路339号</li>
+                                    <li>电话：0518－82320060</li>
+                                    <li>传真号：</li>
+                                    <li>email：http://www.ciqbridge.gov.cn/</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港边防检查检站</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港边防检查检站</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：0518-82310663-110</li>
+                                    <li>传真号：</li>
+                                    <li>email：http://bj.lygport.com.cn</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港海事局</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港海事局</li>
+                                    <li>地址：江苏省连云港市连云区院前路11号</li>
+                                    <li>电话：0518-82230449</li>
+                                    <li>传真号：</li>
+                                    <li>email：http://new.lygmsa.gov.cn/</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>连云港港口集团有限公司</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团轮驳公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团轮驳公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82383797</li>
+                                    <li>传真号：</li>
+                                    <li>email：www.lyglbgs.com.cn</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港中理外轮理货有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港中理外轮理货有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82383841</li>
+                                    <li>传真号：0518-82383814</li>
+                                    <li>email：http://www.lygtally.com/</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港凯达国际物流有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港凯达国际物流有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82384174</li>
+                                    <li>传真号：0518-82383720</li>
+                                    <li>email：http://www.lyg-kaida.com/</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团铁运公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团铁运公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82382757</li>
+                                    <li>传真号：0518-82384067</li>
+                                    <li>email：www.lygtygs.com</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团通信信息工程公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团通信信息工程公司</li>
+                                    <li>地址：江苏省连云港市连云区中山东路99号港医巷十号</li>
+                                    <li>电话：0518-82382700</li>
+                                    <li>传真号：0518-82382560</li>
+                                    <li>email：http://www.lygport.com.cn/txgs/</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港电子口岸信息发展有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港电子口岸信息发展有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82389006</li>
+                                    <li>传真号：</li>
+                                    <li>email：webmaster@lygedi.com</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团物流有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团物流有限公司</li>
+                                    <li>地址：江苏省连云港市连云区阳光国际D座30楼</li>
+                                    <li>电话：86-0518-82388659</li>
+                                    <li>传真号：0518-82383612</li>
+                                    <li>email：http://www.lygwl.com.cn/</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团港务工程公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团港务工程公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82385119</li>
+                                    <li>传真号：0518-82383403</li>
+                                    <li>email：</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团物资公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团物资公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82382670</li>
+                                    <li>传真号：0518-82383002</li>
+                                    <li>email：admin@lygport.com.cn</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港公安局</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港公安局</li>
+                                    <li>地址：江苏省连云港市连云区中山东路港医巷</li>
+                                    <li>电话：86-0518-82384215</li>
+                                    <li>传真号：0518-82382401</li>
+                                    <li>email：</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港外轮服务公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港外轮服务公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82380707</li>
+                                    <li>传真号：0518-82384085</li>
+                                    <li>email：http://www.penavicolyg.com/</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口集团国际客运站</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口集团国际客运站</li>
+                                    <li>地址：江苏省连云港市连云区中山中路129号</li>
+                                    <li>电话：86-0518-82388935</li>
+                                    <li>传真号：</li>
+                                    <li>email：051882383198.locoso.com</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div data-role="collapsible" data-inset="false">
+                    <h3>连云港港口股份有限公司</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口股份有限公司东联分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口股份有限公司东联分公司</li>
+                                    <li>地址：江苏省连云港市连云区中山东路99号</li>
+                                    <li>电话：86-0518-82384372</li>
+                                    <li>传真号：0518-82382833</li>
+                                    <li>email：www.lygdlport.com</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口股份有限公司东源分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口股份有限公司东源分公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82382398</li>
+                                    <li>传真号：</li>
+                                    <li>email：</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口股份有限公司东泰分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口股份有限公司东泰分公司</li>
+                                    <li>地址：江苏省连云港市连云区大港路</li>
+                                    <li>电话：</li>
+                                    <li>传真号：0518-82380437</li>
+                                    <li>email：www.dongtaiport.com</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港港口股份有限公司东润分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港港口股份有限公司东润分公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82384149</li>
+                                    <li>传真号：0518-82384198</li>
+                                    <li>email：</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-inset="false">
+                    <h3>口岸企业</h3>
+                    <ul data-role="listview">
+                        <li>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>新陆桥(连云港)码头有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：新陆桥(连云港)码头有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82388226</li>
+                                    <li>传真号：0518-82387905</li>
+                                    <li>email：:http://www.lygxlq.com/</li>
+                                </ul>
+                            </div><div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港新新苏港矿石码头分公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港新新苏港矿石码头分公司</li>
+                                    <li>地址：江苏省连云港市连云区中山东路2号</li>
+                                    <li>电话：86-0518-82389159</li>
+                                    <li>传真号：0518-82389136</li>
+                                    <li>email：http://www.umetal.com/html/lygksmt</li>
+                                </ul>
+                            </div>
+                            <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                <h4>连云港新东方国际货柜码头有限公司</h4>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>名称：连云港新东方国际货柜码头有限公司</li>
+                                    <li>地址：江苏省连云港市连云区</li>
+                                    <li>电话：86-0518-82383827</li>
+                                    <li>传真号：0518-82383627</li>
+                                    <li>email：http://www.lnoct.com/</li>
+                                </ul>
+                            </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="foot">连云港港口集团有限公司版权所有 <br />连云港港口集团通信信息工程公司建设运营</div>-->
+</body>
+</html>

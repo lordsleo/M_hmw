@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYourName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strYourName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetYourNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetYourNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignAllD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignAllDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsignAllDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignAllC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignAllCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsignAllCResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignSingle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignSingleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetParas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetParasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDelay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInterval" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterParas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDelay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInterval" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterParasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignParas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignParasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDelay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInterval" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterConsignParas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDelay" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strInterval" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterConsignParasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BatchPass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTermParas" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strParas" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BatchPassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsignStateResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterConsignState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNewState" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterConsignStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignStates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNos" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsignStatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsignStatesResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterConsignStates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNos" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNewState" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterConsignStatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestWait">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestWaitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttestWaitResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestPassNotBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestPassNotBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttestPassNotBalanceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestSelfBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestSelfBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttestSelfBalanceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestFullBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBegin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEnd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestFullBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttestFullBalanceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestWait2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestWait2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttestWait2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestNoPass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeDepartMent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestNoPassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttestNoPassResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestFinish">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeDepartMent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBeginDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttestFinishResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttestFinishResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXlqBillGoods">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTerm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXlqBillGoodsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXlqBillGoodsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXlqEntrust">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTerm" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXlqEntrustResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXlqEntrustResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterXlqSys">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtBillGoods">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strParas" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCGNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCargoNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNewState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOldState" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterXlqSysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLedStaticInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeDept" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLedStaticInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLedStaticInfoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLedStaticInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeDept" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNewLedInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateLedStaticInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkDriver">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeDept" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkDriverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkDriverResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWorkDriver">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtDriver">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWorkDriverResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strErr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetYourNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetYourName" />
+  </wsdl:message>
+  <wsdl:message name="GetYourNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetYourNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsignAll" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsignAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignAllDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsignAllD" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignAllDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsignAllDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignAllCSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsignAllC" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignAllCSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsignAllCResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignSingleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsignSingle" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignSingleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsignSingleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetParasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetParas" />
+  </wsdl:message>
+  <wsdl:message name="GetParasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetParasResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterParasSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterParas" />
+  </wsdl:message>
+  <wsdl:message name="AlterParasSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterParasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignParasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsignParas" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignParasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsignParasResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterConsignParasSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterConsignParas" />
+  </wsdl:message>
+  <wsdl:message name="AlterConsignParasSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterConsignParasResponse" />
+  </wsdl:message>
+  <wsdl:message name="BatchPassSoapIn">
+    <wsdl:part name="parameters" element="tns:BatchPass" />
+  </wsdl:message>
+  <wsdl:message name="BatchPassSoapOut">
+    <wsdl:part name="parameters" element="tns:BatchPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignStateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsignState" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignStateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsignStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterConsignStateSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterConsignState" />
+  </wsdl:message>
+  <wsdl:message name="AlterConsignStateSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterConsignStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignStatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsignStates" />
+  </wsdl:message>
+  <wsdl:message name="GetConsignStatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsignStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterConsignStatesSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterConsignStates" />
+  </wsdl:message>
+  <wsdl:message name="AlterConsignStatesSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterConsignStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestWaitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttestWait" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestWaitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttestWaitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestPassNotBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttestPassNotBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestPassNotBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttestPassNotBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestSelfBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttestSelfBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestSelfBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttestSelfBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestFullBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttestFullBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestFullBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttestFullBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestWait2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttestWait2" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestWait2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttestWait2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestNoPassSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttestNoPass" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestNoPassSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttestNoPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestFinishSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttestFinish" />
+  </wsdl:message>
+  <wsdl:message name="GetAttestFinishSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttestFinishResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXlqBillGoodsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXlqBillGoods" />
+  </wsdl:message>
+  <wsdl:message name="GetXlqBillGoodsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXlqBillGoodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXlqEntrustSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXlqEntrust" />
+  </wsdl:message>
+  <wsdl:message name="GetXlqEntrustSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXlqEntrustResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterXlqSysSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterXlqSys" />
+  </wsdl:message>
+  <wsdl:message name="AlterXlqSysSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterXlqSysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLedStaticInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLedStaticInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetLedStaticInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLedStaticInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLedStaticInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateLedStaticInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateLedStaticInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateLedStaticInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDriverSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkDriver" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDriverSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkDriverResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkDriverSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWorkDriver" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkDriverSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWorkDriverResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CIServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYourName">
+      <wsdl:input message="tns:GetYourNameSoapIn" />
+      <wsdl:output message="tns:GetYourNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignAll">
+      <wsdl:input message="tns:GetConsignAllSoapIn" />
+      <wsdl:output message="tns:GetConsignAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignAllD">
+      <wsdl:input message="tns:GetConsignAllDSoapIn" />
+      <wsdl:output message="tns:GetConsignAllDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignAllC">
+      <wsdl:input message="tns:GetConsignAllCSoapIn" />
+      <wsdl:output message="tns:GetConsignAllCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignSingle">
+      <wsdl:input message="tns:GetConsignSingleSoapIn" />
+      <wsdl:output message="tns:GetConsignSingleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParas">
+      <wsdl:input message="tns:GetParasSoapIn" />
+      <wsdl:output message="tns:GetParasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterParas">
+      <wsdl:input message="tns:AlterParasSoapIn" />
+      <wsdl:output message="tns:AlterParasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignParas">
+      <wsdl:input message="tns:GetConsignParasSoapIn" />
+      <wsdl:output message="tns:GetConsignParasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterConsignParas">
+      <wsdl:input message="tns:AlterConsignParasSoapIn" />
+      <wsdl:output message="tns:AlterConsignParasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchPass">
+      <wsdl:input message="tns:BatchPassSoapIn" />
+      <wsdl:output message="tns:BatchPassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignState">
+      <wsdl:input message="tns:GetConsignStateSoapIn" />
+      <wsdl:output message="tns:GetConsignStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterConsignState">
+      <wsdl:input message="tns:AlterConsignStateSoapIn" />
+      <wsdl:output message="tns:AlterConsignStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignStates">
+      <wsdl:input message="tns:GetConsignStatesSoapIn" />
+      <wsdl:output message="tns:GetConsignStatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterConsignStates">
+      <wsdl:input message="tns:AlterConsignStatesSoapIn" />
+      <wsdl:output message="tns:AlterConsignStatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestWait">
+      <wsdl:input message="tns:GetAttestWaitSoapIn" />
+      <wsdl:output message="tns:GetAttestWaitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestPassNotBalance">
+      <wsdl:input message="tns:GetAttestPassNotBalanceSoapIn" />
+      <wsdl:output message="tns:GetAttestPassNotBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestSelfBalance">
+      <wsdl:input message="tns:GetAttestSelfBalanceSoapIn" />
+      <wsdl:output message="tns:GetAttestSelfBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestFullBalance">
+      <wsdl:input message="tns:GetAttestFullBalanceSoapIn" />
+      <wsdl:output message="tns:GetAttestFullBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestWait2">
+      <wsdl:input message="tns:GetAttestWait2SoapIn" />
+      <wsdl:output message="tns:GetAttestWait2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestNoPass">
+      <wsdl:input message="tns:GetAttestNoPassSoapIn" />
+      <wsdl:output message="tns:GetAttestNoPassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestFinish">
+      <wsdl:input message="tns:GetAttestFinishSoapIn" />
+      <wsdl:output message="tns:GetAttestFinishSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXlqBillGoods">
+      <wsdl:input message="tns:GetXlqBillGoodsSoapIn" />
+      <wsdl:output message="tns:GetXlqBillGoodsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXlqEntrust">
+      <wsdl:input message="tns:GetXlqEntrustSoapIn" />
+      <wsdl:output message="tns:GetXlqEntrustSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterXlqSys">
+      <wsdl:input message="tns:AlterXlqSysSoapIn" />
+      <wsdl:output message="tns:AlterXlqSysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLedStaticInfo">
+      <wsdl:input message="tns:GetLedStaticInfoSoapIn" />
+      <wsdl:output message="tns:GetLedStaticInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLedStaticInfo">
+      <wsdl:input message="tns:UpdateLedStaticInfoSoapIn" />
+      <wsdl:output message="tns:UpdateLedStaticInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDriver">
+      <wsdl:input message="tns:GetWorkDriverSoapIn" />
+      <wsdl:output message="tns:GetWorkDriverSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkDriver">
+      <wsdl:input message="tns:UpdateWorkDriverSoapIn" />
+      <wsdl:output message="tns:UpdateWorkDriverSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CIServiceSoap" type="tns:CIServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYourName">
+      <soap:operation soapAction="http://tempuri.org/GetYourName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignAll">
+      <soap:operation soapAction="http://tempuri.org/GetConsignAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignAllD">
+      <soap:operation soapAction="http://tempuri.org/GetConsignAllD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignAllC">
+      <soap:operation soapAction="http://tempuri.org/GetConsignAllC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignSingle">
+      <soap:operation soapAction="http://tempuri.org/GetConsignSingle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParas">
+      <soap:operation soapAction="http://tempuri.org/GetParas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterParas">
+      <soap:operation soapAction="http://tempuri.org/AlterParas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignParas">
+      <soap:operation soapAction="http://tempuri.org/GetConsignParas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterConsignParas">
+      <soap:operation soapAction="http://tempuri.org/AlterConsignParas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchPass">
+      <soap:operation soapAction="http://tempuri.org/BatchPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignState">
+      <soap:operation soapAction="http://tempuri.org/GetConsignState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterConsignState">
+      <soap:operation soapAction="http://tempuri.org/AlterConsignState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignStates">
+      <soap:operation soapAction="http://tempuri.org/GetConsignStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterConsignStates">
+      <soap:operation soapAction="http://tempuri.org/AlterConsignStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestWait">
+      <soap:operation soapAction="http://tempuri.org/GetAttestWait" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestPassNotBalance">
+      <soap:operation soapAction="http://tempuri.org/GetAttestPassNotBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestSelfBalance">
+      <soap:operation soapAction="http://tempuri.org/GetAttestSelfBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestFullBalance">
+      <soap:operation soapAction="http://tempuri.org/GetAttestFullBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestWait2">
+      <soap:operation soapAction="http://tempuri.org/GetAttestWait2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestNoPass">
+      <soap:operation soapAction="http://tempuri.org/GetAttestNoPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestFinish">
+      <soap:operation soapAction="http://tempuri.org/GetAttestFinish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXlqBillGoods">
+      <soap:operation soapAction="http://tempuri.org/GetXlqBillGoods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXlqEntrust">
+      <soap:operation soapAction="http://tempuri.org/GetXlqEntrust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterXlqSys">
+      <soap:operation soapAction="http://tempuri.org/AlterXlqSys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLedStaticInfo">
+      <soap:operation soapAction="http://tempuri.org/GetLedStaticInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLedStaticInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateLedStaticInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDriver">
+      <soap:operation soapAction="http://tempuri.org/GetWorkDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkDriver">
+      <soap:operation soapAction="http://tempuri.org/UpdateWorkDriver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CIServiceSoap12" type="tns:CIServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYourName">
+      <soap12:operation soapAction="http://tempuri.org/GetYourName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignAll">
+      <soap12:operation soapAction="http://tempuri.org/GetConsignAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignAllD">
+      <soap12:operation soapAction="http://tempuri.org/GetConsignAllD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignAllC">
+      <soap12:operation soapAction="http://tempuri.org/GetConsignAllC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignSingle">
+      <soap12:operation soapAction="http://tempuri.org/GetConsignSingle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParas">
+      <soap12:operation soapAction="http://tempuri.org/GetParas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterParas">
+      <soap12:operation soapAction="http://tempuri.org/AlterParas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignParas">
+      <soap12:operation soapAction="http://tempuri.org/GetConsignParas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterConsignParas">
+      <soap12:operation soapAction="http://tempuri.org/AlterConsignParas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchPass">
+      <soap12:operation soapAction="http://tempuri.org/BatchPass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignState">
+      <soap12:operation soapAction="http://tempuri.org/GetConsignState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterConsignState">
+      <soap12:operation soapAction="http://tempuri.org/AlterConsignState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsignStates">
+      <soap12:operation soapAction="http://tempuri.org/GetConsignStates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterConsignStates">
+      <soap12:operation soapAction="http://tempuri.org/AlterConsignStates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestWait">
+      <soap12:operation soapAction="http://tempuri.org/GetAttestWait" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestPassNotBalance">
+      <soap12:operation soapAction="http://tempuri.org/GetAttestPassNotBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestSelfBalance">
+      <soap12:operation soapAction="http://tempuri.org/GetAttestSelfBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestFullBalance">
+      <soap12:operation soapAction="http://tempuri.org/GetAttestFullBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestWait2">
+      <soap12:operation soapAction="http://tempuri.org/GetAttestWait2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestNoPass">
+      <soap12:operation soapAction="http://tempuri.org/GetAttestNoPass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttestFinish">
+      <soap12:operation soapAction="http://tempuri.org/GetAttestFinish" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXlqBillGoods">
+      <soap12:operation soapAction="http://tempuri.org/GetXlqBillGoods" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXlqEntrust">
+      <soap12:operation soapAction="http://tempuri.org/GetXlqEntrust" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterXlqSys">
+      <soap12:operation soapAction="http://tempuri.org/AlterXlqSys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLedStaticInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetLedStaticInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLedStaticInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateLedStaticInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDriver">
+      <soap12:operation soapAction="http://tempuri.org/GetWorkDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkDriver">
+      <soap12:operation soapAction="http://tempuri.org/UpdateWorkDriver" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CIService">
+    <wsdl:port name="CIServiceSoap" binding="tns:CIServiceSoap">
+      <soap:address location="http://168.100.2.54/YKTService/CIService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CIServiceSoap12" binding="tns:CIServiceSoap12">
+      <soap12:address location="http://168.100.2.54/YKTService/CIService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

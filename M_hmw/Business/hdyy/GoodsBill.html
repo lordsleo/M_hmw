@@ -1,0 +1,124 @@
+﻿<!--********************************************************************
+//	创建时间:	2015/02/26
+//	作者:		sh
+//********************************************************************
+//	文件: 	GoodsBill.html
+//	功能：  票货查询
+//  说明：
+*********************************************************************-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>票货查询</title>
+    <link href="../../Css/css.css" rel="stylesheet" />
+    <script src="../../Jquery/jquery-2.1.0.min.js"></script>
+    <script>
+
+        function DetailTableClick(info) {
+            //实现详细表格页面的跳转
+            window.location.href = '../../Detail/Detail_Table_forBusiness.html?info=' + info;
+        }
+ 
+        var str = document.location.search;
+        if (str == "")
+        {
+            var str = "info=010113+227+1+1";
+        }
+        
+        var str1 = str.split("=", 2);
+        var str2 = str1[1].split("+", 4);
+        var strmess = str2[0] + "+" + str2[1] + "+" + str2[2];
+        var num;
+        if (str2[3] == null) {
+            num = 1;
+        }
+        else {
+            num = str2[3];
+        }
+
+        $(function () {
+
+            var minRow = (num - 1) * 15 + 1;
+            var maxRow = num * 15;
+            str = strmess + '+' + minRow + '+' + maxRow;
+
+            $.getJSON("GoodsBill.aspx?message=" + str, null, function (ret) {
+
+                if (ret == 0 && num != 1) {
+                    num--;
+                    alert("当前页无数据，请返回！");
+                    window.location.href = 'GoodsBill.html?info=' + strmess + "+" + num;
+                    return;
+                }   
+
+                $('#table').empty();
+                var page = '第' + num + '页';
+                $('#pagenum').text(page);
+                $('#table').append("<tr><th>货名</th><th>进出口</th><th>内外贸</th><th>唛头</th><th>创建时间</th></tr>");
+                for (var i = 0; i < ret.length; ++i) {
+                    if (i % 2 == 0) {
+                        $('#table').append("<tr class='tr1' onclick=\"DetailTableClick('" + 'GoodsBill' + '+' + 0 + '+' + ret[i][0] + "')\"><td>"
+                            + ret[i][1] + "</td><td>"
+                            + ret[i][4] + "</td><td>"
+                            + ret[i][5] + "</td><td>"
+                            + ret[i][9] + "</td><td>"
+                            + ret[i][8] + "</td></tr>")
+                        continue;
+                    }
+                    $('#table').append("<tr class='tr2' onclick=\"DetailTableClick('" + 'GoodsBill' + '+' + 0 + '+' + ret[i][0] + "')\"><td>"
+                        + ret[i][1] + "</td><td>"
+                        + ret[i][4] + "</td><td>"
+                        + ret[i][5] + "</td><td>"
+                        + ret[i][9] + "</td><td>"
+                        + ret[i][8] + "</td></tr>")
+                }
+                if (0 == ret) {
+                    $('#table').append("<tr><td colspan=\"5\"><img src=\"..\/..\/Images\/Channel/none.png\" width=\"640\" height=\"220\"/></td></tr>");
+                }
+                $(".turepage").css("display", "block");
+            })
+
+
+            $("#prev").click(function () {
+                if (1 == num) {
+                    return;
+                }
+                else {
+                    num--;
+                }
+
+                window.location.href = 'GoodsBill.html?info=' + strmess + "+" + num;
+            });
+
+
+            $("#next").click(function () {
+                num++;
+                window.location.href = 'GoodsBill.html?info=' + strmess + "+" + num;
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="stylebox">
+            <table id="table" class="table" style="width:100%"></table>
+        </div>
+
+        <div class="turepage">
+            <button type="button" id="prev">上一页</button>
+            <p id="pagenum"></p>
+            <button type="button" id="next">下一页</button>
+        </div>
+        <div class="bk20"></div>
+     
+    </div>
+
+</body>
+</html>

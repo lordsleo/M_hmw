@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+    <title></title>
+    <script>
+        var str = document.location.search;
+        if (str == "")
+        {
+            str = "?info=227+111111";
+        }
+        var str1 = str.split("=", 2);
+        var message = str1[1];
+        $(function () {
+            $.getJSON("QRCode.aspx?Message=" + message, null, function (ret) {
+                var aaa = ret;
+                var QRCodePicPath = "http://218.92.115.55/UploadFile/hmw/QRCodePicture/" + ret;
+                $("#content").html("<img src=\' " + QRCodePicPath + "\'>")          
+            })
+
+        })
+
+
+    </script>
+</head>
+<body style="margin:0px;">
+    <div id="content">
+    </div>
+   <!-- <img style="-webkit-user-select: none" src="http://qr.liantu.com/api.php?text=12322123123">-->
+</body>
+</html>

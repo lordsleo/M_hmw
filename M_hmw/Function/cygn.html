@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=640" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="format-detection" content="telephone=no">
+    <title>常用功能</title>
+    <link href="../Css/css.css" rel="stylesheet" />
+    <script src="../Jquery/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript">
+
+        var str = document.location.search;
+        var str = "info=227";
+        var str1 = str.split("=", 2);
+        var userCode = str1[1];
+
+        function ManageClick(userCode) {
+            if ( userCode=="0" ) {
+                alert("请先登录！");
+                return;
+            }
+            window.location.href = 'cygnmanager.html?userCode=' + userCode;
+        }
+
+        function Clickwdcyw(userCode) {
+            window.location.href = 'wdcyw.html?info=' + userCode;
+        }
+        function Clickwdhyw(userCode) {
+            window.location.href = 'wdhyw.html?info=' + userCode;
+        }
+
+        function Clickjszx(userCode) {
+            window.location.href = 'jszx.html?info=' + userCode;
+        }
+
+        $(function () {
+            $.getJSON("cygn.aspx?userCode=" + userCode + "&callback=?", null, function (ret) {
+
+                if ("false" == ret[0])
+                {
+                    return;
+                }
+                var i = 0;
+                var a = ret[0].toString();
+                var lis = document.getElementsByTagName("li");
+                for (i = 0; i < a.length; i++) {
+                    if (a.charAt(i) == "1") {
+                        lis[i].style.display = "block";
+                    }
+                    else {
+                        lis[i].style.display = "none";
+                    }
+                }
+                $(".manage").css("display", "block");
+            })
+        })
+
+    </script>
+
+</head>
+<body style="background-color:#f3f3f3;">
+    <div class="wrapper">
+        <div class="search_l">
+            <div class="back">
+                <a href="javascript:history.back(-1);" class="disapper">返回</a>
+            </div>
+            <div class="title">常用功能</div>
+            <div class="user" id="manager">管理</div>
+        </div>
+
+        <div class="bk20"></div>
+        <div class="icon1">
+            <ul>
+                <li id="f0" style="display:none;"><a href="../Channel/C1_News.html"><img src="../Images/menu/zx.png" /></a></li>
+                <li id="f1" style="display:none;"><a href="../Channel/C2_Ship.html"><img src="../Images/menu/cb.png" /></a></li>
+                <li id="f2" style="display:none;"><a href="../Channel/C3_Railway.html"><img src="../Images/menu/tl.png" /></a></li>
+                <li id="f3" style="display:none;"><a href="../Channel/C4_Highway.html"><img src="../Images/menu/gl.png" /></a></li>
+                <li id="f4" style="display:none;"><a href="../Channel/C5_River.html"><img src="../Images/menu/nh.png" /></a></li>
+                <li id="f5" style="display:none;"><a href="../Channel/C6_Trade.html"><img src="../Images/menu/my.png" /></a></li>
+                <li id="f6" style="display:none;"><a href="../Channel/C7_Storage.html"><img src="../Images/menu/cc.png" /></a></li>
+                <li id="f7" style="display:none;"><a href=""><img src="../Images/menu/bs.png" /></a></li>
+                <li id="f8" style="display:none;"><a onclick="Clickwdcyw(userCode)"><img src="../Images/function/wdcyw.png" /></a></li>
+                <li id="f9" style="display:none;"><a onclick="Clickwdhyw(userCode)"><img src="../Images/function/wdhyw.png" /></a></li>
+                <li id="f10" style="display:none;"><a onclick="Clickjszx(userCode)"><img src="../Images/function/jszx.png" /></a></li>
+                <li id="f11" style="display:none;"><a href="gkjg.html"><img src="../Images/function/gkjg.png" /></a></li>
+                <li id="f12" style="display:none;"><a href="wyts.html"><img src="../Images/function/wyts.png" /></a></li>
+            </ul>
+            <!--<div class="clear"></div>-->
+        </div>
+
+        <div class="bk20"></div>
+        <div class="manage">
+            <button type="button" , onclick="ManageClick(userCode)" id="manage" style="margin:0px auto;">管理</button>
+        </div>
+        <div class="bk20"></div>
+        <div class="bk20"></div>
+        <div class="bk20"></div>
+
+        <!--<div class="foot">连云港港口集团有限公司版权所有<br>连云港港口集团通信信息工程公司建设运营</div>-->
+    </div>
+</body>
+</html>
+
